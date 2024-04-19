@@ -65,5 +65,5 @@ foreach($language_alias as $language) {
 $route['404_override'] = '';
 $route['^(it|en)/(.+)$'] = "$2";
 $route['^(it|en)$'] = $route['default_controller'];
-$route['translate_uri_dashes'] = FALSE;
+$route['translate_uri_dashes'] = TRUE;
 $route['upload'] = 'Upload';

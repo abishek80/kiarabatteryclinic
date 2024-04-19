@@ -1,9 +1,9 @@
-<section class="pt-5">
+<section>
     <div class="container mt-5">
         <div class="bg-white rounded p-3">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h5 class="mb-0 fw-bold">Invoice List</h5>
-                <a href="#" class="bg-primary px-4 py-2 rounded text-white text-decoration-none">Create Invoice</a>
+                <a href="<?php echo base_url(); ?>admin/add-invoice" class="bg-primary px-4 py-2 rounded text-white text-decoration-none">Create Invoice</a>
             </div>
             <table class="table-hover table table-bordered m-0">
                 <thead>
