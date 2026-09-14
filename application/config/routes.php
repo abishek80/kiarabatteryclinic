@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $default_controller = "web";
 $language_alias = array('en');
 // exceptions
-$controller_exceptions = array('web','admin');
+$controller_exceptions = array('web', 'login', 'admin', 'admin_blog', 'admin_service', 'admin_category', 'admin_product', 'admin_invoice', 'admin_vendor', 'admin_gallery', 'admin_settings', 'admin_enquiry');
 // route
 $route['default_controller'] = $default_controller;
 $route["^(".implode('|', $language_alias).")/(".implode('|', $controller_exceptions).")(.*)"] = '$2';
@@ -62,8 +62,53 @@ $route["^((?!\b".implode('\b|\b', $controller_exceptions)."\b).*)$"] = $default_
 foreach($language_alias as $language) {
     $route[$language] = $default_controller.'/index';
 }
-$route['404_override'] = '';
+$route['404_override'] = 'common/errorPage';
 $route['^(it|en)/(.+)$'] = "$2";
 $route['^(it|en)$'] = $route['default_controller'];
 $route['translate_uri_dashes'] = TRUE;
 $route['upload'] = 'Upload';
+
+// Blog Controller Route Path
+$route['admin/blog'] = 'admin_blog/index';
+$route['admin/blog/(:any)'] = 'admin_blog/$1';
+$route['admin/blog/(:any)/(:any)'] = 'admin_blog/$1/$2';
+
+// service Controller Route Path
+$route['admin/service'] = 'admin_service/index';
+$route['admin/service/(:any)'] = 'admin_service/$1';
+$route['admin/service/(:any)/(:any)'] = 'admin_service/$1/$2';
+
+// category Controller Route Path
+$route['admin/category'] = 'admin_category/index';
+$route['admin/category/(:any)'] = 'admin_category/$1';
+$route['admin/category/(:any)/(:any)'] = 'admin_category/$1/$2';
+
+// product Controller Route Path
+$route['admin/product'] = 'admin_product/index';
+$route['admin/product/(:any)'] = 'admin_product/$1';
+$route['admin/product/(:any)/(:any)'] = 'admin_product/$1/$2';
+
+// invoice Controller Route Path
+$route['admin/invoice'] = 'admin_invoice/index';
+$route['admin/invoice/(:any)'] = 'admin_invoice/$1';
+$route['admin/invoice/(:any)/(:any)'] = 'admin_invoice/$1/$2';
+
+// vendor Controller Route Path
+$route['admin/vendor'] = 'admin_vendor/index';
+$route['admin/vendor/(:any)'] = 'admin_vendor/$1';
+$route['admin/vendor/(:any)/(:any)'] = 'admin_vendor/$1/$2';
+
+// gallery Controller Route Path
+$route['admin/gallery'] = 'admin_gallery/index';
+$route['admin/gallery/(:any)'] = 'admin_gallery/$1';
+$route['admin/gallery/(:any)/(:any)'] = 'admin_gallery/$1/$2';
+
+// settings Controller Route Path
+$route['admin/settings'] = 'admin_settings/index';
+$route['admin/settings/(:any)'] = 'admin_settings/$1';
+$route['admin/settings/(:any)/(:any)'] = 'admin_settings/$1/$2';
+
+// enquiry Controller Route Path
+$route['admin/enquiry'] = 'admin_enquiry/index';
+$route['admin/enquiry/(:any)'] = 'admin_enquiry/$1';
+$route['admin/enquiry/(:any)/(:any)'] = 'admin_enquiry/$1/$2';

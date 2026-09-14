@@ -23,14 +23,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/venpep/kiarabatteryclinic/';
-$projectname = "KIARA Battery Clinic"; 
-$config['sitename'] = "KIARA Battery Clinic"; 
+$config['base_url'] = 'http://localhost/venpep/abishek_projects/kiarabatteryclinic/';
+$projectname = "Kiara Battery Clinic"; 
+$config['sitename'] = "Kiara Battery Clinic"; 
 $config['websiteaddress'] = "https://kiarabatteryclinic.com/";
 $config['mailid'] = "";
 $config['country'] = "India";
 
-$config['adminemail'] = "spratheepktvr@gmail.com";
+$config['adminemail'] = "antonyabi80@gmail.com";
 /*
 |--------------------------------------------------------------------------
 | Index File

@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-	<div id="container">
+	<div id="container-fluid px-lg-5">
 		<h1><?php echo $heading; ?></h1>
 		<div id="body">
 			<?php echo $message; ?>
