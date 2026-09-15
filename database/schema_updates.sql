@@ -101,4 +101,21 @@ ALTER TABLE `general_info`
   MODIFY `updated_by` int(11) NULL DEFAULT NULL,
   MODIFY `updated_at` datetime NULL DEFAULT NULL;
 
+-- --------------------------------------------------------
+-- 14. Brand Master Table
+-- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `brand` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `token` varchar(500) NOT NULL,
+  `brand_name` varchar(500) NOT NULL,
+  `brand_img` text DEFAULT NULL,
+  `status` enum('active','inactive') NOT NULL DEFAULT 'active',
+  `delete_status` int(5) NOT NULL DEFAULT 0,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_by` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 SET FOREIGN_KEY_CHECKS = 1;

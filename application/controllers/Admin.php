@@ -27,6 +27,7 @@ class Admin extends CI_Controller
         $data['productEnquiryList'] = $this->enquirymodel->getProductEnquiryList();
         $data['contactEnquiryList'] = $this->enquirymodel->getContactEnquiryList();
         $data['categoryList'] = $this->categorymodel->categoryList('active');
+        $data['brandList'] = $this->brandmodel->brandList('active');
         $data['productList'] = $this->productmodel->productList('active');
         $data['serviceList'] = $this->servicemodel->serviceList('active');
         $data['blogList'] = $this->blogmodel->blogList('active');
@@ -35,6 +36,22 @@ class Admin extends CI_Controller
         $this->load->view('backend/header', $data);
         $this->load->view('backend/dashboard', $data);
         $this->load->view('backend/footer');
+    }
+
+    // Brand Master Methods
+    public function brand($pageStatus='')
+    {
+        redirect(base_url() . 'admin/brand/brand-list/' . $pageStatus);
+    }
+
+    public function brand_add()
+    {
+        redirect(base_url() . 'admin/brand/brand_add');
+    }
+
+    public function brand_edit($brandId)
+    {
+        redirect(base_url() . 'admin/brand/brand_edit/' . $brandId);
     }
 
     public function change_password()

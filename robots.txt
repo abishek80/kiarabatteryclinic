@@ -1,0 +1,15 @@
+# robots.txt for Kiara Battery Clinic (https://kiarabatteryclinic.com/)
+User-agent: *
+Allow: /
+Allow: /themes/
+Allow: /uploads/
+
+# Block Admin & Private Directories
+Disallow: /admin/
+Disallow: /system/
+Disallow: /application/
+Disallow: /database/
+Disallow: /uploads/temp/
+
+# Search engine sitemap location
+Sitemap: https://kiarabatteryclinic.com/sitemap.xml

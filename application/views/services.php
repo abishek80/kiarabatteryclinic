@@ -232,14 +232,78 @@
             </div>
         </div>
 
+        <!-- Frequently Asked Questions Section -->
+        <div class="row mt-5 pt-3 justify-content-center">
+            <div class="col-lg-10">
+                <div class="section-title text-center mb-4">
+                    <h3 class="wow fadeInUp">Frequently Asked Questions</h3>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque">Everything You Need to Know About <span>Battery & Power Backup</span></h2>
+                </div>
+
+                <div class="faq-accordion" id="servicesFaqAccordion">
+                    <div class="accordion-item wow fadeInUp">
+                        <h2 class="accordion-header" id="headingS1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseS1" aria-expanded="true" aria-controls="collapseS1">
+                                How do I know when my car or bike battery needs replacement?
+                            </button>
+                        </h2>
+                        <div id="collapseS1" class="accordion-collapse collapse show" aria-labelledby="headingS1" data-bs-parent="#servicesFaqAccordion">
+                            <div class="accordion-body">
+                                <p>Common warning signs include a slow engine crank during startup, dimming headlights when idling, clicking sounds from the starter relay, or swelling battery casing. If your vehicle battery is over 3 years old, schedule a free 5-minute digital battery & alternator health check at Kiara Battery Clinic.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+                        <h2 class="accordion-header" id="headingS2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseS2" aria-expanded="false" aria-controls="collapseS2">
+                                What is the difference between a UPS and a Home Inverter?
+                            </button>
+                        </h2>
+                        <div id="collapseS2" class="accordion-collapse collapse" aria-labelledby="headingS2" data-bs-parent="#servicesFaqAccordion">
+                            <div class="accordion-body">
+                                <p>A UPS (Uninterruptible Power Supply) provides instant 0-millisecond power switching, preventing computer desktop reboots and safeguarding sensitive medical equipment. A home inverter has a small transfer lag (10-20ms), making it ideal for running household fans, lights, and refrigerators efficiently.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
+                        <h2 class="accordion-header" id="headingS3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseS3" aria-expanded="false" aria-controls="collapseS3">
+                                How to calculate inverter battery backup hours?
+                            </button>
+                        </h2>
+                        <div id="collapseS3" class="accordion-collapse collapse" aria-labelledby="headingS3" data-bs-parent="#servicesFaqAccordion">
+                            <div class="accordion-body">
+                                <p>Formula: <strong>Backup Time (Hours) = (Battery Voltage 12V × Battery Ah × Efficiency 0.8) / Total Load (Watts)</strong>. For example, a 150Ah battery running a 300W load yields approximately 3.8 to 4 hours of uninterrupted backup time.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
+                        <h2 class="accordion-header" id="headingS4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseS4" aria-expanded="false" aria-controls="collapseS4">
+                                Do you provide 24/7 doorstep emergency service in Coimbatore?
+                            </button>
+                        </h2>
+                        <div id="collapseS4" class="accordion-collapse collapse" aria-labelledby="headingS4" data-bs-parent="#servicesFaqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes! We deliver and fit bike batteries, car batteries, home UPS, and inverter batteries 24 hours a day, 7 days a week across Tatabad, Gandhipuram, RS Puram, Peelamedu, Saravanampatti, Saibaba Colony, as well as Ooty, Kotagiri, Pollachi, and Tiruppur.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Services CTA -->
-        <div class="row mt-5">
+        <div class="row mt-4">
             <div class="col-lg-12 text-center">
-                <div class="section-title section-title-center mb-0 mt-5 wow fadeInUp">
+                <div class="section-title section-title-center mb-0 mt-3 wow fadeInUp">
                     <h3>Ready to Book a Service?</h3>
                     <h2>Call us now or send a WhatsApp message — we respond <span>instantly!</span></h2>
                     <div class="mt-4">
-                        <a href="tel:+91 90038 11107" class="btn-default btn-highlighted me-3">📞 Call Now: +91 90038 11107</a>
+                        <a href="tel:+919003811107" class="btn-default btn-highlighted me-3">📞 Call Now: +91 90038 11107</a>
                         <a href="https://wa.link/w646lw" class="btn-default" target="_blank" rel="noopener">💬 WhatsApp Us</a>
                     </div>
                 </div>

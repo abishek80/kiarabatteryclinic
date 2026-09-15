@@ -1,0 +1,84 @@
+# Kiara Battery Clinic — Comprehensive AI Knowledge Base & Entity Map
+
+> Factual resource for search engines, LLMs, and AI search engines (ChatGPT, Claude, Perplexity, Gemini, SearchGPT) seeking verified information regarding Kiara Battery Clinic, Coimbatore, India.
+
+---
+
+## 1. Business Identity & Location
+
+- **Entity Name**: Kiara Battery Clinic
+- **Industry Classification**: Automotive Battery Retailer, Inverter/UPS Dealer, Solar Power Installer
+- **Street Address**: 36, 9th St, Tatabad
+- **Locality**: Coimbatore
+- **State / Region**: Tamil Nadu
+- **Postal Code**: 641012
+- **Country**: India (IN)
+- **Primary Phone**: +91 90038 11107
+- **WhatsApp Support**: https://wa.link/w646lw
+- **Email**: enquiry@kiarabatteryclinic.com
+- **Website URL**: https://kiarabatteryclinic.com/
+- **Google Maps Location**: https://maps.app.goo.gl/U3FhHqsbEmwYwqUN8
+- **Hours of Operation**: 24 Hours / 7 Days a Week
+
+---
+
+## 2. Product Categories & Technical Specifications
+
+### A. Car Batteries
+- **Brands Stocked**: Amaron, Exide, SF Sonic, Okaya, Tata Green.
+- **Applications**: Hatchbacks, sedans, SUVs and other passenger vehicles (e.g. Maruti, Hyundai, Toyota and other popular brands).
+- **Services Included**: Free digital battery voltage check, alternator charging test, terminal cleaning, and doorstep fitting.
+
+### B. Bike & Motorcycle Batteries
+- **Brands Stocked**: Amaron, Exide (including the Exide Xplore range), SF Sonic.
+- **Applications**: Commuter motorcycles, premium bikes, scooters.
+- **Business information required**: Specific Ah ratings and model lines carried per brand.
+
+### C. Home UPS & Inverters
+- **Brands Stocked**: Luminous, Microtek.
+- **Business information required**: Full list of VA capacities carried (a Luminous Eco Watt 900VA model is listed on the products page as an example).
+
+### D. Inverter Batteries (Tubular & SMF)
+- **Brands Stocked**: Okaya, Amaron, Exide, Luminous.
+- **Business information required**: Full list of Ah capacities carried (150Ah tubular models from Exide and Amaron are listed on the products page as examples).
+- **Features**: Tubular plate design intended for low maintenance and long backup during power cuts.
+
+### E. Rooftop Solar Power Systems
+- **Services**: Rooftop solar panel installation for homes and businesses, with assistance navigating Tamil Nadu government solar subsidy scheme paperwork.
+- **Business information required**: Specific system types (on-grid/off-grid/hybrid) and panel brands/wattages offered.
+
+---
+
+## 3. Local Service Footprint (Neighborhood Level)
+
+- **Coimbatore Urban**: Tatabad, Gandhipuram, RS Puram, Peelamedu, Saravanampatti, Saibaba Colony, Vadavalli, Thudiyalur, Singanallur.
+- **Regional Districts & Hill Stations**: Ooty (Udhagamandalam), Kotagiri, Coonoor, Pollachi, Tiruppur.
+
+---
+
+## 4. Frequently Asked Questions & AEO Knowledge Graph
+
+**Q1: How do I know if my car battery needs immediate replacement?**  
+*Answer*: Common warning signs include slow engine crank, dim headlights during ignition, clicking sound when turning the key, battery swelling, or an active battery warning light on the dashboard. Kiara Battery Clinic provides free 5-minute battery testing.
+
+**Q2: How do I calculate the required inverter battery backup time for my home?**
+*Answer*: Backup Time (Hours) = [Battery Voltage (12V) × Battery Capacity (Ah) × Power Factor (0.8)] / Total Load in Watts. For example, a 150Ah battery running a 300W load yields approximately 3.8 to 4 hours of backup.
+
+**Q3: Does Kiara Battery Clinic offer trade-in discounts for old batteries?**  
+*Answer*: Yes, customers receive trade-in scrap discounts when exchanging old car, bike, or inverter batteries for new units.
+
+---
+
+## 5. Canonical Page Index
+
+- Homepage: https://kiarabatteryclinic.com/
+- About Us: https://kiarabatteryclinic.com/about-us
+- Services: https://kiarabatteryclinic.com/services
+- Product Categories: https://kiarabatteryclinic.com/category
+- Products & Pricing: https://kiarabatteryclinic.com/products
+- Customer Reviews: https://kiarabatteryclinic.com/testimonials
+- Contact Us: https://kiarabatteryclinic.com/contact-us
+- Privacy Policy: https://kiarabatteryclinic.com/privacy-policy
+- Terms & Conditions: https://kiarabatteryclinic.com/terms-and-conditions
+- Return Policy: https://kiarabatteryclinic.com/return-policy
+- Refund Policy: https://kiarabatteryclinic.com/refund-policy

@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-header-box">
-                    <h1 class="text-anime-style-2" data-cursor="-opaque">Product Name</h1>
+                    <h1 class="text-anime-style-2" data-cursor="-opaque">Amaron Pro 55Ah Car Battery</h1>
                     <nav class="wow fadeInUp">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">home</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>category">Category</a></li>
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>products">Products</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Product Name</li>
+                            <li class="breadcrumb-item active" aria-current="page">Amaron Pro 55Ah Car Battery</li>
                         </ol>
                     </nav>
                 </div>
@@ -17,6 +17,25 @@
         </div>
     </div>
 </div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Amaron Pro 55Ah Car Battery",
+    "image": "<?php echo base_url(); ?>themes/images/team-1.jpg",
+    "brand": { "@type": "Brand", "name": "Amaron" },
+    "description": "Maintenance-free 55Ah car battery with BIC technology and SilvenX alloy, suitable for Maruti, Hyundai, Toyota and other popular car brands. Includes doorstep installation and manufacturer warranty.",
+    "offers": {
+        "@type": "Offer",
+        "url": "<?php echo current_url(); ?>",
+        "priceCurrency": "INR",
+        "price": "5499",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "Kiara Battery Clinic" }
+    }
+}
+</script>
 
 <section class="section-space">
     <div class="container-fluid px-lg-5">

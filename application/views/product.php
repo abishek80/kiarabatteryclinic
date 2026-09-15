@@ -3,12 +3,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-header-box">
-                    <h1 class="text-anime-style-2" data-cursor="-opaque">Product</h1>
+                    <h1 class="text-anime-style-2" data-cursor="-opaque">Battery, UPS & Solar Products - Price List Coimbatore</h1>
                     <nav class="wow fadeInUp">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">home</a></li>
-                            <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>category">category</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Product</li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>category">Category</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Products</li>
                         </ol>
                     </nav>
                 </div>

@@ -2,10 +2,11 @@ Options -Indexes
 
 RewriteEngine On
 
-RewriteBase /
+# Redirect WWW to Non-WWW (HTTPS)
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
+# CodeIgniter Clean URL Rewrite
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /venpep/abishek_projects/kiarabatteryclinic/index.php/$1
+RewriteRule ^(.*)$ index.php/$1 [L]

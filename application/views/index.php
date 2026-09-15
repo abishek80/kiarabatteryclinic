@@ -36,7 +36,7 @@
                             <div class="col-lg-7">
                                 <div class="hero-content">
                                     <div class="section-title">
-                                        <h1 class="text-anime-style-2" data-cursor="-opaque">Solar Panel Installation & Government Scheme Support in Coimbatore</h1>
+                                        <h2 class="text-anime-style-2" data-cursor="-opaque">Solar Panel Installation & Government Scheme Support in Coimbatore</h2>
                                         <p class="wow fadeInUp" data-wow-delay="0.2s">Save on electricity with our complete solar power setup — from rooftop panel installation to government subsidy assistance. Serving homes, factories and businesses across Tamil Nadu.</p>
                                     </div>
                                     <div class="hero-body wow fadeInUp" data-wow-delay="0.4s">

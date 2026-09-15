@@ -5,13 +5,12 @@ class Web extends CI_Controller {
 
     public function index()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
+        $data['meta'] = get_seo_meta('home');
+        // Legacy keys kept for backwards compatibility
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
-        // $data['productList'] = $this->webmodel->productList();
-        // $data['serviceList'] = $this->webmodel->serviceList();
-        
         $this->load->view('header', $data);
         $this->load->view('index', $data);
         $this->load->view('footer', $data);
@@ -19,99 +18,112 @@ class Web extends CI_Controller {
 
     public function about_us()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
+        $data['meta'] = get_seo_meta('about_us');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
-        $this->load->view('aboutus');
+        $this->load->view('aboutus', $data);
         $this->load->view('footer', $data);
     }
 
     public function contact_us()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
+        $data['meta'] = get_seo_meta('contact_us');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
-        $this->load->view('contactus');
+        $this->load->view('contactus', $data);
         $this->load->view('footer', $data);
     }
 
     public function testimonials()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
+        $data['meta'] = get_seo_meta('testimonials');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
-        $this->load->view('testimonials');
+        $this->load->view('testimonials', $data);
         $this->load->view('footer', $data);
     }
 
     public function privacy_policy()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
+        $data['meta'] = get_seo_meta('privacy_policy');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
-        $this->load->view('privacypolicy');
+        $this->load->view('privacypolicy', $data);
         $this->load->view('footer', $data);
     }
 
     public function terms_and_conditions()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
+        $data['meta'] = get_seo_meta('terms_and_conditions');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
-        $this->load->view('termsandconditions');
+        $this->load->view('termsandconditions', $data);
         $this->load->view('footer', $data);
     }
 
     public function return_policy()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
+        $data['meta'] = get_seo_meta('return_policy');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
-        $this->load->view('returnpolicy');
+        $this->load->view('returnpolicy', $data);
         $this->load->view('footer', $data);
     }
 
     public function refund_policy()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
+        $data['meta'] = get_seo_meta('refund_policy');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
-        $this->load->view('refundpolicy');
+        $this->load->view('refundpolicy', $data);
         $this->load->view('footer', $data);
     }
 
     public function error()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
+        $this->output->set_status_header('404');
+
+        $data['meta'] = get_seo_meta('home', array(
+            'title' => '404 Page Not Found | Kiara Battery Clinic Coimbatore',
+            'description' => 'The page you requested was not found. Contact Kiara Battery Clinic for emergency doorstep battery service in Coimbatore.',
+            'robots' => 'noindex, nofollow'
+        ));
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
-        $this->load->view('error');
+        $this->load->view('error', $data);
         $this->load->view('footer', $data);
     }
     
     public function services()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
-
-        // $data['serviceList'] = $this->webmodel->serviceList();
+        $data['meta'] = get_seo_meta('services');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
         $this->load->view('services', $data);
@@ -120,17 +132,10 @@ class Web extends CI_Controller {
     
     public function service()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
-
-        // $serviceDetail = $this->webmodel->serviceDetail($serviceId);
-        // foreach ($serviceDetail as $row) {
-        //     $data['serviceName'] = $row->service_name;
-        //     $data['shortDescription'] = $row->short_description;
-        //     $data['description'] = $row->description;
-        //     $data['serviceImg'] = $row->service_img;
-	    // }
+        $data['meta'] = get_seo_meta('service_detail');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
         $this->load->view('service_detail', $data);
@@ -139,29 +144,22 @@ class Web extends CI_Controller {
     
     public function category()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
-
-        // $data['categoryList'] = $this->webmodel->categoryList();
+        $data['meta'] = get_seo_meta('category');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
         $this->load->view('category', $data);
         $this->load->view('footer', $data);
     }
 
-    public function products($categoryId)
+    public function products($categoryId = '')
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
-
-        // $data['productList'] = $this->webmodel->productList($categoryId);
-
-        // $productList = $this->webmodel->productList($categoryId);
-        // foreach($productList as $row) {
-        //     $data['categoryName'] = $row->category_name;
-        // }
+        $data['meta'] = get_seo_meta('products');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
         $this->load->view('product', $data);
@@ -170,21 +168,10 @@ class Web extends CI_Controller {
 
     public function product()
     {
-        $data['metaTitle'] = "Kiara Battery Clinic";
-        $data['metaDescription'] = "Kiara Battery Clinic";
-        $data['metaKeyword'] = "Kiara Battery Clinic";
-
-        // $productDetail = $this->webmodel->productDetail($productId);
-        // foreach ($productDetail as $row) {
-        //     $data['productName'] = $row->product_name;
-        //     $data['categoryId'] = $row->category_id;
-        //     $data['categoryName'] = $row->category_name;
-        //     $data['mrpPrice'] = $row->mrp_price;
-        //     $data['productPrice'] = $row->product_price;
-        //     $data['shortDescription'] = $row->short_description;
-        //     $data['description'] = $row->description;
-        //     $data['productImg'] = $row->product_img;
-	    // }
+        $data['meta'] = get_seo_meta('product_detail');
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
         $this->load->view('product_detail', $data);
@@ -200,7 +187,6 @@ class Web extends CI_Controller {
         $mobileNumber = $this->input->post('mobile');
         $subject = $this->input->post('subject');
         $message = $this->input->post('message');
-        
 
         if ($contactId < 0 || $contactId == '') {
             $checkExists = $this->webmodel->checkMobileNumber($mobileNumber);
@@ -218,7 +204,7 @@ class Web extends CI_Controller {
         if ($contactId > 0) {
             $data["message"] = "Form Updated";
         } else {
-            $data["message"] = "Form Submitted Successfull";
+            $data["message"] = "Form Submitted Successfully";
         }
 
         echo json_encode($data);
@@ -243,7 +229,7 @@ class Web extends CI_Controller {
         if ($productEnquiryId > 0) {
             $data["message"] = "Form Updated";
         } else {
-            $data["message"] = "Form Submitted Successfull";
+            $data["message"] = "Form Submitted Successfully";
         }
 
         echo json_encode($data);

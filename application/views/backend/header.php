@@ -72,6 +72,12 @@
                             <div data-i18n="Category List">Category List</div>
                         </a>
                     </li>
+                    <li class="menu-item <?php echo $menu_status == 'BrandList' ? 'active' : ''; ?>">
+                        <a href="<?php echo base_url(); ?>admin/brand/brand-list" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-purchase-tag-alt"></i>
+                            <div data-i18n="Brand List">Brand List</div>
+                        </a>
+                    </li>
                     <li class="menu-item <?php echo $menu_status == 'ServiceList' ? 'active' : ''; ?>">
                         <a href="<?php echo base_url(); ?>admin/service/service-list" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-spreadsheet"></i>

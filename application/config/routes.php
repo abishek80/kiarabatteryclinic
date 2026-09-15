@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $default_controller = "web";
 $language_alias = array('en');
 // exceptions
-$controller_exceptions = array('web', 'login', 'admin', 'admin_blog', 'admin_service', 'admin_category', 'admin_product', 'admin_invoice', 'admin_vendor', 'admin_gallery', 'admin_settings', 'admin_enquiry');
+$controller_exceptions = array('web', 'login', 'admin', 'admin_blog', 'admin_service', 'admin_category', 'admin_brand', 'admin_product', 'admin_invoice', 'admin_vendor', 'admin_gallery', 'admin_settings', 'admin_enquiry');
 // route
 $route['default_controller'] = $default_controller;
 $route["^(".implode('|', $language_alias).")/(".implode('|', $controller_exceptions).")(.*)"] = '$2';
@@ -62,7 +62,7 @@ $route["^((?!\b".implode('\b|\b', $controller_exceptions)."\b).*)$"] = $default_
 foreach($language_alias as $language) {
     $route[$language] = $default_controller.'/index';
 }
-$route['404_override'] = 'common/errorPage';
+$route['404_override'] = 'web/error';
 $route['^(it|en)/(.+)$'] = "$2";
 $route['^(it|en)$'] = $route['default_controller'];
 $route['translate_uri_dashes'] = TRUE;
@@ -112,3 +112,8 @@ $route['admin/settings/(:any)/(:any)'] = 'admin_settings/$1/$2';
 $route['admin/enquiry'] = 'admin_enquiry/index';
 $route['admin/enquiry/(:any)'] = 'admin_enquiry/$1';
 $route['admin/enquiry/(:any)/(:any)'] = 'admin_enquiry/$1/$2';
+
+// brand Controller Route Path
+$route['admin/brand'] = 'admin_brand/index';
+$route['admin/brand/(:any)'] = 'admin_brand/$1';
+$route['admin/brand/(:any)/(:any)'] = 'admin_brand/$1/$2';
