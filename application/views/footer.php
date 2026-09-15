@@ -46,7 +46,7 @@
                                 <img src="<?php echo base_url(); ?>themes/images/icon-location.svg" style="filter: brightness(0) invert(1);" alt="Kiara Battery Clinic shop address Coimbatore">
                             </div>
                             <div class="footer-contact-content">
-                                <p><a href="https://maps.app.goo.gl/U3FhHqsbEmwYwqUN8" target="_blank" rel="noopener">36, 9th Street, Tatabad, Coimbatore - 641 012, Tamil Nadu</a></p>
+                                <p><a href="https://maps.app.goo.gl/ttQckMunQZZrcVq66" target="_blank" rel="noopener">36, 9th Street, Tatabad, Coimbatore - 641 012, Tamil Nadu</a></p>
                             </div>
                         </div>
                         <div class="footer-contact-item">

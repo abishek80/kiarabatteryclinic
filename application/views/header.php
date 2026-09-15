@@ -40,8 +40,8 @@
                 <div class="col-md-9">
                     <div class="topbar-contact-info">
                         <ul>
-                            <li><img src="<?php echo base_url(); ?>themes/images/icon-location.svg" alt="Kiara Battery Clinic Location - Coimbatore">Tatabad, Coimbatore - Tamil Nadu</li>
-                            <li><a href="mailto:enquiry@kiarabatteryclinic.com"><img src="<?php echo base_url(); ?>themes/images/icon-mail.svg" alt="Email Kiara Battery Clinic">enquiry@kiarabatteryclinic.com</a></li>
+                            <li><a href="https://maps.app.goo.gl/ttQckMunQZZrcVq66" target="_blank" rel="noopener"><img src="<?php echo base_url(); ?>themes/images/icon-location.svg" alt="Kiara Battery Clinic Location - Coimbatore">Tatabad, Coimbatore - Tamil Nadu</a></li>
+                            <li><a href="tel:+91 90038 11107"><img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" alt="Call Kiara Battery Clinic">+91 90038 11107</a></li>
                         </ul>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ $config['seo'] = array(
     'site_tagline' => "Coimbatore's #1 Battery Shop, UPS & Solar Service Experts",
     'default_description' => 'Kiara Battery Clinic offers 24/7 doorstep bike battery, car battery replacement, home UPS, inverter service, industrial UPS & solar panel installation across Coimbatore, Ooty, Pollachi, Tiruppur & Kotagiri.',
     'default_keywords' => 'car battery Coimbatore, bike battery replacement, battery shop Coimbatore, home UPS inverter price, inverter battery dealer Tatabad, doorstep battery service 24/7, Kiara Battery Clinic',
-    'default_og_image' => 'themes/images/logo.png',
+    'default_og_image' => 'themes/images/og-share-banner.jpg',
 
     'business_info' => array(
         'name' => 'Kiara Battery Clinic',
@@ -28,7 +28,7 @@ $config['seo'] = array(
         'phone' => '+91 90038 11107',
         'phone_raw' => '+919003811107',
         'email' => 'enquiry@kiarabatteryclinic.com',
-        'google_maps' => 'https://maps.app.goo.gl/U3FhHqsbEmwYwqUN8',
+        'google_maps' => 'https://maps.app.goo.gl/ttQckMunQZZrcVq66',
         'opening_hours' => 'Mo-Su 00:00-23:59',
         'price_range' => '₹₹',
         'area_served' => array('Coimbatore', 'Ooty', 'Kotagiri', 'Pollachi', 'Tiruppur', 'Tatabad', 'Gandhipuram', 'RS Puram', 'Peelamedu', 'Saravanampatti', 'Thudiyalur', 'Singanallur', 'Vadavalli'),

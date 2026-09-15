@@ -9,4 +9,4 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 # CodeIgniter Clean URL Rewrite
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]
+RewriteRule ^(.*)$ /kiarabatteryclinic/index.php/$1 [L]

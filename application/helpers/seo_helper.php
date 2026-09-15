@@ -73,23 +73,29 @@ if (!function_exists('get_seo_meta')) {
 if (!function_exists('render_seo_tags')) {
     function render_seo_tags($meta) {
         $html = '';
-        $html .= '<title>' . $meta['title'] . '</title>' . "\n";
+        $html .= '	<title>' . $meta['title'] . '</title>' . "\n";
+        $html .= '	<meta name="title" content="' . $meta['title'] . '">' . "\n";
         $html .= '	<meta name="description" content="' . $meta['description'] . '">' . "\n";
         $html .= '	<meta name="keywords" content="' . $meta['keywords'] . '">' . "\n";
         $html .= '	<meta name="robots" content="' . $meta['robots'] . '">' . "\n";
         $html .= '	<meta name="googlebot" content="' . $meta['robots'] . '">' . "\n";
         $html .= '	<link rel="canonical" href="' . $meta['canonical'] . '">' . "\n";
         
-        // Open Graph
+        // Open Graph (WhatsApp, Facebook, LinkedIn, iMessage)
         $html .= '	<meta property="og:site_name" content="' . $meta['site_name'] . '">' . "\n";
+        $html .= '	<meta property="og:type" content="' . $meta['og_type'] . '">' . "\n";
+        $html .= '	<meta property="og:url" content="' . $meta['canonical'] . '">' . "\n";
         $html .= '	<meta property="og:title" content="' . $meta['title'] . '">' . "\n";
         $html .= '	<meta property="og:description" content="' . $meta['description'] . '">' . "\n";
-        $html .= '	<meta property="og:url" content="' . $meta['canonical'] . '">' . "\n";
-        $html .= '	<meta property="og:type" content="' . $meta['og_type'] . '">' . "\n";
         $html .= '	<meta property="og:image" content="' . $meta['og_image'] . '">' . "\n";
+        $html .= '	<meta property="og:image:secure_url" content="' . $meta['og_image'] . '">' . "\n";
+        $html .= '	<meta property="og:image:type" content="image/jpeg">' . "\n";
+        $html .= '	<meta property="og:image:width" content="1200">' . "\n";
+        $html .= '	<meta property="og:image:height" content="630">' . "\n";
 
         // Twitter / X Card
         $html .= '	<meta name="twitter:card" content="summary_large_image">' . "\n";
+        $html .= '	<meta name="twitter:url" content="' . $meta['canonical'] . '">' . "\n";
         $html .= '	<meta name="twitter:title" content="' . $meta['title'] . '">' . "\n";
         $html .= '	<meta name="twitter:description" content="' . $meta['description'] . '">' . "\n";
         $html .= '	<meta name="twitter:image" content="' . $meta['og_image'] . '">' . "\n";

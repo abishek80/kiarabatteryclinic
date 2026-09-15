@@ -70,8 +70,8 @@
                             </div>
                         </div>        
                         <div class="contact-info-content">
-                            <p class="ps-4 fs-6 fw-semibold text-black">36, 9th Street, Tatabad, Coimbatore - 641 012, Tamil Nadu<br></p>
-                            <small class="ps-4 mt-3 d-block mb-0">We also serve: Ooty · Kotagiri · Pollachi · Tiruppur</small>
+                            <p class="ps-4 fs-6 fw-semibold text-black"><a href="https://maps.app.goo.gl/ttQckMunQZZrcVq66" target="_blank" rel="noopener" class="text-dark">36, 9th Street, Tatabad, Coimbatore - 641 012, Tamil Nadu</a></p>
+                            <small class="ps-4 mt-3 d-block mb-0">Service Areas: Ooty · Kotagiri · Pollachi · Tiruppur</small>
                         </div>
                     </div>
                 </div>
