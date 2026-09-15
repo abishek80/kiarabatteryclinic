@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-header-box">
-                    <h1 class="text-anime-style-2" data-cursor="-opaque">Customer Reviews - Kiara Battery Clinic, Coimbatore</h1>
+                    <h1 class="text-anime-style-2" data-cursor="-opaque">Customer Reviews <br> - Kiara Battery Clinic, Coimbatore</h1>
                     <nav class="wow fadeInUp">
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb mt-4">
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Testimonials</li>
                         </ol>
@@ -32,181 +32,60 @@
             </div>
         </div>
 
+        <?php 
+            if (!isset($testimonialList) || empty($testimonialList)) {
+                $CI =& get_instance();
+                if (isset($CI->webmodel)) {
+                    $testimonialList = $CI->webmodel->testimonialList();
+                }
+            }
+        ?>
         <div class="row">
-            <div class="col-md-6 col-lg-4">
-                <div class="testimonial-item wow fadeInUp">
-                    <div class="testimonial-quote">
-                        <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer review quote">
-                    </div>
-                    <div class="testimonial-content">
-                        <p>My car battery died in the middle of the road near Gandhipuram. I called Kiara Battery Clinic and their technician arrived within 30 minutes. He replaced the Amaron battery on the spot. Very quick and professional service. Highly recommended for car battery service in Coimbatore!</p>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="author-image">
-                            <figure class="image-anime">
-                                <img src="<?php echo base_url(); ?>themes/images/author-1.jpg" alt="Ramesh Kumar - Car battery service review Coimbatore">
-                            </figure>
-                        </div>            
-                        <div class="author-content">
-                            <h3>Ramesh Kumar</h3>
-                            <p class="mb-0">Gandhipuram, Coimbatore</p>
+            <?php if(!empty($testimonialList)): ?>
+                <?php foreach($testimonialList as $index => $row): ?>
+                    <?php 
+                        $delay = ($index % 3) * 0.2;
+                        $img_src = !empty($row->reviewer_img) 
+                            ? ((strpos($row->reviewer_img, 'http') === 0 || strpos($row->reviewer_img, './') === 0 || strpos($row->reviewer_img, 'uploads/') === 0) 
+                                ? base_url(ltrim($row->reviewer_img, './')) 
+                                : base_url('uploads/testimonials/' . $row->reviewer_img))
+                            : base_url('themes/images/author-' . (($index % 4) + 1) . '.jpg');
+                        $stars = (int)($row->star ?? 5);
+                        $timeline = !empty($row->location) ? $row->location : (!empty($row->review_date) ? date('M Y', strtotime($row->review_date)) : 'Verified Customer');
+                    ?>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="testimonial-item wow fadeInUp" data-wow-delay="<?php echo $delay; ?>s">
+                            <div class="testimonial-quote">
+                                <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer review quote">
+                            </div>
+                            <div class="testimonial-content">
+                                <?php if(!empty($row->title)): ?>
+                                    <h5 class="fw-bold mb-2 text-dark"><?php echo htmlspecialchars($row->title); ?></h5>
+                                <?php endif; ?>
+                                <p><?php echo htmlspecialchars($row->description); ?></p>
+                                <div class="my-2 text-warning">
+                                    <?php 
+                                        for($s = 1; $s <= 5; $s++) {
+                                            echo ($s <= $stars) ? '★' : '☆';
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="testimonial-body">
+                                <div class="author-image">
+                                    <figure class="image-anime">
+                                        <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($row->reviewer_name); ?> - Customer Review">
+                                    </figure>
+                                </div>            
+                                <div class="author-content">
+                                    <h3><?php echo htmlspecialchars($row->reviewer_name); ?></h3>
+                                    <p class="mb-0 text-muted small"> <?php echo htmlspecialchars($timeline); ?></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="testimonial-item wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="testimonial-quote">
-                        <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer review quote">
-                    </div>
-                    <div class="testimonial-content">
-                        <p>We contacted Kiara Battery Clinic for industrial UPS installation for our garment factory in Tiruppur. Their team arrived on time, installed a high-capacity UPS system and even provided a full AMC plan. Our machines have been running without any power interruption since. Top-notch service!</p>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="author-image">
-                            <figure class="image-anime">
-                                <img src="<?php echo base_url(); ?>themes/images/author-2.jpg" alt="Murugan Selvam - Industrial UPS review Tiruppur">
-                            </figure>
-                        </div>            
-                        <div class="author-content">
-                            <h3>Murugan Selvam</h3>
-                            <p class="mb-0">Factory Owner, Tiruppur</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="testimonial-item wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="testimonial-quote">
-                        <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer review quote">
-                    </div>
-                    <div class="testimonial-content">
-                        <p>I had my home UPS installed by Kiara Battery Clinic in RS Puram. The technician came the same day I called, installed the UPS with a new tubular battery, and explained how to maintain it properly. Excellent service and very reasonable price. I will recommend them to everyone!</p>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="author-image">
-                            <figure class="image-anime">
-                                <img src="<?php echo base_url(); ?>themes/images/author-3.jpg" alt="Priya Lakshmi - Home UPS installation review Coimbatore">
-                            </figure>
-                        </div>            
-                        <div class="author-content">
-                            <h3>Priya Lakshmi</h3>
-                            <p class="mb-0">RS Puram, Coimbatore</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="testimonial-item wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="testimonial-quote">
-                        <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer review quote">
-                    </div>
-                    <div class="testimonial-content">
-                        <p>Got a complete solar panel setup for my house in Ooty through Kiara Battery Clinic. They guided me through the Tamil Nadu government solar scheme, helped me with the paperwork and installed everything neatly. My electricity bill has reduced drastically. Excellent company!</p>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="author-image">
-                            <figure class="image-anime">
-                                <img src="<?php echo base_url(); ?>themes/images/author-4.jpg" alt="Sundar Raj - Solar panel installation review Ooty">
-                            </figure>
-                        </div>            
-                        <div class="author-content">
-                            <h3>Sundar Raj</h3>
-                            <p class="mb-0">Ooty, Nilgiris</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="testimonial-item wow fadeInUp">
-                    <div class="testimonial-quote">
-                        <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer review quote">
-                    </div>
-                    <div class="testimonial-content">
-                        <p>My bike battery was completely flat and I had an urgent morning trip. Kiara Battery Clinic sent a technician within 20 minutes to my house in Saravanampatti. He replaced it with an Exide battery with full warranty. Fast, affordable and very reliable. Will always call them for any battery issue.</p>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="author-image">
-                            <figure class="image-anime">
-                                <img src="<?php echo base_url(); ?>themes/images/author-1.jpg" alt="Karthik Rajan - Bike battery service review Coimbatore">
-                            </figure>
-                        </div>            
-                        <div class="author-content">
-                            <h3>Karthik Rajan</h3>
-                            <p class="mb-0">Saravanampatti, Coimbatore</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="testimonial-item wow fadeInUp">
-                    <div class="testimonial-quote">
-                        <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer review quote">
-                    </div>
-                    <div class="testimonial-content">
-                        <p>My inverter stopped working during the rainy season. I called Kiara Battery Clinic and they fixed it the next morning. The technician diagnosed the problem quickly, replaced the damaged part and tested the system completely before leaving. Great inverter repair service in Pollachi!</p>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="author-image">
-                            <figure class="image-anime">
-                                <img src="<?php echo base_url(); ?>themes/images/author-2.jpg" alt="Vasanthi Devi - Inverter repair review Pollachi">
-                            </figure>
-                        </div>            
-                        <div class="author-content">
-                            <h3>Vasanthi Devi</h3>
-                            <p class="mb-0">Pollachi, Coimbatore District</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="testimonial-item wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="testimonial-quote">
-                        <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer review quote">
-                    </div>
-                    <div class="testimonial-content">
-                        <p>We needed solar panels for our tea estate in Kotagiri. Kiara Battery Clinic installed a 5kW rooftop solar system and handled all the government paperwork. The installation was clean and the team was very professional. Our estate now runs mostly on solar power. Superb service!</p>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="author-image">
-                            <figure class="image-anime">
-                                <img src="<?php echo base_url(); ?>themes/images/author-3.jpg" alt="Anand Krishnamurthy - Solar panel review Kotagiri">
-                            </figure>
-                        </div>            
-                        <div class="author-content">
-                            <h3>Anand Krishnamurthy</h3>
-                            <p class="mb-0">Kotagiri, Nilgiris</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="testimonial-item wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="testimonial-quote">
-                        <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer review quote">
-                    </div>
-                    <div class="testimonial-content">
-                        <p>I've been using Kiara Battery Clinic for all my vehicle battery needs for the past 3 years. They are always honest with pricing, use genuine products and come to my house in Peelamedu without fail. The 24/7 support is a huge plus — I've called them late at night and they always pick up!</p>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="author-image">
-                            <figure class="image-anime">
-                                <img src="<?php echo base_url(); ?>themes/images/author-4.jpg" alt="Senthil Nathan - Long-term battery service review Coimbatore">
-                            </figure>
-                        </div>            
-                        <div class="author-content">
-                            <h3>Senthil Nathan</h3>
-                            <p class="mb-0">Peelamedu, Coimbatore</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CTA After Testimonials -->
-        <div class="row mt-5">
-            <div class="col-lg-12">
-            </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -218,12 +97,12 @@
                 <div class="cta-box-content">
                     <div class="section-title">
                         <h3 class="wow fadeInUp">Join Thousands of Satisfied Customers</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Book your battery or UPS service today — <span>we come to you!</span></h2>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">Book your battery or UPS service today - <span>we come to you!</span></h2>
                         <p class="wow fadeInUp" data-wow-delay="0.2s">Fast doorstep service &nbsp;·&nbsp; Genuine products &nbsp;·&nbsp; 24/7 support &nbsp;·&nbsp; Best price guaranteed across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
                     </div>
                     <div class="cta-box-body wow fadeInUp" data-wow-delay="0.4s">
                         <div class="cta-box-btn">
-                            <a href="tel:+91 90038 11107" class="btn-default btn-highlighted">📞 Call Now: +91 90038 11107</a>
+                            <a href="tel:+91 90038 11107" class="btn-default btn-highlighted">Call Now: +91 90038 11107</a>
                         </div>
                         <span>or</span>
                         <div class="contact-now-box">
@@ -247,3 +126,112 @@
         </div>
     </div>
 </div>
+
+
+
+<section class="our-testimonial">
+    <div class="container-fluid px-lg-5">
+        <div class="row section-row align-items-center">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h3 class="wow fadeInUp">Frequently Asked Questions</h3>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque">Common questions about our <span>battery & power services</span></h2>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="section-title-content wow fadeInUp" data-wow-delay="0.2s">
+                    <p>Have a question about battery service, UPS installation or solar panels? Find quick answers below - or call us anytime, we're happy to help!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="faqs-image">
+                    <figure class="image-anime reveal">
+                        <img src="<?php echo base_url(); ?>themes/images/faqs-image.jpg" alt="FAQs - Kiara Battery Clinic Coimbatore battery UPS solar service">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="faq-accordion" id="accordion">
+                    <?php 
+                        if (!isset($faqList) || empty($faqList)) {
+                            $CI =& get_instance();
+                            if (isset($CI->webmodel)) {
+                                $faqList = $CI->webmodel->getFaqsByPage('testimonial');
+                            }
+                        }
+                    ?>
+                    <?php if (!empty($faqList)): ?>
+                        <?php foreach ($faqList as $index => $faq): ?>
+                            <?php 
+                                $isFirst = ($index === 0);
+                                $delay = number_format($index * 0.2, 1);
+                                $qNum = 'Q' . ($index + 1) . '. ';
+                                $titleText = htmlspecialchars($faq->title);
+                                if (stripos($titleText, 'Q') !== 0) {
+                                    $titleText = $qNum . $titleText;
+                                }
+                            ?>
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="<?php echo $delay; ?>s">
+                                <h2 class="accordion-header" id="heading<?php echo $faq->id; ?>">
+                                    <button class="accordion-button <?php echo $isFirst ? '' : 'collapsed'; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $faq->id; ?>" aria-expanded="<?php echo $isFirst ? 'true' : 'false'; ?>" aria-controls="collapse<?php echo $faq->id; ?>">
+                                        <?php echo $titleText; ?>
+                                    </button>
+                                </h2>
+                                <div id="collapse<?php echo $faq->id; ?>" class="accordion-collapse collapse <?php echo $isFirst ? 'show' : ''; ?>" aria-labelledby="heading<?php echo $faq->id; ?>" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <p><?php echo htmlspecialchars($faq->description); ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="our-features-list">
+                    <div class="features-item wow fadeInUp">
+                        <div class="icon-box">
+                            <img src="<?php echo base_url(); ?>themes/images/icon-features-list-1.svg" alt="24/7 emergency battery service Coimbatore">
+                        </div>
+                        <div class="features-item-content">
+                            <h3>24/7 Emergency Service</h3>
+                            <p>Dead battery at midnight? We're available round the clock for emergency doorstep battery service anywhere in Coimbatore.</p>
+                        </div>
+                    </div>
+                    <div class="features-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon-box">
+                            <img src="<?php echo base_url(); ?>themes/images/icon-features-list-2.svg" alt="Genuine batteries all brands Coimbatore">
+                        </div>
+                        <div class="features-item-content">
+                            <h3>100% Genuine Products</h3>
+                            <p>Only original, warranty-backed batteries and UPS products from authorized dealers - no counterfeits, ever.</p>
+                        </div>
+                    </div>
+                    <div class="features-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon-box">
+                            <img src="<?php echo base_url(); ?>themes/images/icon-features-list-3.svg" alt="Best price battery Coimbatore">
+                        </div>
+                        <div class="features-item-content">
+                            <h3>Best Price Guaranteed</h3>
+                            <p>We offer the most competitive prices on batteries, UPS systems and solar installations in Coimbatore - no hidden charges.</p>
+                        </div>
+                    </div>
+                    <div class="features-item wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="icon-box">
+                            <img src="<?php echo base_url(); ?>themes/images/icon-features-list-4.svg" alt="All battery types serviced Coimbatore">
+                        </div>
+                        <div class="features-item-content">
+                            <h3>All Brands & All Types Serviced</h3>
+                            <p>From two-wheelers to heavy trucks, home inverters to industrial UPS - we service, repair and replace all battery types.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

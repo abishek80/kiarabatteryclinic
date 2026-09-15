@@ -45,6 +45,19 @@ class Admin_service extends CI_Controller
     {
         $data['menu_status'] = "ServiceList";
         $data['formTitle'] = "Add Service";
+        $data['serviceId'] = "";
+        $data['serviceToken'] = "";
+        $data['serviceName'] = "";
+        $data['shortDescription'] = "";
+        $data['description'] = "";
+        $data['card1Title'] = "";
+        $data['card1Description'] = "";
+        $data['card2Title'] = "";
+        $data['card2Description'] = "";
+        $data['processSteps'] = "";
+        $data['faqsList'] = array();
+        $data['serviceImg'] = "";
+        $data['status'] = "active";
         
         $this->load->view('backend/header', $data);
         $this->load->view('backend/service/service-form', $data);
@@ -56,17 +69,23 @@ class Admin_service extends CI_Controller
         $data['menu_status'] = "ServiceList";
         $data['formTitle'] = "Edit Service";
 
-	    $serviceDetail = $this->servicemodel->getServiceDetail($serviceId);
+        $serviceDetail = $this->servicemodel->getServiceDetail($serviceId);
         foreach ($serviceDetail as $row) {
             $data['serviceId'] = $row->id;
             $data['serviceToken'] = $row->token;
-            $data['serviceDate'] = $row->service_date;
+            $data['serviceDate'] = isset($row->service_date) ? $row->service_date : '';
             $data['serviceName'] = $row->service_name;
             $data['shortDescription'] = $row->short_description;
             $data['description'] = $row->description;
+            $data['card1Title'] = isset($row->card1_title) ? $row->card1_title : '';
+            $data['card1Description'] = isset($row->card1_description) ? $row->card1_description : '';
+            $data['card2Title'] = isset($row->card2_title) ? $row->card2_title : '';
+            $data['card2Description'] = isset($row->card2_description) ? $row->card2_description : '';
+            $data['processSteps'] = isset($row->process_steps) ? $row->process_steps : '';
+            $data['faqsList'] = !empty($row->faqs) ? json_decode($row->faqs, true) : array();
             $data['serviceImg'] = $row->service_img;
             $data['status'] = $row->status;
-	    }
+        }
         
         $this->load->view('backend/header', $data);
         $this->load->view('backend/service/service-form', $data);
@@ -77,18 +96,24 @@ class Admin_service extends CI_Controller
     {
         $data['menu_status'] = "ServiceList";
 
-	    $serviceDetail = $this->servicemodel->getServiceDetail($serviceId);
+        $serviceDetail = $this->servicemodel->getServiceDetail($serviceId);
         foreach ($serviceDetail as $row) {
             $data['serviceId'] = $row->id;
             $data['serviceToken'] = $row->token;
-            $data['serviceDate'] = $row->service_date;
+            $data['serviceDate'] = isset($row->service_date) ? $row->service_date : '';
             $data['serviceName'] = $row->service_name;
             $data['shortDescription'] = $row->short_description;
             $data['description'] = $row->description;
+            $data['card1Title'] = isset($row->card1_title) ? $row->card1_title : '';
+            $data['card1Description'] = isset($row->card1_description) ? $row->card1_description : '';
+            $data['card2Title'] = isset($row->card2_title) ? $row->card2_title : '';
+            $data['card2Description'] = isset($row->card2_description) ? $row->card2_description : '';
+            $data['processSteps'] = isset($row->process_steps) ? $row->process_steps : '';
+            $data['faqsList'] = !empty($row->faqs) ? json_decode($row->faqs, true) : array();
             $data['serviceImg'] = $row->service_img;
             $data['status'] = $row->status;
             $data['createdAt'] = $row->created_at;
-	    }
+        }
 
         $this->load->view('backend/header', $data);
         $this->load->view('backend/service/service-view', $data);
@@ -100,47 +125,72 @@ class Admin_service extends CI_Controller
     {
         $serviceId = $this->input->post('service_id');
         $token = $this->input->post('token');
-        $serviceDate = $this->input->post('service_date');
-        $serviceName = $this->input->post('service_name');
+        $serviceName = trim($this->input->post('service_name'));
         $shortDescription = $this->input->post('short_description');
         $description = $this->input->post('description');
-        $servicePhoto = $this->input->post('service_img');
         $status = $this->input->post('status');
+
+        $extraData['card1_title'] = $this->input->post('card1_title');
+        $extraData['card1_description'] = $this->input->post('card1_description');
+        $extraData['card2_title'] = $this->input->post('card2_title');
+        $extraData['card2_description'] = $this->input->post('card2_description');
+        $extraData['process_steps'] = $this->input->post('process_steps');
+
+        // FAQs Dynamic Multi Add Processing
+        $faqQuestions = $this->input->post('faq_question');
+        $faqAnswers = $this->input->post('faq_answer');
+
+        $faqsArray = array();
+        if (!empty($faqQuestions) && is_array($faqQuestions)) {
+            foreach ($faqQuestions as $key => $question) {
+                $questionTrim = trim($question);
+                $answerTrim = isset($faqAnswers[$key]) ? trim($faqAnswers[$key]) : '';
+                if (!empty($questionTrim)) {
+                    $faqsArray[] = array(
+                        'question' => $questionTrim,
+                        'answer' => $answerTrim
+                    );
+                }
+            }
+        }
+        $extraData['faqs'] = !empty($faqsArray) ? json_encode($faqsArray, JSON_UNESCAPED_UNICODE) : '';
 
         $alterServicePhoto = $this->input->post('alter_service_img');
         
-        $allowTypes = array('jpg', 'png', 'jpeg', 'pdf', 'doc', 'docx');
+        $allowTypes = array('jpg', 'png', 'jpeg', 'webp', 'svg', 'gif', 'pdf');
         $photoUploadDir = './uploads/service_img/';
 
+        $uploadedFiles = array();
         // Service Photo
-        if (isset($_FILES['service_img'])) {
+        if (isset($_FILES['service_img']) && $_FILES['service_img']['name'] != '') {
             $filesArray = $_FILES['service_img'];
             $uploadedFiles['service_img'] = $this->common->fileUpload($filesArray, $photoUploadDir, $allowTypes);
-        }
-        
-        $service_img = $uploadedFiles['service_img'][0];
-        
-        if ($_FILES["service_img"]["name"] == FALSE) {
+            $service_img = $uploadedFiles['service_img'][0];
+        } else {
             $service_img = $alterServicePhoto;
+        }
+
+        if (empty($token)) {
+            $token = strtolower(url_title($serviceName));
         }
 
         if ($serviceId < 0 || $serviceId == '') {
             $checkExists = $this->servicemodel->checkService($token);
             if ($checkExists > 0) {
                 $data["isError"] = TRUE;
-                $data["message"] = "Service Name Is Already Exists";
+                $data["message"] = "Service Name Already Exists";
                 echo json_encode($data);
                 return;
             }
         }
         
-        $this->servicemodel->saveServiceData($serviceId, $token, $serviceName, $shortDescription, $description, $service_img, $status);
+        $this->servicemodel->saveServiceData($serviceId, $token, $serviceName, $shortDescription, $description, $service_img, $status, $extraData);
         
         $data["isError"] = FALSE;
         if ($serviceId > 0) {
-            $data["message"] = "Service Updated";
+            $data["message"] = "Service Updated Successfully";
         } else {
-            $data["message"] = "Service Created";
+            $data["message"] = "Service Created Successfully";
         }
 
         echo json_encode($data);

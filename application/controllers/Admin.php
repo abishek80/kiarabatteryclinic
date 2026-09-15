@@ -117,7 +117,7 @@ class Admin extends CI_Controller
 
         $this->adminmodel->tableChangeStatus($recordId, $tableName, $statusValue);
         
-        if ($recordId > 0) {
+        if (!empty($recordId)) {
             $data["isError"] = FALSE;
             $data["message"] = "Status Changed Successfully.";
         } else {

@@ -1,1 +1,1 @@
-gallery</br>
+<?php include(APPPATH . 'views/gallery.php'); ?>

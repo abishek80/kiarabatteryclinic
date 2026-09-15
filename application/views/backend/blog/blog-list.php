@@ -31,7 +31,7 @@
                         ?>
                         <tr>
                             <td><?php echo $i++; ?></td>
-                            <td><img src="<?php echo base_url() . $row->blog_img; ?>" class="table-card" alt="Blog Image"></td>
+                            <td><img src="<?php echo base_url() . $row->blog_img; ?>" class="table-card" style="width: 60px; height: 50px; object-fit: cover;" alt="Blog Image"></td>
                             <td><?php $dateFormat = new DateTime($row->blog_date); echo $dateFormat->format('d - m - Y'); ?></td>
                             <td><?php echo $row->blog_name; ?></td>
                             <td><p class="one-line-clamp mb-0"><?php echo $row->short_description; ?></p></td>

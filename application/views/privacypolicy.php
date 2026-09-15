@@ -5,7 +5,7 @@
                 <div class="page-header-box">
                     <h1 class="text-anime-style-2" data-cursor="-opaque">Privacy Policy</h1>
                     <nav class="wow fadeInUp">
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb mt-4">
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Privacy Policy</li>
                         </ol>
@@ -59,12 +59,56 @@
                 <p>If you have any questions or concerns regarding our privacy practices, please reach out to us:</p>
                 <div class="p-3 bg-light rounded-3 mt-3 border-start border-4 border-danger" style="border-left-color: var(--accent-color) !important;">
                     <ul class="list-unstyled mb-0 ps-2">
-                        <li class="mb-2"><strong>📍 Address:</strong> 36, 9th St, Tatabad, Coimbatore - 641 012, Tamil Nadu</li>
-                        <li class="mb-2"><strong>✉️ Email:</strong> <a href="mailto:enquiry@kiarabatteryclinic.com" class="text-danger" style="color: var(--accent-color) !important;">enquiry@kiarabatteryclinic.com</a></li>
-                        <li><strong>📞 Phone:</strong> <a href="tel:+919003811107" class="text-danger" style="color: var(--accent-color) !important;">+91 90038 11107</a> (Available 24/7)</li>
+                        <li class="mb-2"><strong>Address:</strong> 36, 9th Street, Tatabad, Coimbatore - 641 012, Tamil Nadu</li>
+                        <li class="mb-2"><strong>Email:</strong> <a href="mailto:enquiry@kiarabatteryclinic.com" class="text-danger" style="color: var(--accent-color) !important;">enquiry@kiarabatteryclinic.com</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+919003811107" class="text-danger" style="color: var(--accent-color) !important;">+91 90038 11107</a> (Available 24/7)</li>
                     </ul>
                 </div>
             </div>
         </div>
+
+        <?php 
+            if (!isset($faqList) || empty($faqList)) {
+                $CI =& get_instance();
+                if (isset($CI->webmodel)) {
+                    $faqList = $CI->webmodel->getFaqsByPage('privacy_policy');
+                }
+            }
+        ?>
+        <?php if (!empty($faqList)): ?>
+            <div class="faq-policy-section mt-5">
+                <div class="card border-0 shadow-sm p-4 p-md-5 rounded-4 bg-white">
+                    <div class="section-title mb-4">
+                        <h3 class="wow fadeInUp" style="color: var(--accent-color);">Frequently Asked Questions</h3>
+                        <h2 class="text-anime-style-2 mb-3" data-cursor="-opaque" style="font-size: 2rem; font-weight: 600;">Privacy Policy <span>FAQ</span></h2>
+                    </div>
+                    <div class="faq-accordion" id="policyAccordion">
+                        <?php foreach ($faqList as $index => $faq): ?>
+                            <?php 
+                                $isFirst = ($index === 0);
+                                $delay = number_format($index * 0.2, 1);
+                                $qNum = 'Q' . ($index + 1) . '. ';
+                                $titleText = htmlspecialchars($faq->title);
+                                if (stripos($titleText, 'Q') !== 0) {
+                                    $titleText = $qNum . $titleText;
+                                }
+                            ?>
+                            <div class="accordion-item border rounded-3 mb-3 p-2 wow fadeInUp" data-wow-delay="<?php echo $delay; ?>s">
+                                <h2 class="accordion-header" id="headingPolicy<?php echo $faq->id; ?>">
+                                    <button class="accordion-button fw-bold text-dark fs-5 <?php echo $isFirst ? '' : 'collapsed'; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePolicy<?php echo $faq->id; ?>" aria-expanded="<?php echo $isFirst ? 'true' : 'false'; ?>" aria-controls="collapsePolicy<?php echo $faq->id; ?>">
+                                        <?php echo $titleText; ?>
+                                    </button>
+                                </h2>
+                                <div id="collapsePolicy<?php echo $faq->id; ?>" class="accordion-collapse collapse <?php echo $isFirst ? 'show' : ''; ?>" aria-labelledby="headingPolicy<?php echo $faq->id; ?>" data-bs-parent="#policyAccordion">
+                                    <div class="accordion-body text-secondary fs-6" style="line-height: 1.7;">
+                                        <p class="mb-0"><?php echo htmlspecialchars($faq->description); ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 </div>

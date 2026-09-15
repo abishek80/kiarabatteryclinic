@@ -30,7 +30,7 @@
                         ?>
                         <tr>
                             <td><?php echo $i++; ?></td>
-                            <td><img src="<?php echo base_url() . $row->category_img; ?>" class="table-card" alt="Category Image"></td>
+                            <td><img src="<?php echo base_url() . $row->category_img; ?>" class="table-card" style="width: 60px; height: 50px; object-fit: cover;" alt="Category Image"></td>
                             <td><?php echo $row->category_name; ?></td>
                             <td><p class="one-line-clamp mb-0"><?php echo $row->short_description; ?></p></td>
                             <td>

@@ -72,25 +72,9 @@ class Admin_gallery extends CI_Controller
         $this->load->view('backend/footer');
     }
 
-    public function gallery_view($galleryId)
+    public function gallery_view($galleryId = '')
     {
-        $data['menu_status'] = "GalleryList";
-
-	    $galleryDetail = $this->gallerymodel->getGalleryDetail($galleryId);
-        foreach ($galleryDetail as $row) {
-            $data['galleryId'] = $row->id;
-            $data['galleryToken'] = $row->token;
-            $data['galleryDate'] = $row->gallery_date;
-            $data['galleryName'] = $row->gallery_name;
-            $data['description'] = $row->description;
-            $data['galleryImg'] = $row->gallery_img;
-            $data['status'] = $row->status;
-            $data['createdAt'] = $row->created_at;
-	    }
-
-        $this->load->view('backend/header', $data);
-        $this->load->view('backend/gallery/gallery-view', $data);
-        $this->load->view('backend/footer');
+        redirect(base_url() . 'admin/gallery/gallery-list');
     }
 
     //Gallery Save Form //

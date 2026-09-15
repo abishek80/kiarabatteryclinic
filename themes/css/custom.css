@@ -6,7 +6,7 @@
 	--primary-color: #121212;
 	--secondary-color: #eeeeee;
 	--text-color: #666666;
-	--accent-color: #ff2d16;
+	--accent-color: #d11400;
 	--accent-light-color: #ffdfdf;
 	--accent-secondary-color: #050008;
 	--white-color: #FFFFFF;
@@ -25,7 +25,7 @@
 body {
 	position: relative;
 	font-family: var(--default-font);
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 1em;
 	color: var(--text-color);
@@ -208,6 +208,10 @@ body {
 	z-index: 0;
 }
 
+.topbar-contact-info ul li {
+	font-size: 14px;
+}
+
 .btn-default:hover {
 	background: transparent;
 	color: var(--white-color);
@@ -263,16 +267,16 @@ body {
 
 .btn-default.btn-highlighted:hover {
 	background: transparent;
-	color: var(--primary-color);
+	color: var(--white-color);
 }
 
 .btn-default.btn-highlighted::before {
-	background: url('../images/arrow-accent.svg');
-	filter: brightness(10) invert(1);
+	background-image: url('../images/arrow-accent.svg');
+	filter: none;
 }
 
 .btn-default.btn-highlighted:hover::before {
-	filter: brightness(10) invert(1);
+	filter: brightness(0) invert(1);
 }
 
 .btn-default.btn-highlighted::after {
@@ -546,7 +550,7 @@ body {
 
 .topbar-contact-info ul li img {
 	width: 100%;
-	max-width: 20px;
+	max-width: 17px;
 	margin-right: 10px;
 	transition: all 0.3s ease-in-out;
 }
@@ -1849,7 +1853,7 @@ header.main-header .header-sticky.active {
 }
 
 .contact-now-box .icon-box img {
-	filter: brightness(30);
+	filter: brightness(0) invert(1);
 	position: relative;
 	max-width: 24px;
 	z-index: 1;
@@ -1894,7 +1898,7 @@ header.main-header .header-sticky.active {
 }
 
 .hero-description-bk {
-	background-image: linear-gradient(-20deg, #920e00, #ff2d16);
+	background-image: linear-gradient(-20deg, #920e00, #d11400);
 	border-radius: 30px;
 	position: absolute;
 	top: 54%;
@@ -3383,7 +3387,7 @@ header.main-header .header-sticky.active {
 }
 
 .team-item {
-	border: 1px solid #ff2d16;
+	border: 1px solid #d11400;
 	background: #ffeae8;
 	border-radius: 30px;
 	overflow: hidden;
@@ -5230,7 +5234,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.topbar-contact-info ul li img {
-		max-width: 18px;
+		max-width: 15px;
 	}
 
 	.navbar {
@@ -6474,7 +6478,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.topbar-contact-info ul li img {
-		max-width: 16px;
+		max-width: 13px;
 		margin-right: 5px;
 	}
 
@@ -7263,4 +7267,28 @@ header.main-header .header-sticky.active {
 	.error-page-image img {
 		max-width: 80%;
 	}
+}
+
+/* Lightbox Preview Title Centering & Spacing */
+.mfp-bottom-bar {
+    margin-top: 1rem !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.mfp-title {
+    text-align: center !important;
+    margin-top: 1rem !important;
+    padding-right: 0 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+}
+
+.mfp-counter {
+    right: 0 !important;
+    top: 1rem !important;
 }

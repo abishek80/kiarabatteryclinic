@@ -22,21 +22,25 @@ class Webmodel extends CI_Model
     //Service List
     public function serviceList()
     {
-        $sql = "SELECT * FROM service WHERE delete_status=0 AND status='active' ORDER BY id DESC";
+        $sql = "SELECT * FROM service WHERE delete_status=0 AND status='active' ORDER BY id ASC";
         $res = $this->db->query($sql);
         return $res->result();
     }
     
     //Service Detail
-    public function serviceDetail($serviceId)
+    public function serviceDetail($serviceParam = '')
     {
-        if($serviceId){
-            $where = "AND id = $serviceId";
-        } else {
-            $where = '';
+        $where = '';
+        if (!empty($serviceParam)) {
+            if (is_numeric($serviceParam)) {
+                $where = "AND id = " . (int)$serviceParam;
+            } else {
+                $tokenEscaped = $this->db->escape_str($serviceParam);
+                $where = "AND (token = '$tokenEscaped' OR service_name = '$tokenEscaped')";
+            }
         }
 
-        $sql = "SELECT * FROM service WHERE delete_status=0 AND status='active' $where ORDER BY id DESC";
+        $sql = "SELECT * FROM service WHERE delete_status=0 AND status='active' $where ORDER BY id ASC LIMIT 1";
         $res = $this->db->query($sql);
         return $res->result();
     }
@@ -53,6 +57,31 @@ class Webmodel extends CI_Model
     public function galleryList()
     {
         $sql = "SELECT * FROM gallery WHERE delete_status=0 AND status='active' ORDER BY id DESC";
+        $res = $this->db->query($sql);
+        return $res->result();
+    }
+
+    //Testimonial List
+    public function testimonialList()
+    {
+        $sql = "SELECT * FROM testimonial WHERE delete_status=0 AND status='active' ORDER BY id DESC";
+        $res = $this->db->query($sql);
+        return $res->result();
+    }
+
+    //Brand List
+    public function brandList()
+    {
+        $sql = "SELECT * FROM brand WHERE delete_status=0 AND status='active' ORDER BY id ASC";
+        $res = $this->db->query($sql);
+        return $res->result();
+    }
+
+    //Get Page Specific FAQs
+    public function getFaqsByPage($pageName)
+    {
+        $pageNameEsc = $this->db->escape_str($pageName);
+        $sql = "SELECT * FROM faq WHERE delete_status=0 AND status='active' AND page_name='$pageNameEsc' ORDER BY id ASC";
         $res = $this->db->query($sql);
         return $res->result();
     }

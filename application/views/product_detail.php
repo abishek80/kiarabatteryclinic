@@ -5,7 +5,7 @@
                 <div class="page-header-box">
                     <h1 class="text-anime-style-2" data-cursor="-opaque">Amaron Pro 55Ah Car Battery</h1>
                     <nav class="wow fadeInUp">
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb mt-4">
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>category">Category</a></li>
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>products">Products</a></li>
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="wow fadeInUp" data-wow-delay="1">We only stock batteries and power products from India's most trusted brands — Amaron, Exide, Luminous, Okaya and SF Sonic — ensuring you get the best quality at competitive prices.</p>
+                        <p class="wow fadeInUp" data-wow-delay="1">We only stock batteries and power products from India's most trusted brands - Amaron, Exide, Luminous, Okaya and SF Sonic - ensuring you get the best quality at competitive prices.</p>
                     </div>
 
                     <div class="mt-5 project-result">
@@ -96,7 +96,7 @@
                             <div class="bg-secondary-subtle rounded-4 p-4 project-result-content">
                                 <div class="project-result-content-item wow fadeInUp" data-wow-delay="0.2s">
                                     <h3>Expert Installation</h3>
-                                    <p>Our trained technicians ensure proper installation with correct terminal connections, tightening and testing — right at your doorstep.</p>
+                                    <p>Our trained technicians ensure proper installation with correct terminal connections, tightening and testing - right at your doorstep.</p>
                                 </div>
                             </div>
                         </div>

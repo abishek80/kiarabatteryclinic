@@ -50,7 +50,7 @@
                         <ul>
                             <li><a href="https://wa.link/w646lw" target="_blank" rel="noopener" aria-label="WhatsApp Kiara Battery Clinic"><i class="fa-brands fa-whatsapp"></i></a></li>
                             <li><a href="https://www.instagram.com/kiara_battery_clinic/" target="_blank" rel="noopener" aria-label="Instagram Kiara Battery Clinic"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="https://wa.link/w646lw" target="_blank" rel="noopener" aria-label="Facebook Kiara Battery Clinic"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <!-- <li><a href="https://wa.link/w646lw" target="_blank" rel="noopener" aria-label="Facebook Kiara Battery Clinic"><i class="fa-brands fa-facebook-f"></i></a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -67,23 +67,32 @@
 					</a>
 					<div class="collapse navbar-collapse main-menu  ">
                         <div class="nav-menu-wrapper">
+                            <?php 
+                                if (!isset($serviceList) || empty($serviceList)) {
+                                    $CI =& get_instance();
+                                    if (isset($CI->webmodel)) {
+                                        $serviceList = $CI->webmodel->serviceList();
+                                    }
+                                }
+                            ?>
                             <ul class="navbar-nav mr-auto" id="menu">
                                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>about-us">About Us</a></li>
                                 <li class="nav-item submenu"><a class="nav-link" href="<?php echo base_url(); ?>services">Our Services</a>
                                     <ul>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>services">Bike Battery Sales & Service</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>services">Car Battery Sales & Replacement</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>services">Home UPS Installation & Repair</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>services">Industrial UPS Installation & Maintenance</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>services">Inverter Installation & Repair</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>services">Solar Panel Installation & Service</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>services">Battery Recharge & Maintenance</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>services">Doorstep Battery Service</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>services">24/7 Support & Complete Follow-Up</a></li>
+                                        <?php 
+                                            if (!empty($serviceList)) {
+                                                foreach ($serviceList as $sItem) {
+                                                    $sToken = !empty($sItem->token) ? $sItem->token : $sItem->id;
+                                        ?>
+                                            <li class="nav-item"><a class="nav-link" href="<?php echo base_url('service/' . $sToken); ?>"><?php echo htmlspecialchars($sItem->service_name); ?></a></li>
+                                        <?php 
+                                                }
+                                            }
+                                        ?>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>category">Categories</a></li>
+                                <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>gallery">Gallery</a></li>
                                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>testimonials">Testimonials</a></li>
                                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>contact-us">Contact Us</a></li>
                             </ul>

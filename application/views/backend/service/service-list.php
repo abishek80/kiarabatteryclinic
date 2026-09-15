@@ -30,7 +30,18 @@
                         ?>
                         <tr>
                             <td><?php echo $i++; ?></td>
-                            <td><img src="<?php echo base_url() . $row->service_img; ?>" class="table-card" alt="Service Image"></td>
+                            <td>
+                                <?php 
+                                    $img_src = (strpos($row->service_img, 'http') === 0 || strpos($row->service_img, 'uploads/') === 0 || strpos($row->service_img, 'themes/') === 0) 
+                                        ? base_url($row->service_img) 
+                                        : base_url('uploads/services/' . $row->service_img);
+                                ?>
+                                <?php if(!empty($row->service_img)) { ?>
+                                    <img src="<?php echo $img_src; ?>" style="width: 60px; height: 50px; object-fit: cover;" class="rounded border shadow-sm" alt="Service Image">
+                                <?php } else { ?>
+                                    <span class="badge bg-label-secondary">No Image</span>
+                                <?php } ?>
+                            </td>
                             <td><?php echo $row->service_name; ?></td>
                             <td><p class="one-line-clamp mb-0"><?php echo $row->short_description; ?></p></td>
                             <td>

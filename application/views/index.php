@@ -9,7 +9,7 @@
                                 <div class="hero-content">
                                     <div class="section-title">
                                         <h1 class="text-anime-style-2" data-cursor="-opaque">Coimbatore's Most Trusted Battery & Power Solutions Experts</h1>
-                                        <p class="wow fadeInUp" data-wow-delay="0.2s">From bike batteries and car batteries to home UPS, inverters, industrial UPS and solar panel installation — we deliver doorstep service 24/7 across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
+                                        <p class="wow fadeInUp" data-wow-delay="0.2s">From bike batteries and car batteries to home UPS, inverters, industrial UPS and solar panel installation - we deliver doorstep service 24/7 across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
                                     </div>
                                     <div class="hero-body wow fadeInUp" data-wow-delay="0.4s">
                                         <div class="hero-btn">
@@ -37,7 +37,7 @@
                                 <div class="hero-content">
                                     <div class="section-title">
                                         <h2 class="text-anime-style-2" data-cursor="-opaque">Solar Panel Installation & Government Scheme Support in Coimbatore</h2>
-                                        <p class="wow fadeInUp" data-wow-delay="0.2s">Save on electricity with our complete solar power setup — from rooftop panel installation to government subsidy assistance. Serving homes, factories and businesses across Tamil Nadu.</p>
+                                        <p class="wow fadeInUp" data-wow-delay="0.2s">Save on electricity with our complete solar power setup - from rooftop panel installation to government subsidy assistance. Serving homes, factories and businesses across Tamil Nadu.</p>
                                     </div>
                                     <div class="hero-body wow fadeInUp" data-wow-delay="0.4s">
                                         <div class="hero-btn">
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="hero-cta-item-content">
-                            <p>36, 9th St, Tatabad, Coimbatore - 641 012, Tamil Nadu<br>
+                            <p>36, 9th Street, Tatabad, Coimbatore - 641 012, Tamil Nadu<br>
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
             <div class="col-lg-5 order-lg-2 order-1">
                 <div class="our-expert-box">
                     <h2 class="wow fadeInUp" data-wow-delay="0.4s">Need a battery or UPS service today? Call our expert technicians!</h2>
-                    <a href="tel:+91 90038 11107" class="btn-default btn-highlighted wow fadeInUp" data-wow-delay="0.4s">Call Now — We Come to You</a>
+                    <a href="tel:+91 90038 11107" class="btn-default btn-highlighted wow fadeInUp" data-wow-delay="0.4s">Call Now - We Come to You</a>
                 </div>
             </div>
         </div>
@@ -162,7 +162,7 @@
                             </div>
                             <div class="goals-item-content">
                                 <h3>24/7 Doorstep Service</h3>
-                                <p>Our trained technicians come to your home, office or roadside — any time, any day across Coimbatore, Ooty, Pollachi and Tiruppur.</p>
+                                <p>Our trained technicians come to your home, office or roadside - any time, any day across Coimbatore, Ooty, Pollachi and Tiruppur.</p>
                             </div>
                         </div>
                     </div>
@@ -202,156 +202,51 @@
                 <div class="services-slider">
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="service-item">
-                                    <div class="service-image">
-                                        <a href="<?php echo base_url(); ?>services" data-cursor-text="View">
-                                            <figure class="image-anime">
-                                                <img src="<?php echo base_url(); ?>themes/images/service-image-1.jpg" alt="Bike battery sales and service in Coimbatore - Kiara Battery Clinic">
-                                            </figure>
-                                        </a>
+                            <?php 
+                                if (!isset($serviceList) || empty($serviceList)) {
+                                    $CI =& get_instance();
+                                    if (isset($CI->webmodel)) {
+                                        $serviceList = $CI->webmodel->serviceList();
+                                    }
+                                }
+                            ?>
+                            <?php if(!empty($serviceList)): ?>
+                                <?php foreach($serviceList as $index => $s): ?>
+                                    <?php 
+                                        $num = sprintf('%02d', $index + 1);
+                                        $img_src = (strpos($s->service_img, 'http') === 0 || strpos($s->service_img, 'uploads/') === 0 || strpos($s->service_img, 'themes/') === 0) 
+                                            ? base_url($s->service_img) 
+                                            : base_url('uploads/services/' . $s->service_img);
+                                        $sToken = !empty($s->token) ? $s->token : $s->id;
+                                        $detail_url = base_url('service/' . $sToken);
+                                    ?>
+                                    <div class="swiper-slide">
+                                        <div class="service-item">
+                                            <div class="service-image">
+                                                <a href="<?php echo $detail_url; ?>" data-cursor-text="View">
+                                                    <figure class="image-anime">
+                                                        <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($s->service_name); ?> - Kiara Battery Clinic">
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                            <div class="service-no">
+                                                <a href="<?php echo $detail_url; ?>">
+                                                    <h2><?php echo $num; ?></h2>
+                                                </a>
+                                            </div>
+                                            <div class="service-content">
+                                                <h3><a href="<?php echo $detail_url; ?>"><?php echo htmlspecialchars($s->service_name); ?></a></h3>
+                                                <a href="<?php echo $detail_url; ?>">
+                                                    <p class="mb-2 three-line-clamp"><?php echo htmlspecialchars($s->short_description ?? ''); ?></p>
+                                                </a>
+                                                <a href="<?php echo $detail_url; ?>">
+                                                    <p class="text-end">Read More</p>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="service-no">
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <h2>01</h2>
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <h3><a href="<?php echo base_url(); ?>services">Bike Battery Sales & Service</a></h3>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="mb-2">Fast bike battery replacement at your doorstep in Coimbatore. All brands — Amaron, Exide, SF Sonic.</p>
-                                        </a>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="text-end">Read More</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="service-item">
-                                    <div class="service-image">
-                                        <a href="<?php echo base_url(); ?>services" data-cursor-text="View">
-                                            <figure class="image-anime">
-                                                <img src="<?php echo base_url(); ?>themes/images/service-image-2.jpg" alt="Car battery replacement service in Coimbatore - doorstep available">
-                                            </figure>
-                                        </a>
-                                    </div>
-                                    <div class="service-no">
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <h2>02</h2>
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <h3><a href="<?php echo base_url(); ?>services">Car Battery Sales & Replacement</a></h3>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="mb-2">Genuine car batteries with warranty. Free installation at your location across Coimbatore, Pollachi & Tiruppur.</p>
-                                        </a>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="text-end">Read More</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="service-item">
-                                    <div class="service-image">
-                                        <a href="<?php echo base_url(); ?>services" data-cursor-text="View">
-                                            <figure class="image-anime">
-                                                <img src="<?php echo base_url(); ?>themes/images/service-image-3.jpg" alt="Home UPS installation and repair service in Coimbatore">
-                                            </figure>
-                                        </a>
-                                    </div>
-                                    <div class="service-no">
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <h2>03</h2>
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <h3><a href="<?php echo base_url(); ?>services">Home UPS Installation & Repair</a></h3>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="mb-2">Never face a power cut again. We install and service home UPS systems for apartments and houses in Coimbatore.</p>
-                                        </a>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="text-end">Read More</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="service-item">
-                                    <div class="service-image">
-                                        <a href="<?php echo base_url(); ?>services" data-cursor-text="View">
-                                            <figure class="image-anime">
-                                                <img src="<?php echo base_url(); ?>themes/images/service-image-4.jpg" alt="Industrial UPS installation and maintenance service Tamil Nadu">
-                                            </figure>
-                                        </a>
-                                    </div>
-                                    <div class="service-no">
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <h2>04</h2>
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <h3><a href="<?php echo base_url(); ?>services">Industrial UPS Installation & Maintenance</a></h3>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="mb-2">Protect your factory and machinery with our industrial UPS solutions. AMC contracts available across Tamil Nadu.</p>
-                                        </a>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="text-end">Read More</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="service-item">
-                                    <div class="service-image">
-                                        <a href="<?php echo base_url(); ?>services" data-cursor-text="View">
-                                            <figure class="image-anime">
-                                                <img src="<?php echo base_url(); ?>themes/images/service-image-5.jpg" alt="Inverter installation and repair service in Coimbatore near me">
-                                            </figure>
-                                        </a>
-                                    </div>
-                                    <div class="service-no">
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <h2>05</h2>
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <h3><a href="<?php echo base_url(); ?>services">Inverter Installation & Repair</a></h3>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="mb-2">Expert inverter service for homes and offices in Coimbatore. Fast repair, genuine parts and warranty assured.</p>
-                                        </a>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="text-end">Read More</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="service-item">
-                                    <div class="service-image">
-                                        <a href="<?php echo base_url(); ?>services" data-cursor-text="View">
-                                            <figure class="image-anime">
-                                                <img src="<?php echo base_url(); ?>themes/images/service-image-6.jpg" alt="Solar panel installation service Coimbatore Ooty government scheme">
-                                            </figure>
-                                        </a>
-                                    </div>
-                                    <div class="service-no">
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <h2>06</h2>
-                                        </a>
-                                    </div>
-                                    <div class="service-content">
-                                        <h3><a href="<?php echo base_url(); ?>services">Solar Panel Installation & Service</a></h3>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="mb-2">Complete solar power setup for homes and factories. Government scheme assistance available in Coimbatore & Ooty.</p>
-                                        </a>
-                                        <a href="<?php echo base_url(); ?>services">
-                                            <p class="text-end">Read More</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                         <div class="services-pagination"></div>
                     </div>
@@ -373,7 +268,7 @@
 
             <div class="col-lg-6">
                 <div class="section-title-content wow fadeInUp" data-wow-delay="0.2s">
-                    <p>We are authorized dealers and service partners for India's most trusted battery and power product brands — available at the best prices with full warranty.</p>
+                    <p>We are authorized dealers and service partners for India's most trusted battery and power product brands - available at the best prices with full warranty.</p>
                 </div>
             </div>
         </div>
@@ -402,7 +297,7 @@
                         <h4>Exide Batteries</h4>
                     </div>
                     <div class="hero-description">
-                        <p>Exide batteries for bikes, cars, UPS and inverters — trusted brand, best price in Coimbatore.</p>
+                        <p>Exide batteries for bikes, cars, UPS and inverters - trusted brand, best price in Coimbatore.</p>
                     </div>
                     <div class="hero-button">
                         <span>View Products</span>
@@ -417,7 +312,7 @@
                         <h4>Home UPS & Inverters</h4>
                     </div>
                     <div class="hero-description">
-                        <p>Reliable home UPS systems and inverters for power backup — professional doorstep installation.</p>
+                        <p>Reliable home UPS systems and inverters for power backup - professional doorstep installation.</p>
                     </div>
                     <div class="hero-button">
                         <span>View Products</span>
@@ -447,7 +342,7 @@
                         <h4>Industrial UPS Systems</h4>
                     </div>
                     <div class="hero-description">
-                        <p>High-capacity industrial UPS for factories and data centres — AMC and maintenance contracts available.</p>
+                        <p>High-capacity industrial UPS for factories and data centres - AMC and maintenance contracts available.</p>
                     </div>
                     <div class="hero-button">
                         <span>View Products</span>
@@ -462,7 +357,7 @@
                         <h4>Tubular Batteries</h4>
                     </div>
                     <div class="hero-description">
-                        <p>Long-lasting tubular batteries for home inverters and UPS systems — best brands at lowest prices.</p>
+                        <p>Long-lasting tubular batteries for home inverters and UPS systems - best brands at lowest prices.</p>
                     </div>
                     <div class="hero-button">
                         <span>View Products</span>
@@ -493,48 +388,58 @@
                 <div class="testimonial-slider">
                     <div class="swiper">
                         <div class="swiper-wrapper" data-cursor-text="Drag">
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <div class="testimonial-quote">
-                                        <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer testimonial quote">
-                                    </div>
-                                    <div class="testimonial-content">
-                                        <p>My car battery died early morning before work. I called Kiara Battery Clinic and their technician arrived within 30 minutes right at my doorstep in Saravanampatti. Replaced the battery quickly and I was on my way. Excellent service!</p>
-                                    </div>
-                                    <div class="testimonial-body">
-                                        <div class="author-image">
-                                            <figure class="image-anime">
-                                                <img src="<?php echo base_url(); ?>themes/images/author-1.jpg" alt="Ramesh Kumar - Car battery service review Coimbatore">
-                                            </figure>
-                                        </div>            
-                                        <div class="author-content">
-                                            <h3>Ramesh Kumar</h3>
-                                            <p class="mb-0">Saravanampatti, Coimbatore</p>
+                            <?php 
+                                if (!isset($testimonialList) || empty($testimonialList)) {
+                                    $CI =& get_instance();
+                                    if (isset($CI->webmodel)) {
+                                        $testimonialList = $CI->webmodel->testimonialList();
+                                    }
+                                }
+                            ?>
+                            <?php if(!empty($testimonialList)): ?>
+                                <?php foreach($testimonialList as $index => $row): ?>
+                                    <?php 
+                                        $img_src = !empty($row->reviewer_img) 
+                                            ? ((strpos($row->reviewer_img, 'http') === 0 || strpos($row->reviewer_img, './') === 0 || strpos($row->reviewer_img, 'uploads/') === 0) 
+                                                ? base_url(ltrim($row->reviewer_img, './')) 
+                                                : base_url('uploads/testimonials/' . $row->reviewer_img))
+                                            : base_url('themes/images/author-' . (($index % 4) + 1) . '.jpg');
+                                        $stars = (int)($row->star ?? 5);
+                                        $timeline = !empty($row->location) ? $row->location : (!empty($row->review_date) ? date('M Y', strtotime($row->review_date)) : 'Verified Customer');
+                                    ?>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="testimonial-quote">
+                                                <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer testimonial quote">
+                                            </div>
+                                            <div class="testimonial-content">
+                                                <?php if(!empty($row->title)): ?>
+                                                    <h5 class="fw-bold mb-2 text-dark"><?php echo htmlspecialchars($row->title); ?></h5>
+                                                <?php endif; ?>
+                                                <p><?php echo htmlspecialchars($row->description); ?></p>
+                                                <div class="my-2 text-warning">
+                                                    <?php 
+                                                        for($s = 1; $s <= 5; $s++) {
+                                                            echo ($s <= $stars) ? '★' : '☆';
+                                                        }
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-body">
+                                                <div class="author-image">
+                                                    <figure class="image-anime">
+                                                        <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($row->reviewer_name); ?> - Customer Review">
+                                                    </figure>
+                                                </div>            
+                                                <div class="author-content">
+                                                    <h3><?php echo htmlspecialchars($row->reviewer_name); ?></h3>
+                                                    <p class="mb-0 text-muted small"><?php echo htmlspecialchars($timeline); ?></p>
+                                                </div>
+                                            </div>                                    
                                         </div>
-                                    </div>                                    
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <div class="testimonial-quote">
-                                        <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer testimonial quote">
                                     </div>
-                                    <div class="testimonial-content">
-                                        <p>We contacted Kiara Battery Clinic for our factory's industrial UPS setup in Tiruppur. Their team was very professional, arrived on time and completed the installation perfectly. Our machines have been running without interruption since then. Highly recommended!</p>
-                                    </div>
-                                    <div class="testimonial-body">
-                                        <div class="author-image">
-                                            <figure class="image-anime">
-                                                <img src="<?php echo base_url(); ?>themes/images/author-2.jpg" alt="Murugan Textiles - Industrial UPS review Tiruppur">
-                                            </figure>
-                                        </div>            
-                                        <div class="author-content">
-                                            <h3>Murugan Selvam</h3>
-                                            <p class="mb-0">Tiruppur, Tamil Nadu</p>
-                                        </div>
-                                    </div>                                    
-                                </div>
-                            </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                         <div class="testimonial-btn">
                             <div class="testimonial-button-prev"></div>
@@ -555,14 +460,14 @@
                     <div class="our-facts-content">
                         <div class="section-title">
                             <h3 class="wow fadeInUp">Get a Free Estimate</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Doorstep battery service — just a <span>call away</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">Whether you need a new battery for your bike, car battery jump-start, UPS repair or solar panel installation — our expert technicians are ready to come to you anywhere in Coimbatore and surrounding areas.</p>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">Doorstep battery service - just a <span>call away</span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">Whether you need a new battery for your bike, car battery jump-start, UPS repair or solar panel installation - our expert technicians are ready to come to you anywhere in Coimbatore and surrounding areas.</p>
                         </div>
                         <div class="our-facts-list wow fadeInUp" data-wow-delay="0.4s">
                             <ul>
-                                <li>✔ Genuine Batteries — All Top Brands Available</li>
+                                <li>✔ Genuine Batteries - All Top Brands Available</li>
                                 <li>✔ Free Doorstep Installation & Old Battery Pickup</li>
-                                <li>✔ 24/7 Emergency Battery Service — Call Anytime</li>
+                                <li>✔ 24/7 Emergency Battery Service - Call Anytime</li>
                             </ul>
                         </div>
                     </div>
@@ -606,6 +511,65 @@
     </div>
 </div>
 
+<div class="our-faqs bg-section">
+    <div class="container-fluid px-lg-5">
+        <div class="row section-row align-items-center">
+            <div class="col-lg-12">
+                <div class="section-title text-center">
+                    <h3 class="wow fadeInUp">Frequently Asked Questions</h3>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque">Got Questions About Our <span>Battery & UPS Services?</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mt-4">
+            <div class="col-lg-6">
+                <div class="faqs-image">
+                    <figure class="image-anime reveal">
+                        <img src="<?php echo base_url(); ?>themes/images/faqs-image.jpg" alt="FAQs - Kiara Battery Clinic Coimbatore doorstep service">
+                    </figure>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="faq-accordion" id="homeFaqAccordion">
+                    <?php 
+                        if (!isset($faqList) || empty($faqList)) {
+                            $CI =& get_instance();
+                            if (isset($CI->webmodel)) {
+                                $faqList = $CI->webmodel->getFaqsByPage('home');
+                            }
+                        }
+                    ?>
+                    <?php if (!empty($faqList)): ?>
+                        <?php foreach ($faqList as $index => $faq): ?>
+                            <?php 
+                                $isFirst = ($index === 0);
+                                $delay = number_format($index * 0.2, 1);
+                                $qNum = 'Q' . ($index + 1) . '. ';
+                                $titleText = htmlspecialchars($faq->title);
+                                if (stripos($titleText, 'Q') !== 0) {
+                                    $titleText = $qNum . $titleText;
+                                }
+                            ?>
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="<?php echo $delay; ?>s">
+                                <h2 class="accordion-header" id="headingHome<?php echo $faq->id; ?>">
+                                    <button class="accordion-button <?php echo $isFirst ? '' : 'collapsed'; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHome<?php echo $faq->id; ?>" aria-expanded="<?php echo $isFirst ? 'true' : 'false'; ?>" aria-controls="collapseHome<?php echo $faq->id; ?>">
+                                        <?php echo $titleText; ?>
+                                    </button>
+                                </h2>
+                                <div id="collapseHome<?php echo $faq->id; ?>" class="accordion-collapse collapse <?php echo $isFirst ? 'show' : ''; ?>" aria-labelledby="headingHome<?php echo $faq->id; ?>" data-bs-parent="#homeFaqAccordion">
+                                    <div class="accordion-body">
+                                        <p><?php echo htmlspecialchars($faq->description); ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="our-testimonial">
     <div class="container-fluid px-lg-5">
         <div class="row">
@@ -616,44 +580,28 @@
                     </div>
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="company-logo">
-                                    <img src="<?php echo base_url(); ?>themes/images/company-logo-1.svg" alt="Amaron battery authorized dealer Coimbatore">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="company-logo">
-                                    <img src="<?php echo base_url(); ?>themes/images/company-logo-2.svg" alt="Exide battery dealer Coimbatore">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="company-logo">
-                                    <img src="<?php echo base_url(); ?>themes/images/company-logo-3.svg" alt="Okaya battery Coimbatore">
-                                </div>
-                            </div>
-                            
-                            <div class="swiper-slide">
-                                <div class="company-logo">
-                                    <img src="<?php echo base_url(); ?>themes/images/company-logo-4.svg" alt="SF Sonic battery Coimbatore">
-                                </div>
-                            </div>
-                            
-                            <div class="swiper-slide">
-                                <div class="company-logo">
-                                    <img src="<?php echo base_url(); ?>themes/images/company-logo-5.svg" alt="Luminous UPS inverter Coimbatore">
-                                </div>
-                            </div>
-                            
-                            <div class="swiper-slide">
-                                <div class="company-logo">
-                                    <img src="<?php echo base_url(); ?>themes/images/company-logo-6.svg" alt="Su-Kam inverter service Coimbatore">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="company-logo">
-                                    <img src="<?php echo base_url(); ?>themes/images/company-logo-3.svg" alt="Solar power brands Coimbatore">
-                                </div>
-                            </div>
+                            <?php 
+                                if (!isset($brandList) || empty($brandList)) {
+                                    $CI =& get_instance();
+                                    if (isset($CI->webmodel)) {
+                                        $brandList = $CI->webmodel->brandList();
+                                    }
+                                }
+                            ?>
+                            <?php if(!empty($brandList)): ?>
+                                <?php foreach($brandList as $b): ?>
+                                    <?php 
+                                        $img_src = (strpos($b->brand_img, 'http') === 0 || strpos($b->brand_img, 'uploads/') === 0 || strpos($b->brand_img, 'themes/') === 0) 
+                                            ? base_url($b->brand_img) 
+                                            : base_url('uploads/brands/' . $b->brand_img);
+                                    ?>
+                                    <div class="swiper-slide">
+                                        <div class="company-logo">
+                                            <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($b->brand_name); ?> - Kiara Battery Clinic Partner Brand">
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

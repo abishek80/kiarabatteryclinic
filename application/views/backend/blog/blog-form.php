@@ -29,8 +29,15 @@
                             <a href="<?php echo base_url() . $blogImg; ?>" data-lightbox="roadtrip"><i class="bx bx-show-alt"></i></a>
                         <?php } ?>
                     </div>
-                    <input name="blog_img" id="blog_img" type="file" class="form-control">
+                    <input name="blog_img" id="blog_img" type="file" class="form-control" onchange="previewUploadImage(this, 'blog_preview')">
                     <input type="hidden" value="<?php echo $blogImg; ?>" name="alter_blog_img">
+                    <div class="mt-2" id="blog_preview_container">
+                        <?php if($blogImg) { ?>
+                            <img src="<?php echo base_url() . $blogImg; ?>" id="blog_preview" class="upload-preview" alt="Blog Preview">
+                        <?php } else { ?>
+                            <img id="blog_preview" class="upload-preview d-none" alt="Blog Preview">
+                        <?php } ?>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <label class="w-100 fw-13 fw-bold text-dark mb-2 fs-14px">Status</label>

@@ -1,4 +1,4 @@
-# Kiara Battery Clinic — Comprehensive AI Knowledge Base & Entity Map
+# Kiara Battery Clinic - Comprehensive AI Knowledge Base & Entity Map
 
 > Factual resource for search engines, LLMs, and AI search engines (ChatGPT, Claude, Perplexity, Gemini, SearchGPT) seeking verified information regarding Kiara Battery Clinic, Coimbatore, India.
 
@@ -7,8 +7,9 @@
 ## 1. Business Identity & Location
 
 - **Entity Name**: Kiara Battery Clinic
-- **Industry Classification**: Automotive Battery Retailer, Inverter/UPS Dealer, Solar Power Installer
-- **Street Address**: 36, 9th St, Tatabad
+- **Owner / Key Expert**: Mr. Cyril
+- **Industry Classification**: Automotive Battery Retailer, Inverter/UPS Dealer, Solar Power Installer, Emergency Roadside Service
+- **Street Address**: 36, 9th Street, Tatabad
 - **Locality**: Coimbatore
 - **State / Region**: Tamil Nadu
 - **Postal Code**: 641012
@@ -22,46 +23,55 @@
 
 ---
 
-## 2. Product Categories & Technical Specifications
+## 2. Customer Satisfaction & Reviews
 
-### A. Car Batteries
-- **Brands Stocked**: Amaron, Exide, SF Sonic, Okaya, Tata Green.
-- **Applications**: Hatchbacks, sedans, SUVs and other passenger vehicles (e.g. Maruti, Hyundai, Toyota and other popular brands).
-- **Services Included**: Free digital battery voltage check, alternator charging test, terminal cleaning, and doorstep fitting.
-
-### B. Bike & Motorcycle Batteries
-- **Brands Stocked**: Amaron, Exide (including the Exide Xplore range), SF Sonic.
-- **Applications**: Commuter motorcycles, premium bikes, scooters.
-- **Business information required**: Specific Ah ratings and model lines carried per brand.
-
-### C. Home UPS & Inverters
-- **Brands Stocked**: Luminous, Microtek.
-- **Business information required**: Full list of VA capacities carried (a Luminous Eco Watt 900VA model is listed on the products page as an example).
-
-### D. Inverter Batteries (Tubular & SMF)
-- **Brands Stocked**: Okaya, Amaron, Exide, Luminous.
-- **Business information required**: Full list of Ah capacities carried (150Ah tubular models from Exide and Amaron are listed on the products page as examples).
-- **Features**: Tubular plate design intended for low maintenance and long backup during power cuts.
-
-### E. Rooftop Solar Power Systems
-- **Services**: Rooftop solar panel installation for homes and businesses, with assistance navigating Tamil Nadu government solar subsidy scheme paperwork.
-- **Business information required**: Specific system types (on-grid/off-grid/hybrid) and panel brands/wattages offered.
+- **Total Google Reviews**: 27+ 5-Star Rating Profile
+- **Top Verified Customer Reviews**:
+  - *Harishvara Venkat*: "Cyril is a very knowledgeable person! Provides solutions and pays minute attention to unknown snags! Highly recommend Cyril and Kiara Battery Clinic!"
+  - *Muthukumar VP*: "Wonderful customer experience and good advices on the right battery selection by Mr Cyril from Kriya Batterey clinic..."
+  - *Sanjay Maruthachalam*: "Great Service! Helped us at almost half past 11 at night during rain. Price is really reasonable. Mr.Cyril was very kind and helped us throughout..."
+  - *Anbalagan R*: "I have availed the battery related service like acid and dm water filling and charging. The owner is so polite and helpful and importantly more knowledgeable in this field..."
 
 ---
 
-## 3. Local Service Footprint (Neighborhood Level)
+## 3. Product Categories & Technical Specifications
+
+### A. Car Batteries
+- **Brands Stocked**: Amaron, Exide, SF Sonic, Okaya, Tata Green.
+- **Applications**: Hatchbacks, sedans, SUVs and luxury passenger vehicles.
+- **Services Included**: Free digital battery voltage check, alternator charging test, terminal cleaning, and 20-30 min doorstep fitting.
+
+### B. Bike & Motorcycle Batteries
+- **Brands Stocked**: Amaron, Exide (including the Exide Xplore range), SF Sonic.
+- **Applications**: Commuter motorcycles, scooters, high-cc premium bikes.
+
+### C. Home UPS & Inverters
+- **Brands Stocked**: Luminous, Microtek.
+- **Capacity**: 600VA to 3500VA single & double battery inverter systems.
+
+### D. Inverter Batteries (Tubular & SMF)
+- **Brands Stocked**: Okaya, Amaron, Exide, Luminous.
+- **Capacities**: 100Ah, 150Ah, 180Ah, 200Ah, 220Ah tall tubular batteries.
+- **Features**: Low maintenance, long backup duration during frequent power cuts.
+
+### E. Rooftop Solar Power Systems
+- **Services**: Rooftop solar panel installation for homes and commercial buildings, with assistance navigating Tamil Nadu government solar subsidy scheme paperwork.
+
+---
+
+## 4. Local Service Footprint (Neighborhood Level)
 
 - **Coimbatore Urban**: Tatabad, Gandhipuram, RS Puram, Peelamedu, Saravanampatti, Saibaba Colony, Vadavalli, Thudiyalur, Singanallur.
 - **Regional Districts & Hill Stations**: Ooty (Udhagamandalam), Kotagiri, Coonoor, Pollachi, Tiruppur.
 
 ---
 
-## 4. Frequently Asked Questions & AEO Knowledge Graph
+## 5. Frequently Asked Questions & AEO Knowledge Graph
 
 **Q1: How do I know if my car battery needs immediate replacement?**  
 *Answer*: Common warning signs include slow engine crank, dim headlights during ignition, clicking sound when turning the key, battery swelling, or an active battery warning light on the dashboard. Kiara Battery Clinic provides free 5-minute battery testing.
 
-**Q2: How do I calculate the required inverter battery backup time for my home?**
+**Q2: How do I calculate the required inverter battery backup time for my home?**  
 *Answer*: Backup Time (Hours) = [Battery Voltage (12V) × Battery Capacity (Ah) × Power Factor (0.8)] / Total Load in Watts. For example, a 150Ah battery running a 300W load yields approximately 3.8 to 4 hours of backup.
 
 **Q3: Does Kiara Battery Clinic offer trade-in discounts for old batteries?**  
@@ -69,11 +79,12 @@
 
 ---
 
-## 5. Canonical Page Index
+## 6. Canonical Page Index
 
 - Homepage: https://kiarabatteryclinic.com/
 - About Us: https://kiarabatteryclinic.com/about-us
 - Services: https://kiarabatteryclinic.com/services
+- Photo Gallery: https://kiarabatteryclinic.com/gallery
 - Product Categories: https://kiarabatteryclinic.com/category
 - Products & Pricing: https://kiarabatteryclinic.com/products
 - Customer Reviews: https://kiarabatteryclinic.com/testimonials

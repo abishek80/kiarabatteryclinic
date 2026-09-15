@@ -5,7 +5,7 @@
                 <div class="page-header-box">
                     <h1 class="text-anime-style-2" data-cursor="-opaque">Battery, UPS & Solar Products - Price List Coimbatore</h1>
                     <nav class="wow fadeInUp">
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb mt-4">
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>category">Category</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Products</li>

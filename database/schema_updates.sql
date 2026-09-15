@@ -118,4 +118,14 @@ CREATE TABLE IF NOT EXISTS `brand` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+-- 15. Service Additional Detail Fields
+-- --------------------------------------------------------
+ALTER TABLE `service` ADD COLUMN `card1_title` VARCHAR(500) NULL AFTER `description`;
+ALTER TABLE `service` ADD COLUMN `card1_description` TEXT NULL AFTER `card1_title`;
+ALTER TABLE `service` ADD COLUMN `card2_title` VARCHAR(500) NULL AFTER `card1_description`;
+ALTER TABLE `service` ADD COLUMN `card2_description` TEXT NULL AFTER `card2_title`;
+ALTER TABLE `service` ADD COLUMN `process_steps` TEXT NULL AFTER `card2_description`;
+ALTER TABLE `service` ADD COLUMN `faqs` LONGTEXT NULL AFTER `process_steps`;
+
 SET FOREIGN_KEY_CHECKS = 1;

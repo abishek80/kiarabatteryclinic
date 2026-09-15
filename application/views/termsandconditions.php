@@ -5,7 +5,7 @@
                 <div class="page-header-box">
                     <h1 class="text-anime-style-2" data-cursor="-opaque">Terms and Conditions</h1>
                     <nav class="wow fadeInUp">
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb mt-4">
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Terms and Conditions</li>
                         </ol>
@@ -67,5 +67,49 @@
                 <p>We reserve the right to revise or modify these Terms and Conditions at any time without prior notice. By continuing to use the site or booking services after updates, you agree to accept the modified terms.</p>
             </div>
         </div>
+
+        <?php 
+            if (!isset($faqList) || empty($faqList)) {
+                $CI =& get_instance();
+                if (isset($CI->webmodel)) {
+                    $faqList = $CI->webmodel->getFaqsByPage('terms_and_conditions');
+                }
+            }
+        ?>
+        <?php if (!empty($faqList)): ?>
+            <div class="faq-policy-section mt-5">
+                <div class="card border-0 shadow-sm p-4 p-md-5 rounded-4 bg-white">
+                    <div class="section-title mb-4">
+                        <h3 class="wow fadeInUp" style="color: var(--accent-color);">Frequently Asked Questions</h3>
+                        <h2 class="text-anime-style-2 mb-3" data-cursor="-opaque" style="font-size: 2rem; font-weight: 600;">Terms & Conditions <span>FAQ</span></h2>
+                    </div>
+                    <div class="faq-accordion" id="policyAccordion">
+                        <?php foreach ($faqList as $index => $faq): ?>
+                            <?php 
+                                $isFirst = ($index === 0);
+                                $delay = number_format($index * 0.2, 1);
+                                $qNum = 'Q' . ($index + 1) . '. ';
+                                $titleText = htmlspecialchars($faq->title);
+                                if (stripos($titleText, 'Q') !== 0) {
+                                    $titleText = $qNum . $titleText;
+                                }
+                            ?>
+                            <div class="accordion-item border rounded-3 mb-3 p-2 wow fadeInUp" data-wow-delay="<?php echo $delay; ?>s">
+                                <h2 class="accordion-header" id="headingPolicy<?php echo $faq->id; ?>">
+                                    <button class="accordion-button fw-bold text-dark fs-5 <?php echo $isFirst ? '' : 'collapsed'; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePolicy<?php echo $faq->id; ?>" aria-expanded="<?php echo $isFirst ? 'true' : 'false'; ?>" aria-controls="collapsePolicy<?php echo $faq->id; ?>">
+                                        <?php echo $titleText; ?>
+                                    </button>
+                                </h2>
+                                <div id="collapsePolicy<?php echo $faq->id; ?>" class="accordion-collapse collapse <?php echo $isFirst ? 'show' : ''; ?>" aria-labelledby="headingPolicy<?php echo $faq->id; ?>" data-bs-parent="#policyAccordion">
+                                    <div class="accordion-body text-secondary fs-6" style="line-height: 1.7;">
+                                        <p class="mb-0"><?php echo htmlspecialchars($faq->description); ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 </div>

@@ -53,7 +53,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $default_controller = "web";
 $language_alias = array('en');
 // exceptions
-$controller_exceptions = array('web', 'login', 'admin', 'admin_blog', 'admin_service', 'admin_category', 'admin_brand', 'admin_product', 'admin_invoice', 'admin_vendor', 'admin_gallery', 'admin_settings', 'admin_enquiry');
+$controller_exceptions = array('web', 'login', 'admin', 'admin_blog', 'admin_service', 'admin_category', 'admin_brand', 'admin_product', 'admin_invoice', 'admin_vendor', 'admin_gallery', 'admin_settings', 'admin_enquiry', 'admin_testimonial', 'admin_faq');
+
 // route
 $route['default_controller'] = $default_controller;
 $route["^(".implode('|', $language_alias).")/(".implode('|', $controller_exceptions).")(.*)"] = '$2';
@@ -117,3 +118,15 @@ $route['admin/enquiry/(:any)/(:any)'] = 'admin_enquiry/$1/$2';
 $route['admin/brand'] = 'admin_brand/index';
 $route['admin/brand/(:any)'] = 'admin_brand/$1';
 $route['admin/brand/(:any)/(:any)'] = 'admin_brand/$1/$2';
+
+// testimonial Controller Route Path
+$route['admin/testimonial'] = 'admin_testimonial/index';
+$route['admin/testimonial/(:any)'] = 'admin_testimonial/$1';
+$route['admin/testimonial/(:any)/(:any)'] = 'admin_testimonial/$1/$2';
+$route['admin/testimonial/(:any)/(:any)/(:any)'] = 'admin_testimonial/$1/$2/$3';
+
+// faq Controller Route Path
+$route['admin/faq'] = 'admin_faq/index';
+$route['admin/faq/(:any)'] = 'admin_faq/$1';
+$route['admin/faq/(:any)/(:any)'] = 'admin_faq/$1/$2';
+$route['admin/faq/(:any)/(:any)/(:any)'] = 'admin_faq/$1/$2/$3';

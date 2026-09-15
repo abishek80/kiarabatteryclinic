@@ -8,7 +8,7 @@
                         </div>
 
                         <div class="about-footer-content">
-                            <p>Coimbatore's trusted battery & power solutions provider. We specialize in bike batteries, car batteries, home UPS, industrial UPS, inverter service and solar panel installation — with 24/7 doorstep service across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
+                            <p class="fs-6">Coimbatore's trusted battery & power solutions provider. We specialize in bike batteries, car batteries, home UPS, industrial UPS, inverter service and solar panel installation - with 24/7 doorstep service across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
                         </div>
                     </div>
                 </div>
@@ -18,8 +18,9 @@
                         <h3>Quick Link</h3>
                         <ul>
                             <li><a href="<?php echo base_url(); ?>about-us">About Us</a></li>
-                            <li><a href="<?php echo base_url(); ?>category">Category</a></li>
                             <li><a href="<?php echo base_url(); ?>services">Services</a></li>
+                            <li><a href="<?php echo base_url(); ?>testimonials">Testimonial</a></li>
+                            <li><a href="<?php echo base_url(); ?>gallery">Gallery</a></li>
                             <li><a href="<?php echo base_url(); ?>contact-us">Contact Us</a></li>
                         </ul>
                     </div>
@@ -42,15 +43,15 @@
                         <h3>Contact Us</h3>
                         <div class="footer-contact-item">
                             <div class="icon-box map">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-location-accent.svg" alt="Kiara Battery Clinic shop address Coimbatore">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-location.svg" style="filter: brightness(0) invert(1);" alt="Kiara Battery Clinic shop address Coimbatore">
                             </div>
                             <div class="footer-contact-content">
-                                <p><a href="https://maps.app.goo.gl/U3FhHqsbEmwYwqUN8" target="_blank" rel="noopener">36, 9th St, Tatabad, Coimbatore - 641 012, Tamil Nadu</a></p>
+                                <p><a href="https://maps.app.goo.gl/U3FhHqsbEmwYwqUN8" target="_blank" rel="noopener">36, 9th Street, Tatabad, Coimbatore - 641 012, Tamil Nadu</a></p>
                             </div>
                         </div>
                         <div class="footer-contact-item">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-mail-accent.svg" alt="Email Kiara Battery Clinic">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-mail.svg" style="filter: brightness(0) invert(1);" alt="Email Kiara Battery Clinic">
                             </div>
                             <div class="footer-contact-content">
                                 <p><a href="mailto:enquiry@kiarabatteryclinic.com">enquiry@kiarabatteryclinic.com</a></p>
@@ -58,11 +59,11 @@
                         </div>
                         <div class="footer-contact-item">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-phone-accent.svg" alt="Call Kiara Battery Clinic 24/7">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" style="filter: brightness(0) invert(1);" alt="Call Kiara Battery Clinic 24/7">
                             </div>
                             <div class="footer-contact-content">
                                 <p><a href="tel:+91 90038 11107">+91 90038 11107</a> &nbsp;|&nbsp; <a href="https://wa.link/w646lw" target="_blank" rel="noopener">WhatsApp</a></p>
-                                <p><small>Available 24/7 — Call Anytime</small></p>
+                                <p><small>Available 24/7 - Call Anytime</small></p>
                             </div>
                         </div>
                     </div>
@@ -71,12 +72,12 @@
                 <div class="col-lg-12">
                     <div class="footer-copyright">
                         <div class="footer-copyright-text">
-                            <p>Copyright &copy; <?php echo date('Y'); ?> Kiara Battery Clinic. All Rights Reserved | Battery Shop in Coimbatore</p>
+                            <p class="fs-6">Copyright &copy; <?php echo date('Y'); ?> Kiara Battery Clinic. All Rights Reserved | Battery Shop in Coimbatore</p>
                         </div>
                         <div class="footer-social-links">
                             <ul>
                                 <li><a href="https://wa.link/w646lw" target="_blank" rel="noopener" aria-label="WhatsApp Kiara Battery Clinic"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                <li><a href="#" target="_blank" rel="noopener" aria-label="Facebook Kiara Battery Clinic"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <!-- <li><a href="#" target="_blank" rel="noopener" aria-label="Facebook Kiara Battery Clinic"><i class="fa-brands fa-facebook-f"></i></a></li> -->
                                 <li><a href="https://www.instagram.com/kiara_battery_clinic/" target="_blank" rel="noopener" aria-label="Instagram Kiara Battery Clinic"><i class="fa-brands fa-instagram"></i></a></li>
                             </ul>
                         </div>
@@ -140,28 +141,28 @@
                         <form id="contactForm" action="#" method="POST" data-toggle="validator">
                             <div class="row">                                
                                 <div class="form-group col-md-6 px-2 mb-3">
-                                    <input type="text" name="full_name" class="form-control" id="full_name" placeholder="First Name" required>
-                                    <div class="help-block with-errors"></div>
+                                    <input type="text" name="full_name" class="form-control" id="full_name" placeholder="First Name" required data-error="Please enter the first name">
+                                    <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="form-group col-md-6 px-2 mb-3">
-                                    <input type="text" name="company_name" class="form-control" id="company_name" placeholder="Company Name" required>
-                                    <div class="help-block with-errors"></div>
+                                    <input type="text" name="company_name" class="form-control" id="company_name" placeholder="Company Name" required data-error="Please enter the company name">
+                                    <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="form-group col-md-6 px-2 mb-3">
-                                    <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Enter Your Phone No." required>
-                                    <div class="help-block with-errors"></div>
+                                    <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Enter Your Phone No." required data-error="Please enter the phone number">
+                                    <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="form-group col-md-6 px-2 mb-3">
-                                    <input type="email" name ="email" class="form-control" id="email" placeholder="Enter Your E-mail" required>
-                                    <div class="help-block with-errors"></div>
+                                    <input type="email" name ="email" class="form-control" id="email" placeholder="Enter Your E-mail" required data-error="Please enter the email address">
+                                    <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="form-group col-md-12 px-2 mb-3">
-                                    <input type="text" name="city" class="form-control" id="city" placeholder="Your Location" required>
-                                    <div class="help-block with-errors"></div>
+                                    <input type="text" name="city" class="form-control" id="city" placeholder="Your Location" required data-error="Please enter the location">
+                                    <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="form-group col-md-12 px-2 mb-3">
                                     <textarea name="message" class="form-control" id="message" rows="4" placeholder="Write Message"></textarea>
-                                    <div class="help-block with-errors"></div>
+                                    <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="col-md-12 text-center">
                                     <button type="submit" class="btn-default bg-dark"><span>submit message</span></button>

@@ -20,7 +20,7 @@ $config['seo'] = array(
     'business_info' => array(
         'name' => 'Kiara Battery Clinic',
         'legal_name' => 'Kiara Battery Clinic',
-        'street' => '36, 9th St, Tatabad',
+        'street' => '36, 9th Street, Tatabad',
         'locality' => 'Coimbatore',
         'region' => 'Tamil Nadu',
         'postal_code' => '641012',
@@ -35,8 +35,7 @@ $config['seo'] = array(
         'brands_offered' => array('Amaron', 'Exide', 'Okaya', 'SF Sonic', 'Luminous', 'Microtek', 'Tata Green'),
         'social' => array(
             'whatsapp' => 'https://wa.link/w646lw',
-            'instagram' => 'https://www.instagram.com/kiara_battery_clinic/',
-            'facebook' => 'https://wa.link/w646lw'
+            'instagram' => 'https://www.instagram.com/kiara_battery_clinic/'
         )
     ),
 
@@ -146,6 +145,14 @@ $config['seo'] = array(
             'canonical' => 'testimonials',
             'og_type' => 'website',
             'schema_type' => 'ItemPage'
+        ),
+        'gallery' => array(
+            'title' => 'Photo Gallery | Kiara Battery Clinic Coimbatore',
+            'description' => 'Browse our gallery of car battery replacements, bike battery fittings, solar panel installations, home UPS setups, and doorstep emergency service across Coimbatore.',
+            'keywords' => 'Kiara Battery Clinic gallery, battery service photos Coimbatore, solar installation photos, inverter battery setup Tatabad',
+            'canonical' => 'gallery',
+            'og_type' => 'website',
+            'schema_type' => 'ImageGallery'
         ),
         'contact_us' => array(
             'title' => 'Contact Us | 24/7 Doorstep Battery Service Coimbatore - Kiara Battery Clinic',

@@ -5,7 +5,7 @@
                 <div class="page-header-box">
                     <h1 class="text-anime-style-2" data-cursor="-opaque">Battery & Power Categories - Amaron, Exide, UPS & Solar</h1>
                     <nav class="wow fadeInUp">
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb mt-4">
                             <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Category</li>
                         </ol>
@@ -42,7 +42,7 @@
                         <h4>Exide Batteries</h4>
                     </div>
                     <div class="hero-description">
-                        <p>Exide batteries for bikes, cars, UPS and inverters — trusted brand, best price in Coimbatore.</p>
+                        <p>Exide batteries for bikes, cars, UPS and inverters - trusted brand, best price in Coimbatore.</p>
                     </div>
                     <div class="hero-button">
                         <span>View Products</span>
@@ -57,7 +57,7 @@
                         <h4>Home UPS & Inverters</h4>
                     </div>
                     <div class="hero-description">
-                        <p>Reliable home UPS systems and inverters for power backup — professional doorstep installation.</p>
+                        <p>Reliable home UPS systems and inverters for power backup - professional doorstep installation.</p>
                     </div>
                     <div class="hero-button">
                         <span>View Products</span>
@@ -87,7 +87,7 @@
                         <h4>Industrial UPS Systems</h4>
                     </div>
                     <div class="hero-description">
-                        <p>High-capacity industrial UPS for factories and data centres — AMC and maintenance contracts available.</p>
+                        <p>High-capacity industrial UPS for factories and data centres - AMC and maintenance contracts available.</p>
                     </div>
                     <div class="hero-button">
                         <span>View Products</span>
@@ -102,7 +102,7 @@
                         <h4>Tubular Batteries</h4>
                     </div>
                     <div class="hero-description">
-                        <p>Long-lasting tubular batteries for home inverters and UPS systems — best brands at lowest prices.</p>
+                        <p>Long-lasting tubular batteries for home inverters and UPS systems - best brands at lowest prices.</p>
                     </div>
                     <div class="hero-button">
                         <span>View Products</span>

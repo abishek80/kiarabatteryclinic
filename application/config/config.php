@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/kiarabatteryclinic/';
+$config['base_url'] = 'https://kiarabatteryclinic.com/';
 $projectname = "Kiara Battery Clinic"; 
 $config['sitename'] = "Kiara Battery Clinic"; 
 $config['websiteaddress'] = "https://kiarabatteryclinic.com/";

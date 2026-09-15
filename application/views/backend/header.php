@@ -96,6 +96,18 @@
                             <div data-i18n="Gallery List">Gallery List</div>
                         </a>
                     </li>
+                    <li class="menu-item <?php echo $menu_status == 'TestimonialList' ? 'active' : ''; ?>">
+                        <a href="<?php echo base_url(); ?>admin/testimonial/testimonial-list" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-star"></i>
+                            <div data-i18n="Testimonial List">Testimonial List</div>
+                        </a>
+                    </li>
+                    <li class="menu-item <?php echo $menu_status == 'FAQList' ? 'active' : ''; ?>">
+                        <a href="<?php echo base_url(); ?>admin/faq/faq-list" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-help-circle"></i>
+                            <div data-i18n="FAQ List">FAQ List</div>
+                        </a>
+                    </li>
                     <li class="menu-item <?php echo $menu_open == 'Enquiry' ? 'active open' : ''; ?>">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-message-detail"></i>

@@ -32,7 +32,7 @@
                         ?>
                         <tr>
                             <td><?php echo $i++; ?></td>
-                            <td><img src="<?php echo base_url() . $row->product_img; ?>" class="table-card" alt="Product Image"></td>
+                            <td><img src="<?php echo base_url() . $row->product_img; ?>" class="table-card" style="width: 60px; height: 50px; object-fit: cover;" alt="Product Image"></td>
                             <td><?php echo $row->category_name; ?></td>
                             <td><?php echo $row->product_name; ?></td>
                             <td class="amount-format"><?php echo $row->product_price; ?></td>
