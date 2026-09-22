@@ -2,11 +2,12 @@ Options -Indexes
 
 RewriteEngine On
 
-# Redirect WWW to Non-WWW (HTTPS)
+# 1. Force HTTPS and Non-WWW (301 Permanent Redirect)
+RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+RewriteRule ^(.*)$ https://kiarabatteryclinic.com/$1 [R=301,L]
 
-# CodeIgniter Clean URL Rewrite
+# 2. CodeIgniter Clean URL Rewrite
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /kiarabatteryclinic/index.php/$1 [L]
+RewriteRule ^(.*)$ index.php/$1 [L]

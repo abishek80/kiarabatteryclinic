@@ -20,7 +20,7 @@
 
 <div class="page-contact-us">
     <div class="container-fluid px-lg-5">
-        <div class="row pb-5">
+        <div class="row g-4 pb-5">
             <div class="col-lg-4 col-md-4">
                 <div class="contact-info-box h-100 rounded-4">
                     <div class="contact-info-item wow fadeInUp" data-wow-delay="0.2s">
@@ -77,7 +77,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row g-4">
             <div class="col-lg-7">
                 <div class="contact-us-content">
                     <div class="section-title">
