@@ -27,7 +27,7 @@ $config['seo'] = array(
         'country' => 'IN',
         'phone' => '+91 90038 11107',
         'phone_raw' => '+919003811107',
-        'email' => 'enquiry@kiarabatteryclinic.com',
+        'email' => 'kiarabatteryclinic@gmail.com',
         'google_maps' => 'https://maps.app.goo.gl/ttQckMunQZZrcVq66',
         'opening_hours' => 'Mo-Su 00:00-23:59',
         'price_range' => '₹₹',
@@ -69,15 +69,15 @@ $config['seo'] = array(
         ),
         array(
             'question' => 'What is the difference between a UPS and an Inverter for home backup?',
-            'answer' => 'A UPS (Uninterruptible Power Supply) provides zero-millisecond switching time, ideal for sensitive electronics like computers and medical equipment. An inverter has a slight transfer lag (10-20ms), suitable for general home appliances like fans, lights, and TVs.'
+            'answer' => 'A UPS (Uninterruptible Power Supply) provides zero-millisecond switching time, ideal for sensitive electronics like computers and medical equipment. An inverter has a slight transfer lag (10-20ms), suitable for general home appliances like fans, lights, and TVs. Kiara Battery Clinic stocks Luminous and Microtek UPS and inverter systems to match your home or office backup needs.'
         ),
         array(
             'question' => 'Do you provide 24/7 emergency doorstep battery replacement in Coimbatore?',
-            'answer' => 'Yes! Kiara Battery Clinic offers 24/7 emergency doorstep battery replacement, testing, and jumpstart services across Coimbatore (Tatabad, Gandhipuram, RS Puram, Peelamedu, Saravanampatti) as well as Ooty, Kotagiri, Pollachi, and Tiruppur.'
+            'answer' => 'Yes! Kiara Battery Clinic offers 24/7 emergency doorstep battery replacement, testing, and jumpstart services across Coimbatore (Tatabad, Gandhipuram, RS Puram, Peelamedu, Saravanampatti) as well as Ooty, Kotagiri, Pollachi, and Tiruppur. For emergency calls within Coimbatore city, a technician typically arrives within 30-60 minutes of your call or WhatsApp message.'
         ),
         array(
             'question' => 'How do I choose the correct battery for my car or bike?',
-            'answer' => 'Match your vehicle model, engine capacity (cc), battery dimensions, terminal layout, and Ampere-hour (Ah) rating. Kiara Battery Clinic technicians verify vehicle compatibility before installation to guarantee proper fitment and performance.'
+            'answer' => 'Match your vehicle model, engine capacity (cc), battery dimensions, terminal layout, and Ampere-hour (Ah) rating. Kiara Battery Clinic technicians verify vehicle compatibility before installation to guarantee proper fitment and performance. We stock genuine Amaron, Exide, Okaya, SF Sonic and Tata Green batteries, with free doorstep consultation to confirm the right match before you buy.'
         )
     ),
 

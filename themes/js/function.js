@@ -318,42 +318,69 @@
 	});
 
 	/* Contact form validation */
-	var $contactform = $("#contactForm");
-	$contactform.validator({focus: false}).on("submit", function (event) {
-		if (!event.isDefaultPrevented()) {
-			event.preventDefault();
-			submitForm();
+	/* Phone fields: digits and a leading + only */
+	$(document).on("input", "input[name='phone'], input[name='phone_number'], input[name='mobile'], input[type='tel']", function () {
+		var value = this.value.replace(/[^0-9+]/g, "").replace(/(?!^)\+/g, "");
+		if (value !== this.value) {
+			this.value = value;
 		}
 	});
 
-	function submitForm(){
+	$("#contactForm, #serviceEnquiryForm, .enquiry-form").each(function () {
+		var $form = $(this);
+		$form.validator({focus: false}).on("submit", function (event) {
+			if (!event.isDefaultPrevented()) {
+				event.preventDefault();
+				submitForm($form);
+			}
+		});
+	});
+
+	function submitForm($form){
+		var $button = $form.find("button[type='submit']");
+		$button.prop("disabled", true);
+		submitMSG($form, true, "Sending your enquiry...");
+
+		var targetUrl = $form.attr("action");
+		if (!targetUrl || targetUrl === "#" || targetUrl === "" || targetUrl === "form-process.php") {
+			targetUrl = (typeof base_url !== 'undefined' ? base_url : "/") + "contactFormSave";
+		}
+
 		/* Ajax call to submit form */
 		$.ajax({
 			type: "POST",
-			url: "form-process.php",
-			data: $contactform.serialize(),
-			success : function(text){
-				if (text === "success"){
-					formSuccess();
+			url: targetUrl,
+			data: $form.serialize(),
+			dataType: "json",
+			success : function(res){
+				if (res && (!res.isError || res.status === "success")) {
+					$form[0].reset();
+					$button.prop("disabled", false);
+					if (res.redirect) {
+						window.location.href = res.redirect;
+					} else {
+						submitMSG($form, true, (res.message || "Message Sent Successfully!"));
+					}
 				} else {
-					submitMSG(false,text);
+					$button.prop("disabled", false);
+					var errMsg = (typeof res === "string") ? res : ((res && res.message) || "Something went wrong. Please try again.");
+					submitMSG($form, false, errMsg);
 				}
+			},
+			error : function(xhr, status, error){
+				$button.prop("disabled", false);
+				submitMSG($form, false, "Could not send your enquiry. Please call +91 90038 11107.");
 			}
 		});
 	}
 
-	function formSuccess(){
-		$contactform[0].reset();
-		submitMSG(true, "Message Sent Successfully!")
-	}
-
-	function submitMSG(valid, msg){
-		if(valid){
-			var msgClasses = "h4 text-success";
-		} else {
-			var msgClasses = "h4 text-danger";
+	function submitMSG($form, valid, msg){
+		var msgClasses = valid ? "form-msg h6 mt-3 text-success p-2 rounded" : "form-msg h6 mt-3 text-danger p-2 rounded";
+		var $target = $form.find(".form-msg, #msgSubmit");
+		if ($target.length === 0) {
+			$target = $('<div class="form-msg"></div>').appendTo($form);
 		}
-		$("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+		$target.removeClass('hidden d-none').addClass(msgClasses).text(msg);
 	}
 	/* Contact form validation end */
 

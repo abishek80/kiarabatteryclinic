@@ -248,37 +248,103 @@ class Web extends CI_Controller {
         $this->load->view('footer', $data);
     }
 
-    //Contact Enquiry Save Form //
+    public function thank_you()
+    {
+        $data['meta'] = get_seo_meta('home', array(
+            'title' => 'Thank You | Kiara Battery Clinic Coimbatore',
+            'description' => 'Thank you for contacting Kiara Battery Clinic. Our team will call you back shortly.',
+            'robots' => 'noindex, nofollow'
+        ));
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
+
+        $this->load->view('header', $data);
+        $this->load->view('thankyou', $data);
+        $this->load->view('footer', $data);
+    }
+
+    //Contact Enquiry Save Form (contact page, service detail page and header quote popup) //
     public function contactFormSave()
     {
-        $contactId = $this->input->post('contact_id');
-        $name = $this->input->post('full_name');
-        $email = $this->input->post('email');
-        $mobileNumber = $this->input->post('mobile');
-        $subject = $this->input->post('subject');
-        $message = $this->input->post('message');
+        $this->output->set_content_type('application/json');
 
-        if ($contactId < 0 || $contactId == '') {
-            $checkExists = $this->webmodel->checkMobileNumber($mobileNumber);
-            if ($checkExists > 0) {
-                $data["isError"] = TRUE;
-                $data["message"] = "Mobile Number Already Exists";
-                echo json_encode($data);
-                return;
-            }
+        if ($this->input->method() !== 'post') {
+            show_404();
+            return;
         }
 
-        $this->webmodel->saveContactData($contactId, $name, $email, $mobileNumber, $subject, $message);
-        
-        $data["isError"] = FALSE;
-        if ($contactId > 0) {
-            $data["message"] = "Form Updated";
-        } else {
-            $data["message"] = "Form Submitted Successfully";
+        // Honeypot: real visitors never fill this hidden field
+        if (trim((string) $this->input->post('website')) !== '') {
+            echo json_encode(array('isError' => FALSE, 'redirect' => base_url('thank-you')));
+            return;
         }
 
-        echo json_encode($data);
-        return;
+        $clean = function ($key, $max = 255) {
+            $value = trim(strip_tags((string) $this->input->post($key)));
+            return mb_substr($value, 0, $max);
+        };
+
+        // Each form names its fields differently
+        $name = $clean('full_name', 100);
+        if ($name === '') {
+            $name = $clean('name', 100);
+        }
+        if ($name === '') {
+            $name = trim($clean('fname', 50) . ' ' . $clean('lname', 50));
+        }
+
+        $mobileNumber = $clean('phone', 20);
+        if ($mobileNumber === '') {
+            $mobileNumber = $clean('phone_number', 20);
+        }
+        $mobileNumber = preg_replace('/[\s\-()]/', '', $mobileNumber);
+
+        $email = $clean('email', 50);
+        $location = $clean('city', 150);
+        if ($location === '') {
+            $location = $clean('location', 150);
+        }
+        $company = $clean('company_name', 150);
+        $serviceName = $clean('service_name', 200);
+        $subject = $clean('form_source', 200);
+        $message = trim(strip_tags((string) $this->input->post('message')));
+
+        if ($name === '') {
+            echo json_encode(array('isError' => TRUE, 'message' => 'Please enter your name.'));
+            return;
+        }
+        if (!preg_match('/^(\+?91|0)?[6-9][0-9]{9}$/', $mobileNumber)) {
+            echo json_encode(array('isError' => TRUE, 'message' => 'Please enter a valid 10-digit mobile number.'));
+            return;
+        }
+        if ($serviceName === '') {
+            $serviceName = 'General Service Enquiry';
+        }
+        if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo json_encode(array('isError' => TRUE, 'message' => 'Please enter a valid email address.'));
+            return;
+        }
+
+        if ($subject === '') {
+            $subject = 'Website Enquiry';
+        }
+
+        // contact_enquiry has no company column, so keep it with the message
+        if ($company !== '') {
+            $message = 'Company: ' . $company . ($message !== '' ? "\n\n" . $message : '');
+        }
+
+        if (!$this->webmodel->saveContactData($name, $email, $mobileNumber, $serviceName, $location, $subject, $message)) {
+            echo json_encode(array('isError' => TRUE, 'message' => 'Could not save your enquiry. Please call +91 90038 11107.'));
+            return;
+        }
+
+        echo json_encode(array(
+            'isError' => FALSE,
+            'message' => 'Form Submitted Successfully',
+            'redirect' => base_url('thank-you')
+        ));
     }
 
     //Product Enquiry Save Form //

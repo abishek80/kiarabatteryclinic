@@ -33,7 +33,7 @@
                             </div>
                         </div>        
                         <div class="contact-info-content">
-                            <p class="ps-4 fs-6 fw-semibold text-black"><a href="mailto:enquiry@kiarabatteryclinic.com">enquiry@kiarabatteryclinic.com</a></p>
+                            <p class="ps-4 fs-6 fw-semibold text-black"><a href="mailto:kiarabatteryclinic@gmail.com">kiarabatteryclinic@gmail.com</a></p>
                             <small class="ps-4 mt-3 d-block mb-0">We reply within 2 hours on weekdays</small>
                         </div>
                     </div>
@@ -86,7 +86,9 @@
                         <p class="wow fadeInUp" data-wow-delay="0.2s">Whether you need a quick car battery replacement, a home UPS installation, inverter repair or a complete solar power setup - fill in the form below and our team will contact you within the hour. Doorstep service available across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
                     </div>
                     <div class="contact-form">
-                        <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.4s">
+                        <form id="contactPageForm" action="<?php echo base_url('contactFormSave'); ?>" method="POST" data-toggle="validator" class="enquiry-form wow fadeInUp" data-wow-delay="0.4s">
+                            <input type="hidden" name="form_source" value="Contact Page Enquiry">
+                            <div class="d-none" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
                             <div class="row">                                
                                 <div class="form-group col-md-6 mb-4">
                                     <input type="text" name="fname" class="form-control" id="contact-fname" placeholder="Your First Name" required data-error="Please enter the first name">
@@ -99,7 +101,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6 mb-4">
-                                    <input type="text" name="phone" class="form-control" id="contact-phone" placeholder="Your Phone / WhatsApp No." required data-error="Please enter the phone / whatsapp no.">
+                                    <input type="tel" inputmode="tel" maxlength="13" pattern="(\+91|91|0)?[6-9][0-9]{9}" name="phone" class="form-control" id="contact-phone" placeholder="Your Phone / WhatsApp No." required data-error="Please enter a valid 10-digit mobile number">
                                     <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
 
@@ -108,8 +110,19 @@
                                     <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
 
-                                <div class="form-group col-md-12 mb-4">
+                                <div class="form-group col-md-6 mb-4">
                                     <input type="text" name="city" class="form-control" id="contact-city" placeholder="Your City / Area (e.g., Coimbatore, Ooty, Pollachi)" required data-error="Please enter the city / area">
+                                    <div class="help-block with-errors mt-1 ms-1"></div>
+                                </div>
+
+                                <div class="form-group col-md-6 mb-4">
+                                    <select name="service_name" class="form-control form-select" id="contact-service" required data-error="Please select the service you need">
+                                        <option value="">Select the Service You Need</option>
+                                        <?php if (!empty($serviceList)) { foreach ($serviceList as $sItem) { ?>
+                                            <option value="<?php echo htmlspecialchars($sItem->service_name); ?>"><?php echo htmlspecialchars($sItem->service_name); ?></option>
+                                        <?php } } ?>
+                                        <option value="Other / Not Sure">Other / Not Sure</option>
+                                    </select>
                                     <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
 
@@ -120,7 +133,7 @@
 
                                 <div class="col-md-12">
                                     <button type="submit" class="btn-default" id="contact-submit"><span>Send My Enquiry</span></button>
-                                    <div id="msgSubmit" class="h3 hidden"></div>
+                                    <div class="form-msg"></div>
                                 </div>
                             </div>
                         </form>

@@ -12,6 +12,8 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Mobile Number</th>
+                            <th>Service</th>
+                            <th>Location</th>
                             <th>Subject</th>
                             <th>Description</th>
                             <th>Created At</th>
@@ -25,11 +27,13 @@
                         ?>
                         <tr>
                             <td><?php echo $i++; ?></td>
-                            <td><?php echo $row->name; ?></td>
-                            <td><a href="mailto:<?php echo $row->email; ?>" class="text-lowercase"><?php echo $row->email; ?></a></td>
-                            <td><a href="tel:<?php echo $row->mobile_number; ?>"><?php echo $row->mobile_number; ?></a></td>
-                            <td><?php echo $row->subject; ?></td>
-                            <td><?php echo $row->message; ?></td>
+                            <td><?php echo htmlspecialchars($row->name); ?></td>
+                            <td><a href="mailto:<?php echo htmlspecialchars($row->email); ?>" class="text-lowercase"><?php echo htmlspecialchars($row->email); ?></a></td>
+                            <td><a href="tel:<?php echo htmlspecialchars($row->mobile_number); ?>"><?php echo htmlspecialchars($row->mobile_number); ?></a></td>
+                            <td><?php echo !empty($row->service_name) ? htmlspecialchars($row->service_name) : '-'; ?></td>
+                            <td><?php echo !empty($row->location) ? htmlspecialchars($row->location) : '-'; ?></td>
+                            <td><?php echo htmlspecialchars($row->subject); ?></td>
+                            <td><?php echo nl2br(htmlspecialchars($row->message)); ?></td>
                             <td><?php $dateFormat = new DateTime($row->created_at); echo $dateFormat->format('d-m-Y h:i A'); ?></td>
                             <td>
                                 <a href="javascript:void(0);" data-rowid="<?php echo $row->id; ?>" data-tablename="contact_enquiry" data-link="<?php echo base_url(); ?>admin/enquiry/contact-enquiry" class="box-hover trashItem" data-toggle="tooltip" data-placement="top" title="Delete"> <i class="bx bx-trash"></i> </a>

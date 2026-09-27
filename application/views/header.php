@@ -4,16 +4,28 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Kiara Battery Clinic">
 <?php 
     if (!isset($meta) || empty($meta)) {
         $meta = get_seo_meta('home');
     }
+    // Prefer the page's own FAQ data (service_detail's per-service $faqsList, or the
+    // DB-driven $faqList every other page loads) so the schema always matches what's
+    // actually visible on THIS page, instead of a generic sitewide question set.
+    $schema_faq_source = null;
+    if (!empty($faqsList) && is_array($faqsList)) {
+        $schema_faq_source = $faqsList;
+    } elseif (!empty($faqList)) {
+        $schema_faq_source = $faqList;
+    }
     echo render_seo_tags($meta);
-    echo render_schema_jsonld($meta);
+    echo render_schema_jsonld($meta, $schema_faq_source);
 ?>
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>themes/images/fav-icon.png">
+	<?php if (uri_string() === '') { ?>
+	<link rel="preload" as="image" href="<?php echo base_url(); ?>themes/images/hero-bg.jpg" fetchpriority="high">
+	<?php } ?>
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Onest:wght@100..900&amp;display=swap" rel="stylesheet">
@@ -21,10 +33,11 @@
 	<link href="<?php echo base_url(); ?>themes/css/slicknav.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/swiper-bundle.min.css">
 	<link href="<?php echo base_url(); ?>themes/css/all.min.css" rel="stylesheet" media="screen">
-	<link href="<?php echo base_url(); ?>themes/css/animate.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/animate.css" media="print" onload="this.media='all'">
+	<noscript><link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/animate.css"></noscript>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/magnific-popup.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/mousecursor.css">
-	<link href="<?php echo base_url(); ?>themes/css/custom.css" rel="stylesheet" media="screen">
+	<link href="<?php echo base_url(); ?>themes/css/custom.css?v=20260923" rel="stylesheet" media="screen">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-49VNNWKB6M"></script>
@@ -56,7 +69,7 @@
 	<div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
-			<div id="loading-icon"><img src="<?php echo base_url(); ?>themes/images/fav-icon-white.png" alt="Kiara Battery Clinic Loading"></div>
+			<div id="loading-icon"><img src="<?php echo base_url(); ?>themes/images/fav-icon-white.png" width="100" height="100" alt="Kiara Battery Clinic Loading"></div>
 		</div>
 	</div>
     <div class="topbar">
@@ -65,8 +78,8 @@
                 <div class="col-md-9">
                     <div class="topbar-contact-info">
                         <ul>
-                            <li><a href="https://maps.app.goo.gl/ttQckMunQZZrcVq66" target="_blank" rel="noopener"><img src="<?php echo base_url(); ?>themes/images/icon-location.svg" alt="Kiara Battery Clinic Location - Coimbatore">Tatabad, Coimbatore - Tamil Nadu</a></li>
-                            <li><a href="tel:+91 90038 11107"><img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" alt="Call Kiara Battery Clinic">+91 90038 11107</a></li>
+                            <li><a href="https://maps.app.goo.gl/ttQckMunQZZrcVq66" target="_blank" rel="noopener"><img src="<?php echo base_url(); ?>themes/images/icon-location.svg" width="16" height="16" alt="Kiara Battery Clinic Location - Coimbatore">Tatabad, Coimbatore - Tamil Nadu</a></li>
+                            <li><a href="tel:+91 90038 11107"><img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" width="16" height="16" alt="Call Kiara Battery Clinic">+91 90038 11107</a></li>
                         </ul>
                     </div>
                 </div>
@@ -88,7 +101,7 @@
 			<nav class="navbar navbar-expand-lg">
 				<div class="container-fluid px-lg-5">
 					<a class="navbar-brand" href="<?php echo base_url(); ?>">
-						<img src="<?php echo base_url(); ?>themes/images/logo.png" style="width: 250px;" alt="Kiara Battery Clinic Logo - Battery Shop Coimbatore">
+						<img src="<?php echo base_url(); ?>themes/images/logo.png" width="250" height="68" style="width: 250px; height: auto;" alt="Kiara Battery Clinic Logo - Battery Shop Coimbatore">
 					</a>
 					<div class="collapse navbar-collapse main-menu  ">
                         <div class="nav-menu-wrapper">

@@ -75,7 +75,7 @@
                             </div>
                         </div>
                         <div class="hero-cta-item-content">
-                            <p><a href="mailto:enquiry@kiarabatteryclinic.com"><span>Email:</span> enquiry@kiarabatteryclinic.com</a></p>
+                            <p><a href="mailto:kiarabatteryclinic@gmail.com"><span>Email:</span> kiarabatteryclinic@gmail.com</a></p>
                             <p><a href="tel:+91 90038 11107"><span>Phone / WhatsApp:</span> +91 90038 11107</a></p>
                         </div>
                     </div>
@@ -112,30 +112,30 @@
                     <div class="goals-image-box">
                         <div class="goals-img-1">
                             <figure class="image-anime reveal">
-                                <img src="<?php echo base_url(); ?>themes/images/our-goals-img-1.jpg" alt="Kiara Battery Clinic technician installing car battery in Coimbatore">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-1.jpg" alt="Kiara Battery Clinic technician installing car battery in Coimbatore">
                             </figure>
                         </div>
                         
                         <div class="goals-img-2">
                             <figure class="image-anime reveal">
-                                <img src="<?php echo base_url(); ?>themes/images/our-goals-img-2.jpg" alt="Home UPS installation service in Coimbatore">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-2.jpg" alt="Home UPS installation service in Coimbatore">
                             </figure>
                         </div>
                     </div>
                     <div class="goals-image-box">
                         <div class="goals-img-3">
                             <figure class="image-anime reveal">
-                                <img src="<?php echo base_url(); ?>themes/images/our-goals-img-3.jpg" alt="Solar panel setup in Ooty and Coimbatore by Kiara Battery Clinic">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-3.jpg" alt="Solar panel setup in Ooty and Coimbatore by Kiara Battery Clinic">
                             </figure>
                         </div>
                         <div class="goals-img-4">
                             <figure class="image-anime reveal">
-                                <img src="<?php echo base_url(); ?>themes/images/our-goals-img-4.jpg" alt="Industrial UPS installation service in Tamil Nadu">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-4.jpg" alt="Industrial UPS installation service in Tamil Nadu">
                             </figure>
                         </div>
                     </div>
                     <div class="contact-now-circle">
-                        <a href="<?php echo base_url(); ?>contact-us"><img src="<?php echo base_url(); ?>themes/images/contact-now-circle.png" alt="Contact Kiara Battery Clinic for doorstep battery service"></a>
+                        <a href="<?php echo base_url(); ?>contact-us"><img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/contact-now-circle.png" alt="Contact Kiara Battery Clinic for doorstep battery service"></a>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                     <div class="goals-content-body wow fadeInUp" data-wow-delay="0.4s">
                         <div class="goals-item">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-goals-item-1.svg" alt="Genuine battery brands in Coimbatore">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-goals-item-1.svg" alt="Genuine battery brands in Coimbatore">
                             </div>
                             <div class="goals-item-content">
                                 <h3>100% Genuine Batteries & Parts</h3>
@@ -158,7 +158,7 @@
                         </div>
                         <div class="goals-item">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-goals-item-2.svg" alt="Doorstep battery service Coimbatore 24/7">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-goals-item-2.svg" alt="Doorstep battery service Coimbatore 24/7">
                             </div>
                             <div class="goals-item-content">
                                 <h3>24/7 Doorstep Service</h3>
@@ -172,7 +172,7 @@
                         </div>
                         <div class="contact-now-box">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-phone-accent.svg" alt="Call Kiara Battery Clinic 24/7">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-phone-accent.svg" alt="Call Kiara Battery Clinic 24/7">
                             </div>
                             <div class="contact-now-box-content">
                                 <span>Call Us 24/7</span>
@@ -225,7 +225,7 @@
                                             <div class="service-image">
                                                 <a href="<?php echo $detail_url; ?>" data-cursor-text="View">
                                                     <figure class="image-anime">
-                                                        <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($s->service_name); ?> - Kiara Battery Clinic">
+                                                        <img loading="lazy" decoding="async" src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($s->service_name); ?> - Kiara Battery Clinic">
                                                     </figure>
                                                 </a>
                                             </div>
@@ -276,7 +276,7 @@
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
                 <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" src="<?php echo base_url(); ?>themes/images/category-amaron.jpg" alt="Amaron car battery dealer Coimbatore - best price with warranty">
+                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-amaron.jpg" alt="Amaron car battery dealer Coimbatore - best price with warranty">
                     <div class="hero-description-bk"></div>
                     <div class="hero-heading">
                         <h4>Amaron Batteries</h4>
@@ -291,7 +291,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" src="<?php echo base_url(); ?>themes/images/category-exide.jpg" alt="Exide battery dealer Coimbatore - bike car tubular batteries">
+                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-exide.jpg" alt="Exide battery dealer Coimbatore - bike car tubular batteries">
                     <div class="hero-description-bk"></div>
                     <div class="hero-heading">
                         <h4>Exide Batteries</h4>
@@ -306,7 +306,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" src="<?php echo base_url(); ?>themes/images/category-ups-inverter.jpg" alt="Home UPS and inverter battery in Coimbatore">
+                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-ups-inverter.jpg" alt="Home UPS and inverter battery in Coimbatore">
                     <div class="hero-description-bk"></div>
                     <div class="hero-heading">
                         <h4>Home UPS & Inverters</h4>
@@ -321,7 +321,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" src="<?php echo base_url(); ?>themes/images/category-solar.jpg" alt="Solar panel installation Coimbatore Ooty Kotagiri government scheme">
+                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-solar.jpg" alt="Solar panel installation Coimbatore Ooty Kotagiri government scheme">
                     <div class="hero-description-bk"></div>
                     <div class="hero-heading">
                         <h4>Solar Power Systems</h4>
@@ -336,7 +336,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" src="<?php echo base_url(); ?>themes/images/category-industrial-ups.jpg" alt="Industrial UPS installation Coimbatore factory power backup">
+                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-industrial-ups.jpg" alt="Industrial UPS installation Coimbatore factory power backup">
                     <div class="hero-description-bk"></div>
                     <div class="hero-heading">
                         <h4>Industrial UPS Systems</h4>
@@ -351,7 +351,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" src="<?php echo base_url(); ?>themes/images/category-tubular.jpg" alt="Tubular battery for inverter and UPS in Coimbatore">
+                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-tubular.jpg" alt="Tubular battery for inverter and UPS in Coimbatore">
                     <div class="hero-description-bk"></div>
                     <div class="hero-heading">
                         <h4>Tubular Batteries</h4>
@@ -410,7 +410,7 @@
                                     <div class="swiper-slide">
                                         <div class="testimonial-item">
                                             <div class="testimonial-quote">
-                                                <img src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer testimonial quote">
+                                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/testimonial-quote.svg" alt="Customer testimonial quote">
                                             </div>
                                             <div class="testimonial-content">
                                                 <?php if(!empty($row->title)): ?>
@@ -428,7 +428,7 @@
                                             <div class="testimonial-body">
                                                 <div class="author-image">
                                                     <figure class="image-anime">
-                                                        <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($row->reviewer_name); ?> - Customer Review">
+                                                        <img loading="lazy" decoding="async" width="60" height="60" src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($row->reviewer_name); ?> - Customer Review">
                                                     </figure>
                                                 </div>            
                                                 <div class="author-content">
@@ -474,10 +474,10 @@
                       
                     <div class="our-facts-image">
                         <figure>
-                            <img src="<?php echo base_url(); ?>themes/images/facts-image.png" alt="Kiara Battery Clinic doorstep service Coimbatore - battery UPS solar">
+                            <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/facts-image.png" alt="Kiara Battery Clinic doorstep service Coimbatore - battery UPS solar">
                         </figure>
                         <div class="contact-now-circle">
-                            <a href="<?php echo base_url(); ?>contact-us"><img src="<?php echo base_url(); ?>themes/images/contact-now-circle.png" alt="Contact Kiara Battery Clinic now"></a>
+                            <a href="<?php echo base_url(); ?>contact-us"><img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/contact-now-circle.png" alt="Contact Kiara Battery Clinic now"></a>
                         </div>
                     </div>
                 </div>
@@ -486,22 +486,22 @@
             <div class="col-lg-12">
                 <div class="facts-counter-box">
                     <div class="facts-counter-item">
-                        <img src="<?php echo base_url(); ?>themes/images/icon-facts-counter-1.svg" alt="Batteries replaced by Kiara Battery Clinic">
+                        <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-facts-counter-1.svg" alt="Batteries replaced by Kiara Battery Clinic">
                         <h2><span class="counter">5000</span>+</h2>
                         <p>Batteries Replaced</p>
                     </div>
                     <div class="facts-counter-item">
-                        <img src="<?php echo base_url(); ?>themes/images/icon-facts-counter-2.svg" alt="Doorstep service visits Coimbatore">
+                        <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-facts-counter-2.svg" alt="Doorstep service visits Coimbatore">
                         <h2><span class="counter">3000</span>+</h2>
                         <p>Doorstep Service Visits</p>
                     </div>
                     <div class="facts-counter-item">
-                        <img src="<?php echo base_url(); ?>themes/images/icon-facts-counter-3.svg" alt="Happy customers Kiara Battery Clinic Coimbatore">
+                        <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-facts-counter-3.svg" alt="Happy customers Kiara Battery Clinic Coimbatore">
                         <h2><span class="counter">4500</span>+</h2>
                         <p>Happy Customers</p>
                     </div>
                     <div class="facts-counter-item">
-                        <img src="<?php echo base_url(); ?>themes/images/icon-facts-counter-4.svg" alt="Years of battery service experience">
+                        <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-facts-counter-4.svg" alt="Years of battery service experience">
                         <h2><span class="counter">6</span>+</h2>
                         <p>Years of Experience</p>
                     </div>
@@ -525,7 +525,7 @@
             <div class="col-lg-6">
                 <div class="faqs-image">
                     <figure class="image-anime reveal">
-                        <img src="<?php echo base_url(); ?>themes/images/faqs-image.jpg" alt="FAQs - Kiara Battery Clinic Coimbatore doorstep service">
+                        <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/faqs-image.jpg" alt="FAQs - Kiara Battery Clinic Coimbatore doorstep service">
                     </figure>
                 </div>
             </div>
@@ -597,7 +597,7 @@
                                     ?>
                                     <div class="swiper-slide">
                                         <div class="company-logo">
-                                            <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($b->brand_name); ?> - Kiara Battery Clinic Partner Brand">
+                                            <img loading="lazy" decoding="async" src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($b->brand_name); ?> - Kiara Battery Clinic Partner Brand">
                                         </div>
                                     </div>
                                 <?php endforeach; ?>

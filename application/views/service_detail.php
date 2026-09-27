@@ -24,13 +24,16 @@
                 <div class="page-single-sidebar">
                     <div class="mt-0 service-category-list bg-theme-light wow fadeInUp">
                         <h3 class="fw-semibold mb-4">Enquiry Now</h3>
-                        <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.4s">
+                        <form id="serviceEnquiryForm" action="<?php echo base_url('contactFormSave'); ?>" method="POST" data-toggle="validator" class="enquiry-form wow fadeInUp" data-wow-delay="0.4s">
+                            <input type="hidden" name="form_source" value="Service Page Enquiry">
+                            <input type="hidden" name="service_name" value="<?php echo !empty($serviceName) ? htmlspecialchars($serviceName) : 'Other / Not Sure'; ?>">
+                            <div class="d-none" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
                             <div class="form-group mb-3">
                                 <input type="text" name="name" class="form-control rounded-3 p-3" id="name" placeholder="First name" required data-error="Please enter the first name">
                                 <div class="help-block with-errors mt-1 ms-1"></div>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" name="phone" class="form-control rounded-3 p-3" id="phone" placeholder="Phone no." required data-error="Please enter the phone number">
+                                <input type="tel" inputmode="tel" maxlength="13" pattern="(\+91|91|0)?[6-9][0-9]{9}" name="phone" class="form-control rounded-3 p-3" id="phone" placeholder="Phone no." required data-error="Please enter a valid 10-digit mobile number">
                                 <div class="help-block with-errors mt-1 ms-1"></div>
                             </div>
                             <div class="form-group mb-3">
@@ -43,7 +46,7 @@
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn-default"><span>submit message</span></button>
-                                <div id="msgSubmit" class="h3 hidden"></div>
+                                <div class="form-msg"></div>
                             </div>
                         </form>
                     </div>

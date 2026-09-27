@@ -1,3 +1,12 @@
+@font-face {
+	font-family: 'Font Awesome 6 Free';
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Font Awesome 6 Brands';
+	font-display: swap;
+}
+
 /************************************/
 /*** 	 01. Global Variables	  ***/
 /************************************/
@@ -540,6 +549,8 @@ body {
 
 .topbar-contact-info ul li a {
 	display: flex;
+	align-items: center;
+	white-space: nowrap;
 	color: inherit;
 	transition: all 0.3s ease-in-out;
 }
@@ -549,8 +560,9 @@ body {
 }
 
 .topbar-contact-info ul li img {
-	width: 100%;
-	max-width: 17px;
+	flex-shrink: 0;
+	width: 17px;
+	height: auto;
 	margin-right: 10px;
 	transition: all 0.3s ease-in-out;
 }
@@ -981,6 +993,15 @@ header.main-header .header-sticky.active {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
+}
+
+/* Keep every slide as tall as the tallest one, so a shorter slide never shows the one behind it */
+.hero.hero-bg-image.hero-slider-layout .swiper-slide {
+	height: auto;
+}
+
+.hero.hero-bg-image.hero-slider-layout .hero-slide {
+	height: 100%;
 }
 
 .hero.hero-bg-image.hero-slider-layout .hero-slide::before {

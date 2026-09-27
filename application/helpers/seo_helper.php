@@ -108,7 +108,7 @@ if (!function_exists('render_seo_tags')) {
  * Render structured JSON-LD Schema.org scripts (Organization, LocalBusiness, BreadcrumbList, FAQPage, Service)
  */
 if (!function_exists('render_schema_jsonld')) {
-    function render_schema_jsonld($meta) {
+    function render_schema_jsonld($meta, $faq_items = null) {
         $b = $meta['business_info'];
         $site_url = $meta['site_url'];
 
@@ -196,10 +196,35 @@ if (!function_exists('render_schema_jsonld')) {
         );
 
         // 5. FAQPage Schema for AEO
+        // Always mirror the FAQs actually visible on THIS page (DB-driven $faqList /
+        // $faqsList passed in from the controller/view), never a generic sitewide list —
+        // Google requires FAQPage schema to match on-page content exactly.
+        $faq_pairs = array();
+        if (!empty($faq_items)) {
+            foreach ($faq_items as $item) {
+                if (is_object($item)) {
+                    $q = isset($item->title) ? $item->title : '';
+                    $a = isset($item->description) ? $item->description : '';
+                } else {
+                    $q = isset($item['question']) ? $item['question'] : (isset($item['q']) ? $item['q'] : '');
+                    $a = isset($item['answer']) ? $item['answer'] : (isset($item['a']) ? $item['a'] : '');
+                }
+                $q = trim(strip_tags((string) $q));
+                $a = trim(strip_tags((string) $a));
+                if ($q === '' || $a === '') {
+                    continue;
+                }
+                $faq_pairs[] = array('question' => $q, 'answer' => $a);
+            }
+        } elseif (!empty($meta['aeo_questions'])) {
+            // Fallback only for pages with no page-specific FAQ block of their own
+            $faq_pairs = $meta['aeo_questions'];
+        }
+
         $faq_schema = null;
-        if (!empty($meta['aeo_questions'])) {
+        if (!empty($faq_pairs)) {
             $main_entities = array();
-            foreach ($meta['aeo_questions'] as $q) {
+            foreach ($faq_pairs as $q) {
                 $main_entities[] = array(
                     '@type' => 'Question',
                     'name' => $q['question'],

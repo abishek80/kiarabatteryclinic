@@ -10,6 +10,20 @@ SET FOREIGN_KEY_CHECKS = 0;
 ALTER TABLE `contact_enquiry` 
   MODIFY `delete_status` int(5) NOT NULL DEFAULT 0;
 
+-- Service the customer is enquiring about (contact page / service page / quote popup)
+ALTER TABLE `contact_enquiry`
+  ADD COLUMN `service_name` varchar(200) DEFAULT NULL AFTER `mobile_number`;
+
+-- Customer's city / area, stored on its own instead of inside the message
+ALTER TABLE `contact_enquiry`
+  ADD COLUMN `location` varchar(150) DEFAULT NULL AFTER `service_name`;
+
+-- Move "Location: ..." out of messages saved before the column existed
+UPDATE `contact_enquiry`
+  SET `location` = TRIM(SUBSTRING_INDEX(SUBSTRING(`message`, 11), '\n', 1)),
+      `message`  = TRIM(BOTH '\n' FROM IF(LOCATE('\n', `message`) > 0, SUBSTRING(`message`, LOCATE('\n', `message`) + 1), ''))
+  WHERE `location` IS NULL AND `message` LIKE 'Location: %';
+
 -- --------------------------------------------------------
 -- 2. Product Enquiry
 -- --------------------------------------------------------
@@ -127,5 +141,50 @@ ALTER TABLE `service` ADD COLUMN `card2_title` VARCHAR(500) NULL AFTER `card1_de
 ALTER TABLE `service` ADD COLUMN `card2_description` TEXT NULL AFTER `card2_title`;
 ALTER TABLE `service` ADD COLUMN `process_steps` TEXT NULL AFTER `card2_description`;
 ALTER TABLE `service` ADD COLUMN `faqs` LONGTEXT NULL AFTER `process_steps`;
+
+-- --------------------------------------------------------
+-- 16. Testimonial Master Table
+-- Required by Webmodel::testimonialList() / Testimonialmodel — loaded on
+-- EVERY frontend page via Web::__construct(). Without this table the whole
+-- site hard-crashes with a DB error on every request.
+-- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testimonial` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `token` varchar(255) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `reviewer_name` varchar(255) NOT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `review_date` date DEFAULT NULL,
+  `star` tinyint(1) NOT NULL DEFAULT 5,
+  `reviewer_img` varchar(500) DEFAULT NULL,
+  `status` enum('active','inactive') NOT NULL DEFAULT 'active',
+  `delete_status` int(5) NOT NULL DEFAULT 0,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_by` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+-- 17. FAQ Master Table
+-- Required by Webmodel::getFaqsByPage() — called on nearly every frontend
+-- page (home, about, services, contact, testimonials, gallery, policy pages).
+-- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `faq` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `token` varchar(255) DEFAULT NULL,
+  `page_name` varchar(100) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `status` enum('active','inactive') NOT NULL DEFAULT 'active',
+  `delete_status` int(5) NOT NULL DEFAULT 0,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_by` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -60,7 +60,7 @@
                 <div class="p-3 bg-light rounded-3 mt-3 border-start border-4 border-danger" style="border-left-color: var(--accent-color) !important;">
                     <ul class="list-unstyled mb-0 ps-2">
                         <li class="mb-2"><strong>Address:</strong> 36, 9th Street, Tatabad, Coimbatore - 641 012, Tamil Nadu</li>
-                        <li class="mb-2"><strong>Email:</strong> <a href="mailto:enquiry@kiarabatteryclinic.com" class="text-danger" style="color: var(--accent-color) !important;">enquiry@kiarabatteryclinic.com</a></li>
+                        <li class="mb-2"><strong>Email:</strong> <a href="mailto:kiarabatteryclinic@gmail.com" class="text-danger" style="color: var(--accent-color) !important;">kiarabatteryclinic@gmail.com</a></li>
                         <li><strong>Phone:</strong> <a href="tel:+919003811107" class="text-danger" style="color: var(--accent-color) !important;">+91 90038 11107</a> (Available 24/7)</li>
                     </ul>
                 </div>

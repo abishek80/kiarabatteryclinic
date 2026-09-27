@@ -4,7 +4,7 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="about-footer">
                         <div class="footer-logo">
-                            <img src="<?php echo base_url(); ?>themes/images/footer-logo.png" alt="Kiara Battery Clinic Logo">
+                            <img src="<?php echo base_url(); ?>themes/images/footer-logo.png" width="250" height="68" style="width: 250px; height: auto;" alt="Kiara Battery Clinic Logo">
                         </div>
 
                         <div class="about-footer-content">
@@ -43,7 +43,7 @@
                         <h3>Contact Us</h3>
                         <div class="footer-contact-item">
                             <div class="icon-box map">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-location.svg" style="filter: brightness(0) invert(1);" alt="Kiara Battery Clinic shop address Coimbatore">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-location.svg" width="20" height="20" style="filter: brightness(0) invert(1);" alt="Kiara Battery Clinic shop address Coimbatore">
                             </div>
                             <div class="footer-contact-content">
                                 <p><a href="https://maps.app.goo.gl/ttQckMunQZZrcVq66" target="_blank" rel="noopener">36, 9th Street, Tatabad, Coimbatore - 641 012, Tamil Nadu</a></p>
@@ -51,15 +51,15 @@
                         </div>
                         <div class="footer-contact-item">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-mail.svg" style="filter: brightness(0) invert(1);" alt="Email Kiara Battery Clinic">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-mail.svg" width="20" height="20" style="filter: brightness(0) invert(1);" alt="Email Kiara Battery Clinic">
                             </div>
                             <div class="footer-contact-content">
-                                <p><a href="mailto:enquiry@kiarabatteryclinic.com">enquiry@kiarabatteryclinic.com</a></p>
+                                <p><a href="mailto:kiarabatteryclinic@gmail.com">kiarabatteryclinic@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="footer-contact-item">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" style="filter: brightness(0) invert(1);" alt="Call Kiara Battery Clinic 24/7">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" width="20" height="20" style="filter: brightness(0) invert(1);" alt="Call Kiara Battery Clinic 24/7">
                             </div>
                             <div class="footer-contact-content">
                                 <p><a href="tel:+91 90038 11107">+91 90038 11107</a> &nbsp;|&nbsp; <a href="https://wa.link/w646lw" target="_blank" rel="noopener">WhatsApp</a></p>
@@ -138,35 +138,47 @@
                         <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="member-contact-form contact-form">
-                        <form id="contactForm" action="#" method="POST" data-toggle="validator">
+                        <form id="quoteForm" action="<?php echo base_url('contactFormSave'); ?>" method="POST" data-toggle="validator" class="enquiry-form">
+                            <input type="hidden" name="form_source" value="Get a Free Quote (Popup)">
+                            <div class="d-none" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
                             <div class="row">                                
                                 <div class="form-group col-md-6 px-2 mb-3">
-                                    <input type="text" name="full_name" class="form-control" id="full_name" placeholder="First Name" required data-error="Please enter the first name">
+                                    <input type="text" name="full_name" class="form-control" id="quote-full-name" placeholder="First Name" required data-error="Please enter the first name">
                                     <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="form-group col-md-6 px-2 mb-3">
-                                    <input type="text" name="company_name" class="form-control" id="company_name" placeholder="Company Name" required data-error="Please enter the company name">
+                                    <input type="text" name="company_name" class="form-control" id="quote-company-name" placeholder="Company Name" required data-error="Please enter the company name">
                                     <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="form-group col-md-6 px-2 mb-3">
-                                    <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Enter Your Phone No." required data-error="Please enter the phone number">
+                                    <input type="tel" inputmode="tel" maxlength="13" pattern="(\+91|91|0)?[6-9][0-9]{9}" name="phone_number" class="form-control" id="quote-phone" placeholder="Enter Your Phone No." required data-error="Please enter a valid 10-digit mobile number">
                                     <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="form-group col-md-6 px-2 mb-3">
-                                    <input type="email" name ="email" class="form-control" id="email" placeholder="Enter Your E-mail" required data-error="Please enter the email address">
+                                    <input type="email" name ="email" class="form-control" id="quote-email" placeholder="Enter Your E-mail" required data-error="Please enter the email address">
+                                    <div class="help-block with-errors mt-1 ms-1"></div>
+                                </div>
+                                <div class="form-group col-md-6 px-2 mb-3">
+                                    <input type="text" name="city" class="form-control" id="quote-city" placeholder="Your Location" required data-error="Please enter the location">
+                                    <div class="help-block with-errors mt-1 ms-1"></div>
+                                </div>
+                                <div class="form-group col-md-6 px-2 mb-3">
+                                    <select name="service_name" class="form-control form-select" id="quote-service" required data-error="Please select the service you need">
+                                        <option value="">Select the Service You Need</option>
+                                        <?php if (!empty($serviceList)) { foreach ($serviceList as $sItem) { ?>
+                                            <option value="<?php echo htmlspecialchars($sItem->service_name); ?>"<?php echo (!empty($serviceName) && $serviceName === $sItem->service_name) ? ' selected' : ''; ?>><?php echo htmlspecialchars($sItem->service_name); ?></option>
+                                        <?php } } ?>
+                                        <option value="Other / Not Sure">Other / Not Sure</option>
+                                    </select>
                                     <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="form-group col-md-12 px-2 mb-3">
-                                    <input type="text" name="city" class="form-control" id="city" placeholder="Your Location" required data-error="Please enter the location">
-                                    <div class="help-block with-errors mt-1 ms-1"></div>
-                                </div>
-                                <div class="form-group col-md-12 px-2 mb-3">
-                                    <textarea name="message" class="form-control" id="message" rows="4" placeholder="Write Message"></textarea>
+                                    <textarea name="message" class="form-control" id="quote-message" rows="4" placeholder="Write Message"></textarea>
                                     <div class="help-block with-errors mt-1 ms-1"></div>
                                 </div>
                                 <div class="col-md-12 text-center">
                                     <button type="submit" class="btn-default bg-dark"><span>submit message</span></button>
-                                    <div id="msgSubmit" class="h3 hidden"></div>
+                                    <div class="form-msg"></div>
                                 </div>
                             </div>
                         </form>
@@ -176,23 +188,23 @@
         </div>
     </div>
 
-    <script src="<?php echo base_url(); ?>themes/js/jquery-3.7.1.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/validator.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/jquery.slicknav.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/swiper-bundle.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/jquery.waypoints.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/jquery.counterup.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/jquery.magnific-popup.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/SmoothScroll.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/parallaxie.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/gsap.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/magiccursor.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/SplitText.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/ScrollTrigger.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/jquery.mb.YTPlayer.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/wow.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/js/function.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/jquery-3.7.1.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/bootstrap.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/validator.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/jquery.slicknav.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/swiper-bundle.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/jquery.waypoints.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/jquery.counterup.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/jquery.magnific-popup.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/SmoothScroll.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/parallaxie.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/gsap.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/magiccursor.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/SplitText.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/ScrollTrigger.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/jquery.mb.YTPlayer.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/wow.min.js"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/function.js?v=20260923"></script>
 </body>
 
 </html>

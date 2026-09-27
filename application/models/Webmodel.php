@@ -137,30 +137,28 @@ class Webmodel extends CI_Model
     }
 
     //Save Contact Enquiry Form
-    public function saveContactData($contactId, $name, $email, $mobileNumber, $subject, $message)
+    public function saveContactData($name, $email, $mobileNumber, $serviceName, $location, $subject, $message)
     {
-        if ($contactId > 0) {
-            $data = array(
-                'name' => $name,
-                'email' => $email,
-                'mobile_number' => $mobileNumber,
-                'subject' => $subject,
-                'message' => $message
-            );
-            $this->db->where('id', (int) $contactId);
-            $this->db->update('contact_enquiry', $data);
-        } else {
-            $data = array(
-                'name' => $name,
-                'email' => $email,
-                'mobile_number' => $mobileNumber,
-                'subject' => $subject,
-                'message' => $message,
-                'created_at' => date('Y-m-d H:i:s')
-            );
-            $this->db->insert('contact_enquiry', $data);
-            $this->db->insert_id();
+        $data = array(
+            'name' => $name,
+            'email' => $email,
+            'mobile_number' => $mobileNumber,
+            'subject' => $subject,
+            'message' => $message,
+            'created_at' => date('Y-m-d H:i:s')
+        );
+
+        // service_name / location are added by database/schema_updates.sql; keep the form working until it is run
+        $optional = array('location' => array('Location', $location), 'service_name' => array('Service', $serviceName));
+        foreach ($optional as $column => $field) {
+            if ($this->db->field_exists($column, 'contact_enquiry')) {
+                $data[$column] = $field[1];
+            } elseif ($field[1] !== '') {
+                $data['message'] = $field[0] . ': ' . $field[1] . "\n" . $data['message'];
+            }
         }
+
+        return $this->db->insert('contact_enquiry', $data);
     }
 
     //Save Product Enquiry Form

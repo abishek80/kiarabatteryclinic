@@ -75,6 +75,8 @@ CREATE TABLE `contact_enquiry` (
   `name` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `mobile_number` varchar(50) DEFAULT NULL,
+  `service_name` varchar(200) DEFAULT NULL,
+  `location` varchar(150) DEFAULT NULL,
   `subject` text DEFAULT NULL,
   `message` longtext DEFAULT NULL,
   `delete_status` int(5) NOT NULL DEFAULT 0,
