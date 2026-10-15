@@ -204,7 +204,7 @@
     <script defer src="<?php echo base_url(); ?>themes/js/ScrollTrigger.min.js"></script>
     <script defer src="<?php echo base_url(); ?>themes/js/jquery.mb.YTPlayer.min.js"></script>
     <script defer src="<?php echo base_url(); ?>themes/js/wow.min.js"></script>
-    <script defer src="<?php echo base_url(); ?>themes/js/function.js?v=20260923"></script>
+    <script defer src="<?php echo base_url(); ?>themes/js/function.js?v=20261016"></script>
 </body>
 
 </html>

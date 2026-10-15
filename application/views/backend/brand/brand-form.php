@@ -21,8 +21,11 @@
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="d-flex justify-content-between align-items-center">
                         <label class="fw-13 fw-bold text-dark mb-2 fs-14px">Brand Image / Logo</label>
-                        <?php if(!empty($brandImg)) { ?>
-                            <a href="<?php echo base_url() . $brandImg; ?>" data-lightbox="roadtrip" class="text-primary fs-14px fw-bold"><i class="bx bx-show-alt me-1"></i> Preview Current Image</a>
+                        <?php if(!empty($brandImg)) { 
+                            $bPath = ltrim((string)$brandImg, './');
+                            $bUrl = (strpos($brandImg, 'http') === 0) ? $brandImg : base_url($bPath);
+                        ?>
+                            <a href="<?php echo $bUrl; ?>" data-lightbox="roadtrip" class="text-primary fs-14px fw-bold"><i class="bx bx-show-alt me-1"></i> Preview Current Image</a>
                         <?php } ?>
                     </div>
                     <input name="brand_img" id="brand_img" type="file" class="form-control" accept="image/*">

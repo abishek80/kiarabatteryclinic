@@ -510,6 +510,44 @@ body {
 	font-size: 14px;
 }
 
+/* High-contrast validation error text on red / theme backgrounds (e.g. Popup Quote Modal) */
+#exampleModalToggle .help-block.with-errors ul li,
+.modal-body.bg-theme .help-block.with-errors ul li,
+.bg-theme .help-block.with-errors ul li {
+	color: #ffffff !important;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 1.4;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+	margin-top: 3px;
+}
+
+#exampleModalToggle .help-block.with-errors ul li::before,
+.modal-body.bg-theme .help-block.with-errors ul li::before,
+.bg-theme .help-block.with-errors ul li::before {
+	content: "⚠ ";
+	color: #ffeb3b;
+	font-weight: 700;
+	font-size: 13px;
+	margin-right: 3px;
+}
+
+#exampleModalToggle .form-msg,
+.bg-theme .form-msg {
+	color: #ffffff !important;
+	font-weight: 600;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+#exampleModalToggle .form-msg.text-danger,
+.bg-theme .form-msg.text-danger,
+#exampleModalToggle .form-msg.text-success,
+.bg-theme .form-msg.text-success {
+	color: #ffffff !important;
+	background: rgba(0, 0, 0, 0.45) !important;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
 /************************************/
 /**** 	   03. Header css		 ****/
 /************************************/
@@ -680,6 +718,50 @@ header.main-header .header-sticky.active {
 .main-menu ul li a:hover,
 .main-menu ul li a:focus {
 	color: var(--accent-color);
+}
+
+.main-menu ul > li.active > a,
+.main-menu ul > li > a.active,
+.main-menu ul > li.active > a:hover,
+.main-menu ul > li.active > a:focus {
+	color: var(--accent-color) !important;
+	font-weight: 600;
+	position: relative;
+}
+
+.main-menu ul > li.active > a::before,
+.main-menu ul > li > a.active::before {
+	content: '';
+	position: absolute;
+	bottom: 8px;
+	left: 15px;
+	right: 15px;
+	height: 2px;
+	background-color: var(--accent-color);
+	border-radius: 2px;
+}
+
+.main-menu ul > li.submenu.active > a::before {
+	right: 32px;
+}
+
+.main-menu ul ul li.active > a,
+.main-menu ul ul li a.active {
+	color: var(--accent-color) !important;
+	font-weight: 600;
+	padding-left: 25px !important;
+}
+
+.main-menu ul ul li.active > a::before,
+.main-menu ul ul li a.active::before {
+	display: none !important;
+}
+
+.slicknav_nav li.active > a,
+.slicknav_nav li a.active {
+	background-color: rgba(255, 255, 255, 0.2) !important;
+	color: var(--white-color) !important;
+	font-weight: 700;
 }
 
 .main-menu ul ul {
@@ -2473,6 +2555,7 @@ header.main-header .header-sticky.active {
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
+	object-fit: cover;
 }
 
 .testimonial-body .author-content {
@@ -2564,6 +2647,7 @@ header.main-header .header-sticky.active {
 .testimonial-company-slider .company-logo img {
 	width: 100%;
 	max-height: 40px;
+	object-fit: contain;
 }
 
 /************************************/

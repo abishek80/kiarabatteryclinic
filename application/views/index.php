@@ -214,9 +214,12 @@
                                 <?php foreach($serviceList as $index => $s): ?>
                                     <?php 
                                         $num = sprintf('%02d', $index + 1);
-                                        $img_src = (strpos($s->service_img, 'http') === 0 || strpos($s->service_img, 'uploads/') === 0 || strpos($s->service_img, 'themes/') === 0) 
-                                            ? base_url($s->service_img) 
-                                            : base_url('uploads/services/' . $s->service_img);
+                                        $srv_path = ltrim((string)$s->service_img, './');
+                                        $img_src = (strpos($s->service_img, 'http') === 0)
+                                            ? $s->service_img
+                                            : ((strpos($srv_path, 'uploads/') === 0 || strpos($srv_path, 'themes/') === 0)
+                                                ? base_url($srv_path)
+                                                : base_url('uploads/service_img/' . $srv_path));
                                         $sToken = !empty($s->token) ? $s->token : $s->id;
                                         $detail_url = base_url('service/' . $sToken);
                                     ?>
@@ -250,6 +253,9 @@
                         </div>
                         <div class="services-pagination"></div>
                     </div>
+                </div>
+                <div class="col-lg-12 text-center mt-4 wow fadeInUp">
+                    <a href="<?php echo base_url(); ?>services" class="btn-default"><span>View All Services</span></a>
                 </div>
             </div>
         </div>
@@ -591,9 +597,12 @@
                             <?php if(!empty($brandList)): ?>
                                 <?php foreach($brandList as $b): ?>
                                     <?php 
-                                        $img_src = (strpos($b->brand_img, 'http') === 0 || strpos($b->brand_img, 'uploads/') === 0 || strpos($b->brand_img, 'themes/') === 0) 
-                                            ? base_url($b->brand_img) 
-                                            : base_url('uploads/brands/' . $b->brand_img);
+                                        $brand_path = ltrim((string)$b->brand_img, './');
+                                        $img_src = (strpos($b->brand_img, 'http') === 0)
+                                            ? $b->brand_img
+                                            : ((strpos($brand_path, 'uploads/') === 0 || strpos($brand_path, 'themes/') === 0)
+                                                ? base_url($brand_path)
+                                                : base_url('uploads/brand_img/' . $brand_path));
                                     ?>
                                     <div class="swiper-slide">
                                         <div class="company-logo">

@@ -230,13 +230,16 @@
                             <?php if(!empty($brandList)): ?>
                                 <?php foreach($brandList as $b): ?>
                                     <?php 
-                                        $img_src = (strpos($b->brand_img, 'http') === 0 || strpos($b->brand_img, 'uploads/') === 0 || strpos($b->brand_img, 'themes/') === 0) 
-                                            ? base_url($b->brand_img) 
-                                            : base_url('uploads/brands/' . $b->brand_img);
+                                        $brand_path = ltrim((string)$b->brand_img, './');
+                                        $img_src = (strpos($b->brand_img, 'http') === 0)
+                                            ? $b->brand_img
+                                            : ((strpos($brand_path, 'uploads/') === 0 || strpos($brand_path, 'themes/') === 0)
+                                                ? base_url($brand_path)
+                                                : base_url('uploads/brand_img/' . $brand_path));
                                     ?>
                                     <div class="swiper-slide">
                                         <div class="company-logo">
-                                            <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($b->brand_name); ?> <br> - Kiara Battery Clinic Partner Brand">
+                                            <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($b->brand_name); ?> - Kiara Battery Clinic Partner Brand">
                                         </div>
                                     </div>
                                 <?php endforeach; ?>

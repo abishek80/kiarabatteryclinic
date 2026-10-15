@@ -32,9 +32,12 @@
                             <td><?php echo $i++; ?></td>
                             <td>
                                 <?php 
-                                    $img_src = (strpos($row->service_img, 'http') === 0 || strpos($row->service_img, 'uploads/') === 0 || strpos($row->service_img, 'themes/') === 0) 
-                                        ? base_url($row->service_img) 
-                                        : base_url('uploads/services/' . $row->service_img);
+                                    $srv_path = ltrim((string)$row->service_img, './');
+                                    $img_src = (strpos($row->service_img, 'http') === 0)
+                                        ? $row->service_img
+                                        : ((strpos($srv_path, 'uploads/') === 0 || strpos($srv_path, 'themes/') === 0)
+                                            ? base_url($srv_path)
+                                            : base_url('uploads/service_img/' . $srv_path));
                                 ?>
                                 <?php if(!empty($row->service_img)) { ?>
                                     <img src="<?php echo $img_src; ?>" style="width: 60px; height: 50px; object-fit: cover;" class="rounded border shadow-sm" alt="Service Image">

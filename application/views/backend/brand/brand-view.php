@@ -12,9 +12,12 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-4 text-center">
-                    <?php if(!empty($brandImg)) { ?>
-                        <a href="<?php echo base_url() . $brandImg; ?>" data-lightbox="roadtrip">
-                            <img src="<?php echo base_url() . $brandImg; ?>" class="img-fluid rounded border p-2" style="max-height: 200px; object-fit: contain;" alt="Brand Logo">
+                    <?php if(!empty($brandImg)) { 
+                        $bPath = ltrim((string)$brandImg, './');
+                        $bUrl = (strpos($brandImg, 'http') === 0) ? $brandImg : base_url($bPath);
+                    ?>
+                        <a href="<?php echo $bUrl; ?>" data-lightbox="roadtrip">
+                            <img src="<?php echo $bUrl; ?>" class="img-fluid rounded border p-2" style="max-height: 200px; object-fit: contain;" alt="Brand Logo">
                         </a>
                     <?php } else { ?>
                         <div class="p-4 bg-light rounded text-muted">No Image Uploaded</div>

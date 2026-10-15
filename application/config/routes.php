@@ -57,6 +57,7 @@ $controller_exceptions = array('web', 'login', 'admin', 'admin_blog', 'admin_ser
 
 // route
 $route['default_controller'] = $default_controller;
+$route['image-sitemap.xml'] = 'web/image_sitemap';
 $route["^(".implode('|', $language_alias).")/(".implode('|', $controller_exceptions).")(.*)"] = '$2';
 $route["^(".implode('|', $language_alias).")?/(.*)"] = $default_controller.'/$2';
 $route["^((?!\b".implode('\b|\b', $controller_exceptions)."\b).*)$"] = $default_controller.'/$1';

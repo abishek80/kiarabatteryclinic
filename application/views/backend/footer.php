@@ -7,7 +7,6 @@
     <script src="<?php echo base_url(); ?>themes/backend/js/admin.js"></script>
     <script src="<?php echo base_url(); ?>themes/backend/js/jquery.sweet-alert.custom.js"></script>
     <script src="<?php echo base_url(); ?>themes/backend/js/sweetalert.min.js"></script>
-    <script src="<?php echo base_url(); ?>themes/backend/js/lightbox-plus-jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>themes/backend/js/dropzone.js"></script>
     
     <script src="<?php echo base_url(); ?>themes/backend/vendor/js/helpers.js"></script>

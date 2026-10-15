@@ -77,9 +77,28 @@ if (!function_exists('render_seo_tags')) {
         $html .= '	<meta name="title" content="' . $meta['title'] . '">' . "\n";
         $html .= '	<meta name="description" content="' . $meta['description'] . '">' . "\n";
         $html .= '	<meta name="keywords" content="' . $meta['keywords'] . '">' . "\n";
-        $html .= '	<meta name="robots" content="' . $meta['robots'] . '">' . "\n";
-        $html .= '	<meta name="googlebot" content="' . $meta['robots'] . '">' . "\n";
+        
+        // Robots & Crawlers (max-image-preview:large enables Google Discover and large search thumbnails)
+        $robots = $meta['robots'];
+        if (strpos($robots, 'max-image-preview') === false && strpos($robots, 'noindex') === false) {
+            $robots .= ', max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+        }
+        $html .= '	<meta name="robots" content="' . $robots . '">' . "\n";
+        $html .= '	<meta name="googlebot" content="' . $robots . '">' . "\n";
+        $html .= '	<meta name="bingbot" content="' . $robots . '">' . "\n";
         $html .= '	<link rel="canonical" href="' . $meta['canonical'] . '">' . "\n";
+        
+        // Geo-Targeting / Local SEO (Coimbatore, Tamil Nadu)
+        $html .= '	<meta name="geo.region" content="IN-TN">' . "\n";
+        $html .= '	<meta name="geo.placename" content="Coimbatore">' . "\n";
+        $html .= '	<meta name="geo.position" content="11.016647;76.950577">' . "\n";
+        $html .= '	<meta name="ICBM" content="11.016647, 76.950577">' . "\n";
+        $html .= '	<meta name="language" content="English">' . "\n";
+
+        // Google Search Console verification if configured
+        if (!empty($meta['business_info']['google_site_verification'])) {
+            $html .= '	<meta name="google-site-verification" content="' . $meta['business_info']['google_site_verification'] . '">' . "\n";
+        }
         
         // Open Graph (WhatsApp, Facebook, LinkedIn, iMessage)
         $html .= '	<meta property="og:site_name" content="' . $meta['site_name'] . '">' . "\n";
@@ -92,6 +111,8 @@ if (!function_exists('render_seo_tags')) {
         $html .= '	<meta property="og:image:type" content="image/jpeg">' . "\n";
         $html .= '	<meta property="og:image:width" content="1200">' . "\n";
         $html .= '	<meta property="og:image:height" content="630">' . "\n";
+        $html .= '	<meta property="og:locale" content="en_IN">' . "\n";
+        $html .= '	<meta property="og:locale:alternate" content="ta_IN">' . "\n";
 
         // Twitter / X Card
         $html .= '	<meta name="twitter:card" content="summary_large_image">' . "\n";
@@ -108,7 +129,7 @@ if (!function_exists('render_seo_tags')) {
  * Render structured JSON-LD Schema.org scripts (Organization, LocalBusiness, BreadcrumbList, FAQPage, Service)
  */
 if (!function_exists('render_schema_jsonld')) {
-    function render_schema_jsonld($meta, $faq_items = null) {
+    function render_schema_jsonld($meta, $faq_items = null, $testimonial_items = null) {
         $b = $meta['business_info'];
         $site_url = $meta['site_url'];
 
@@ -168,15 +189,48 @@ if (!function_exists('render_schema_jsonld')) {
                 'Industrial Power Back-up Systems',
                 'Rooftop Solar Panel Installation'
             ),
+            'currenciesAccepted' => 'INR',
+            'paymentAccepted' => 'Cash, Credit Card, Debit Card, UPI, Net Banking',
             'hasMap' => $b['google_maps']
         );
 
-        // 3. WebSite Schema
+        // AggregateRating must reflect real, first-party review data only — never a
+        // fixed/invented number. Computed here from the actual admin-managed testimonial
+        // list (same reviews already shown with star icons on the page), and only added
+        // when there is at least one genuine rated review.
+        if (!empty($testimonial_items)) {
+            $ratings = array();
+            foreach ($testimonial_items as $t) {
+                $star = is_object($t) ? (isset($t->star) ? (int) $t->star : null) : (isset($t['star']) ? (int) $t['star'] : null);
+                if ($star >= 1 && $star <= 5) {
+                    $ratings[] = $star;
+                }
+            }
+            if (!empty($ratings)) {
+                $local_schema['aggregateRating'] = array(
+                    '@type' => 'AggregateRating',
+                    'ratingValue' => (string) round(array_sum($ratings) / count($ratings), 1),
+                    'reviewCount' => (string) count($ratings),
+                    'bestRating' => '5',
+                    'worstRating' => '1'
+                );
+            }
+        }
+
+        // 3. WebSite Schema (with Google Sitelinks Searchbox action)
         $website_schema = array(
             '@context' => 'https://schema.org',
             '@type' => 'WebSite',
             'name' => $b['name'],
-            'url' => $site_url
+            'url' => $site_url,
+            'potentialAction' => array(
+                '@type' => 'SearchAction',
+                'target' => array(
+                    '@type' => 'EntryPoint',
+                    'urlTemplate' => $site_url . 'services?q={search_term_string}'
+                ),
+                'query-input' => 'required name=search_term_string'
+            )
         );
 
         // 4. BreadcrumbList Schema

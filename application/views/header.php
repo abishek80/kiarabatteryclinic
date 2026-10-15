@@ -20,15 +20,28 @@
         $schema_faq_source = $faqList;
     }
     echo render_seo_tags($meta);
-    echo render_schema_jsonld($meta, $schema_faq_source);
+    echo render_schema_jsonld($meta, $schema_faq_source, isset($testimonialList) ? $testimonialList : null);
 ?>
+	<!-- Favicon & Touch Icons for Google SERP & Mobile Browsers -->
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>themes/images/fav-icon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url(); ?>themes/images/fav-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url(); ?>themes/images/fav-icon.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url(); ?>themes/images/fav-icon.png">
+
+	<!-- Mobile Browser & PWA UI Signals -->
+	<meta name="theme-color" content="#d11400">
+	<meta name="msapplication-TileColor" content="#d11400">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="apple-mobile-web-app-title" content="Kiara Battery Clinic">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- Search Engine Sitemap Discovery -->
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="<?php echo base_url('sitemap.xml'); ?>">
 	<?php if (uri_string() === '') { ?>
 	<link rel="preload" as="image" href="<?php echo base_url(); ?>themes/images/hero-bg.jpg" fetchpriority="high">
 	<?php } ?>
-	<link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Onest:wght@100..900&amp;display=swap" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>themes/css/fonts.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>themes/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="<?php echo base_url(); ?>themes/css/slicknav.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/swiper-bundle.min.css">
@@ -37,7 +50,7 @@
 	<noscript><link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/animate.css"></noscript>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/magnific-popup.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/mousecursor.css">
-	<link href="<?php echo base_url(); ?>themes/css/custom.css?v=20260923" rel="stylesheet" media="screen">
+	<link href="<?php echo base_url(); ?>themes/css/custom.css?v=20261016" rel="stylesheet" media="screen">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-49VNNWKB6M"></script>
@@ -112,27 +125,39 @@
                                         $serviceList = $CI->webmodel->serviceList();
                                     }
                                 }
+
+                                $curr_method = isset($this->router->method) ? $this->router->method : '';
+                                $seg1 = isset($this->uri) ? $this->uri->segment(1) : '';
+                                $seg2 = isset($this->uri) ? $this->uri->segment(2) : '';
+
+                                $is_home = ($curr_method === 'index') || empty($seg1) || $seg1 === 'index' || ($seg1 === 'web' && empty($seg2));
+                                $is_about = ($curr_method === 'about_us') || in_array($seg1, array('about-us', 'about_us'));
+                                $is_services = in_array($curr_method, array('services', 'service_detail')) || in_array($seg1, array('services', 'service'));
+                                $is_gallery = ($curr_method === 'gallery') || ($seg1 === 'gallery');
+                                $is_testimonials = ($curr_method === 'testimonials') || ($seg1 === 'testimonials');
+                                $is_contact = ($curr_method === 'contact_us') || in_array($seg1, array('contact-us', 'contact_us'));
                             ?>
                             <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>about-us">About Us</a></li>
-                                <li class="nav-item submenu"><a class="nav-link" href="<?php echo base_url(); ?>services">Our Services</a>
+                                <li class="nav-item <?php echo $is_home ? 'active' : ''; ?>"><a class="nav-link <?php echo $is_home ? 'active' : ''; ?>" href="<?php echo base_url(); ?>">Home</a></li>
+                                <li class="nav-item <?php echo $is_about ? 'active' : ''; ?>"><a class="nav-link <?php echo $is_about ? 'active' : ''; ?>" href="<?php echo base_url(); ?>about-us">About Us</a></li>
+                                <li class="nav-item submenu <?php echo $is_services ? 'active' : ''; ?>"><a class="nav-link <?php echo $is_services ? 'active' : ''; ?>" href="<?php echo base_url(); ?>services">Our Services</a>
                                     <ul>
                                         <?php 
                                             if (!empty($serviceList)) {
                                                 foreach ($serviceList as $sItem) {
                                                     $sToken = !empty($sItem->token) ? $sItem->token : $sItem->id;
+                                                    $is_curr_sub = ($seg1 === 'service' && $seg2 == $sToken);
                                         ?>
-                                            <li class="nav-item"><a class="nav-link" href="<?php echo base_url('service/' . $sToken); ?>"><?php echo htmlspecialchars($sItem->service_name); ?></a></li>
+                                            <li class="nav-item <?php echo $is_curr_sub ? 'active' : ''; ?>"><a class="nav-link <?php echo $is_curr_sub ? 'active' : ''; ?>" href="<?php echo base_url('service/' . $sToken); ?>"><?php echo htmlspecialchars($sItem->service_name); ?></a></li>
                                         <?php 
                                                 }
                                             }
                                         ?>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>gallery">Gallery</a></li>
-                                <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>testimonials">Testimonials</a></li>
-                                <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>contact-us">Contact Us</a></li>
+                                <li class="nav-item <?php echo $is_gallery ? 'active' : ''; ?>"><a class="nav-link <?php echo $is_gallery ? 'active' : ''; ?>" href="<?php echo base_url(); ?>gallery">Gallery</a></li>
+                                <li class="nav-item <?php echo $is_testimonials ? 'active' : ''; ?>"><a class="nav-link <?php echo $is_testimonials ? 'active' : ''; ?>" href="<?php echo base_url(); ?>testimonials">Testimonials</a></li>
+                                <li class="nav-item <?php echo $is_contact ? 'active' : ''; ?>"><a class="nav-link <?php echo $is_contact ? 'active' : ''; ?>" href="<?php echo base_url(); ?>contact-us">Contact Us</a></li>
                             </ul>
                         </div>
                         <div class="header-contact-btn">

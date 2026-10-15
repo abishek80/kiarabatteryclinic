@@ -165,9 +165,9 @@ class Admin_service extends CI_Controller
         if (isset($_FILES['service_img']) && $_FILES['service_img']['name'] != '') {
             $filesArray = $_FILES['service_img'];
             $uploadedFiles['service_img'] = $this->common->fileUpload($filesArray, $photoUploadDir, $allowTypes);
-            $service_img = $uploadedFiles['service_img'][0];
+            $service_img = !empty($uploadedFiles['service_img'][0]) ? ltrim($uploadedFiles['service_img'][0], './') : '';
         } else {
-            $service_img = $alterServicePhoto;
+            $service_img = !empty($alterServicePhoto) ? ltrim($alterServicePhoto, './') : '';
         }
 
         if (empty($token)) {

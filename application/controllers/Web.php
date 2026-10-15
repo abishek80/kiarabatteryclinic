@@ -14,6 +14,18 @@ class Web extends CI_Controller {
         ));
     }
 
+    // Dynamic image sitemap so Google Images can discover real gallery photos
+    // without a static file going stale every time one is added/removed via admin.
+    public function image_sitemap()
+    {
+        $this->output->set_content_type('application/xml');
+
+        $data['site_url'] = rtrim(base_url(), '/');
+        $data['galleryList'] = $this->webmodel->galleryList();
+
+        $this->load->view('image_sitemap', $data);
+    }
+
     public function index()
     {
         $data['meta'] = get_seo_meta('home');
@@ -177,12 +189,13 @@ class Web extends CI_Controller {
     
     public function service($serviceParam = '')
     {
-        $data['meta'] = get_seo_meta('service_detail');
-        $data['metaTitle'] = $data['meta']['title'];
-        $data['metaDescription'] = $data['meta']['description'];
-        $data['metaKeyword'] = $data['meta']['keywords'];
-
         $data['serviceList'] = $this->webmodel->serviceList();
+
+        // Every service page must get its OWN title/description/canonical/breadcrumb —
+        // sharing the generic 'service_detail' config for all of them made every service
+        // page look like a duplicate of the others (same meta + a canonical pointing at
+        // the bare /service URL), which kept Google from indexing most of them.
+        $customMeta = array();
 
         $serviceDetail = $this->webmodel->serviceDetail($serviceParam);
         if (!empty($serviceDetail)) {
@@ -201,20 +214,34 @@ class Web extends CI_Controller {
                 $data['serviceImg'] = $row->service_img;
 
                 if (!empty($row->service_name)) {
-                    $data['meta']['title'] = $row->service_name . " | Kiara Battery Clinic Coimbatore";
-                    $data['metaTitle'] = $data['meta']['title'];
+                    $slug = !empty($row->token) ? $row->token : $row->id;
+                    $customMeta['title'] = $row->service_name . ' | Kiara Battery Clinic Coimbatore';
+                    $customMeta['description'] = !empty($row->short_description)
+                        ? trim(strip_tags($row->short_description))
+                        : trim(mb_substr(strip_tags((string) $row->description), 0, 160));
+                    $customMeta['canonical'] = 'service/' . $slug;
+                    $customMeta['crumb_title'] = $row->service_name;
                 }
             }
         }
+
+        $data['meta'] = get_seo_meta('service_detail', $customMeta);
+        $data['metaTitle'] = $data['meta']['title'];
+        $data['metaDescription'] = $data['meta']['description'];
+        $data['metaKeyword'] = $data['meta']['keywords'];
 
         $this->load->view('header', $data);
         $this->load->view('service_detail', $data);
         $this->load->view('footer', $data);
     }
     
+    // Category/product catalog is hidden for now (placeholder catalog, not real
+    // inventory) but kept live and working — not deleted — so it can be switched
+    // back on later. noindex + robots.txt + sitemap/llms removal keep it out of
+    // search in the meantime.
     public function category()
     {
-        $data['meta'] = get_seo_meta('category');
+        $data['meta'] = get_seo_meta('category', array('robots' => 'noindex, nofollow'));
         $data['metaTitle'] = $data['meta']['title'];
         $data['metaDescription'] = $data['meta']['description'];
         $data['metaKeyword'] = $data['meta']['keywords'];
@@ -226,7 +253,7 @@ class Web extends CI_Controller {
 
     public function products($categoryId = '')
     {
-        $data['meta'] = get_seo_meta('products');
+        $data['meta'] = get_seo_meta('products', array('robots' => 'noindex, nofollow'));
         $data['metaTitle'] = $data['meta']['title'];
         $data['metaDescription'] = $data['meta']['description'];
         $data['metaKeyword'] = $data['meta']['keywords'];
@@ -238,7 +265,7 @@ class Web extends CI_Controller {
 
     public function product()
     {
-        $data['meta'] = get_seo_meta('product_detail');
+        $data['meta'] = get_seo_meta('product_detail', array('robots' => 'noindex, nofollow'));
         $data['metaTitle'] = $data['meta']['title'];
         $data['metaDescription'] = $data['meta']['description'];
         $data['metaKeyword'] = $data['meta']['keywords'];

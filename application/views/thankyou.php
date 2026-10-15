@@ -18,7 +18,7 @@
 
 <style>
 .thank-you-page { padding: 100px 0; }
-.thank-you-box { max-width: 820px; margin: 0 auto; text-align: center; }
+.thank-you-box { text-align: center; }
 .thank-you-icon {
     width: 110px;
     height: 110px;
@@ -59,7 +59,7 @@
 </style>
 
 <div class="thank-you-page">
-    <div class="container-fluid px-lg-5">
+    <div class="container">
         <div class="thank-you-box">
             <div class="thank-you-icon wow fadeInUp"><i class="fa-solid fa-check"></i></div>
             <div class="section-title">
@@ -70,21 +70,21 @@
             <div class="row g-4 thank-you-steps">
                 <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="thank-you-step">
-                        <span>01</span>
+                        <span class="d-block mb-3">01</span>
                         <h3>We review</h3>
                         <p>Our team checks the service and location you shared.</p>
                     </div>
                 </div>
                 <div class="col-md-4 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="thank-you-step">
-                        <span>02</span>
+                        <span class="d-block mb-3">02</span>
                         <h3>We call you</h3>
                         <p>We contact you on the number you gave to confirm details.</p>
                     </div>
                 </div>
                 <div class="col-md-4 wow fadeInUp" data-wow-delay="0.6s">
                     <div class="thank-you-step">
-                        <span>03</span>
+                        <span class="d-block mb-3">03</span>
                         <h3>We fix it</h3>
                         <p>A technician visits or we get your order ready at the shop.</p>
                     </div>

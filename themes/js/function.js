@@ -5,9 +5,16 @@
 	var $body = $('body'); 
 
 	/* Preloader Effect */
-	$window.on('load', function(){
-		$(".preloader").fadeOut(600);
+	function hidePreloader() {
+		if ($(".preloader").length && $(".preloader").is(":visible")) {
+			$(".preloader").fadeOut(400);
+		}
+	}
+	$window.on('load', hidePreloader);
+	$(document).ready(function() {
+		setTimeout(hidePreloader, 500);
 	});
+	setTimeout(hidePreloader, 1500);
 
 	/* Sticky Header */	
 	if($('.active-sticky-header').length){

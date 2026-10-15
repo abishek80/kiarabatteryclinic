@@ -31,9 +31,12 @@
                         <tr>
                             <td><?php echo $i++; ?></td>
                             <td>
-                                <?php if(!empty($row->brand_img)) { ?>
-                                    <a href="<?php echo base_url() . $row->brand_img; ?>" data-lightbox="roadtrip">
-                                        <img src="<?php echo base_url() . $row->brand_img; ?>" class="table-card" style="max-height: 50px; object-fit: contain;" alt="Brand Logo">
+                                <?php if(!empty($row->brand_img)) { 
+                                    $bPath = ltrim((string)$row->brand_img, './');
+                                    $bUrl = (strpos($row->brand_img, 'http') === 0) ? $row->brand_img : base_url($bPath);
+                                ?>
+                                    <a href="<?php echo $bUrl; ?>" data-lightbox="roadtrip">
+                                        <img src="<?php echo $bUrl; ?>" class="table-card" style="max-height: 50px; object-fit: contain;" alt="Brand Logo">
                                     </a>
                                 <?php } else { ?>
                                     <span class="badge bg-label-secondary">No Image</span>

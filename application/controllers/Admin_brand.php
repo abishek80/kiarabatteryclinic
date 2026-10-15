@@ -113,9 +113,9 @@ class Admin_brand extends CI_Controller
         if (isset($_FILES['brand_img']) && $_FILES['brand_img']['name'] != '') {
             $filesArray = $_FILES['brand_img'];
             $uploadedFiles['brand_img'] = $this->common->fileUpload($filesArray, $photoUploadDir, $allowTypes);
-            $brand_img = $uploadedFiles['brand_img'][0];
+            $brand_img = !empty($uploadedFiles['brand_img'][0]) ? ltrim($uploadedFiles['brand_img'][0], './') : '';
         } else {
-            $brand_img = $alterBrandImg;
+            $brand_img = !empty($alterBrandImg) ? ltrim($alterBrandImg, './') : '';
         }
 
         if (empty($token)) {

@@ -38,8 +38,6 @@ Kiara Battery Clinic provides sales, installation, maintenance, and doorstep rep
 - [About Us](https://kiarabatteryclinic.com/about-us)
 - [Services Catalog](https://kiarabatteryclinic.com/services)
 - [Photo Gallery](https://kiarabatteryclinic.com/gallery)
-- [Product Categories](https://kiarabatteryclinic.com/category)
-- [Products & Pricing](https://kiarabatteryclinic.com/products)
 - [Customer Reviews](https://kiarabatteryclinic.com/testimonials)
 - [Contact & Location](https://kiarabatteryclinic.com/contact-us)
 - [Privacy Policy](https://kiarabatteryclinic.com/privacy-policy)

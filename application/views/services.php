@@ -40,9 +40,12 @@
                 <?php foreach($serviceList as $index => $s): ?>
                     <?php 
                         $num = sprintf('%02d', $index + 1);
-                        $img_src = (strpos($s->service_img, 'http') === 0 || strpos($s->service_img, 'uploads/') === 0 || strpos($s->service_img, 'themes/') === 0) 
-                            ? base_url($s->service_img) 
-                            : base_url('uploads/services/' . $s->service_img);
+                        $srv_path = ltrim((string)$s->service_img, './');
+                        $img_src = (strpos($s->service_img, 'http') === 0)
+                            ? $s->service_img
+                            : ((strpos($srv_path, 'uploads/') === 0 || strpos($srv_path, 'themes/') === 0)
+                                ? base_url($srv_path)
+                                : base_url('uploads/service_img/' . $srv_path));
                         $sToken = !empty($s->token) ? $s->token : $s->id;
                         $detail_url = base_url('service/' . $sToken);
                     ?>
