@@ -43,14 +43,16 @@
                 <?php foreach ($galleryList as $index => $row): ?>
                     <?php 
                         $delay = ($index % 3) * 0.2;
-                        $imgUrl = (strpos($row->gallery_img, 'http') === 0) ? $row->gallery_img : base_url($row->gallery_img);
-                        $title = !empty($row->gallery_name) ? htmlspecialchars($row->gallery_name) : 'Kiara Battery Clinic Service';
-                        $description = !empty($row->description) ? htmlspecialchars($row->description) : '';
+                        $gPath = ltrim((string)$row->gallery_img, './');
+                        $imgUrl = (strpos($row->gallery_img, 'http') === 0) ? $row->gallery_img : base_url($gPath);
+                        $title = !empty($row->gallery_name) ? htmlspecialchars($row->gallery_name) : 'Best Battery Service and Installation in Coimbatore';
+                        $description = !empty($row->description) ? htmlspecialchars($row->description) : 'Professional battery replacement, UPS inverter setup, and solar panel installation in Coimbatore.';
+                        $seo_alt = $title . ' - Coimbatore Battery, UPS & Solar Installation Service | Kiara Battery Clinic';
                     ?>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <a href="<?php echo $imgUrl; ?>" class="gallery-popup-item gallery-card card border-0 shadow-sm rounded-4 overflow-hidden h-100 text-decoration-none d-block wow fadeInUp" title="<?php echo $title; ?>" data-wow-delay="<?php echo $delay; ?>s">
                             <div class="gallery-img-wrapper position-relative overflow-hidden">
-                                <img src="<?php echo $imgUrl; ?>" class="card-img-top gallery-img" alt="<?php echo $title; ?>">
+                                <img src="<?php echo $imgUrl; ?>" class="card-img-top gallery-img" alt="<?php echo $seo_alt; ?>" title="<?php echo $title; ?> - Kiara Battery Clinic Coimbatore" loading="lazy" decoding="async">
                                 <div class="gallery-overlay d-flex align-items-center justify-content-center">
                                     <span class="btn btn-light rounded-circle shadow-lg p-3">
                                         <i class="fa-solid fa-magnifying-glass-plus fs-4 text-theme"></i>
@@ -66,6 +68,54 @@
                         </a>
                     </div>
                 <?php endforeach; ?>
+
+                <!-- Google Images Structured Data: ImageGallery Schema -->
+                <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "ImageGallery",
+                    "name": "Kiara Battery Clinic Work & Installation Photo Gallery - Coimbatore",
+                    "description": "Photos of car and bike battery doorstep service, home UPS inverter setups, and rooftop solar installations in Coimbatore, Ooty, Pollachi, and Tiruppur.",
+                    "url": "https://kiarabatteryclinic.com/gallery",
+                    "provider": {
+                        "@type": "AutomotiveBusiness",
+                        "name": "Kiara Battery Clinic",
+                        "telephone": "+919003811107",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "36, 9th Street, Tatabad",
+                            "addressLocality": "Coimbatore",
+                            "addressRegion": "Tamil Nadu",
+                            "postalCode": "641012",
+                            "addressCountry": "IN"
+                        }
+                    },
+                    "hasPart": [
+                        <?php 
+                            $jsonImages = array();
+                            foreach ($galleryList as $gRow) {
+                                $imgPath = ltrim((string)$gRow->gallery_img, './');
+                                $imgFullUrl = (strpos($gRow->gallery_img, 'http') === 0) ? $gRow->gallery_img : 'https://kiarabatteryclinic.com/' . $imgPath;
+                                $gTitle = !empty($gRow->gallery_name) ? $gRow->gallery_name : 'Best Battery Service and Installation in Coimbatore';
+                                $gDesc = !empty($gRow->description) ? $gRow->description : 'Doorstep battery replacement, UPS inverter setup, and solar panel installation in Coimbatore by Kiara Battery Clinic.';
+                                
+                                $jsonImages[] = json_encode(array(
+                                    '@type' => 'ImageObject',
+                                    'contentUrl' => $imgFullUrl,
+                                    'name' => $gTitle,
+                                    'caption' => $gDesc . ' - Coimbatore Battery Service',
+                                    'keywords' => 'coimbatore battery service, best battery service and installation, home ups, inverter, solar install, Kiara Battery Clinic',
+                                    'contentLocation' => array(
+                                        '@type' => 'Place',
+                                        'name' => 'Coimbatore, Tamil Nadu, India'
+                                    )
+                                ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+                            }
+                            echo implode(",\n                        ", $jsonImages);
+                        ?>
+                    ]
+                }
+                </script>
             <?php else: ?>
                 <div class="col-12 text-center py-5">
                     <div class="p-5 bg-light rounded-4">

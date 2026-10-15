@@ -54,7 +54,7 @@
                             <div class="service-image">
                                 <a href="<?php echo $detail_url; ?>" data-cursor-text="View">
                                     <figure class="image-anime">
-                                        <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($s->service_name); ?> - Kiara Battery Clinic">
+                                        <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($s->service_name); ?> - Best Battery, UPS, Inverter & Solar Installation Service in Coimbatore" title="<?php echo htmlspecialchars($s->service_name); ?> - Kiara Battery Clinic Coimbatore" loading="lazy" decoding="async">
                                     </figure>
                                 </a>
                             </div>
@@ -117,3 +117,58 @@
         </div>
     </div>
 </div>
+
+<?php if (!empty($serviceList)): ?>
+<!-- Services ImageGallery Structured Data for Google Images -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Battery, UPS, Inverter & Solar Services - Kiara Battery Clinic Coimbatore",
+    "description": "Photo gallery of battery replacement, home UPS inverter setup, and solar panel installation services in Coimbatore, Ooty, Pollachi and Tiruppur by Kiara Battery Clinic.",
+    "url": "https://kiarabatteryclinic.com/services",
+    "provider": {
+        "@type": "AutomotiveBusiness",
+        "name": "Kiara Battery Clinic",
+        "telephone": "+919003811107",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "36, 9th Street, Tatabad",
+            "addressLocality": "Coimbatore",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "641012",
+            "addressCountry": "IN"
+        }
+    },
+    "hasPart": [
+        <?php
+            $svcJsonImages = array();
+            foreach ($serviceList as $sv) {
+                $svPath = ltrim((string)$sv->service_img, './');
+                if ($svPath === '') { continue; }
+                $svFullUrl = (strpos($sv->service_img, 'http') === 0)
+                    ? $sv->service_img
+                    : 'https://kiarabatteryclinic.com/' . ((strpos($svPath, 'uploads/') === 0 || strpos($svPath, 'themes/') === 0)
+                        ? $svPath
+                        : 'uploads/service_img/' . $svPath);
+                $svName = trim(strip_tags($sv->service_name));
+                $svDesc = !empty($sv->short_description) ? trim(strip_tags($sv->short_description)) : 'Best battery service and installation in Coimbatore by Kiara Battery Clinic.';
+
+                $svcJsonImages[] = json_encode(array(
+                    '@type' => 'ImageObject',
+                    'contentUrl' => $svFullUrl,
+                    'name' => $svName . ' - Coimbatore Battery Service',
+                    'caption' => $svDesc . ' - coimbatore battery service, best battery service and installation, home ups, inverter, solar install',
+                    'keywords' => 'coimbatore battery service, best battery service and installation, home ups, inverter, solar install, ' . strtolower($svName) . ', Kiara Battery Clinic',
+                    'contentLocation' => array(
+                        '@type' => 'Place',
+                        'name' => 'Coimbatore, Tamil Nadu, India'
+                    )
+                ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+            }
+            echo implode(",\n        ", $svcJsonImages);
+        ?>
+    ]
+}
+</script>
+<?php endif; ?>

@@ -92,7 +92,12 @@
                             <div class="project-video-box wow fadeInUp" data-wow-delay="0.6s">
                                 <div class="project-video-image">
                                     <figure class="image-anime">
-                                        <img src="<?php echo !empty($serviceImg) ? base_url() . $serviceImg : base_url() . 'themes/images/project-video-image.jpg'; ?>" alt="<?php echo !empty($serviceName) ? $serviceName : 'Kiara Battery Clinic Service'; ?>">
+                                        <?php 
+                                            $sImgPath = !empty($serviceImg) ? ltrim((string)$serviceImg, './') : '';
+                                            $sImgSrc = !empty($sImgPath) ? ((strpos($sImgPath, 'http') === 0) ? $sImgPath : base_url($sImgPath)) : base_url('themes/images/project-video-image.jpg');
+                                            $sName = !empty($serviceName) ? htmlspecialchars($serviceName) : 'Coimbatore Battery Service';
+                                        ?>
+                                        <img src="<?php echo $sImgSrc; ?>" alt="<?php echo $sName; ?> - Best Battery Service, UPS Inverter & Solar Installation in Coimbatore" title="<?php echo $sName; ?> - Kiara Battery Clinic Coimbatore" loading="lazy" decoding="async">
                                     </figure>
                                 </div>
                             </div>

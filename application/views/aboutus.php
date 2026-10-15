@@ -395,3 +395,61 @@
         </div>
     </div>
 </section>
+
+<!-- About Us ImageGallery Structured Data for Google Images -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "About Kiara Battery Clinic - Coimbatore Battery, UPS & Solar Service Team",
+    "description": "Photos of Kiara Battery Clinic technicians, shop, and service operations in Coimbatore - car battery, bike battery, home UPS, inverter and solar installation experts.",
+    "url": "https://kiarabatteryclinic.com/about-us",
+    "provider": {
+        "@type": "AutomotiveBusiness",
+        "name": "Kiara Battery Clinic",
+        "telephone": "+919003811107",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "36, 9th Street, Tatabad",
+            "addressLocality": "Coimbatore",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "641012",
+            "addressCountry": "IN"
+        }
+    },
+    "hasPart": [
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/about-image-1.jpg",
+            "name": "Kiara Battery Clinic Technicians at Work - Coimbatore Battery Service",
+            "caption": "Expert battery technicians at Kiara Battery Clinic providing doorstep car battery and bike battery service in Coimbatore",
+            "keywords": "coimbatore battery service, battery technician coimbatore, doorstep battery service, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/about-image-2.jpg",
+            "name": "Kiara Battery Clinic Battery Shop Coimbatore - Car Battery Bike Battery UPS Solar",
+            "caption": "Kiara Battery Clinic battery shop in Coimbatore - car battery, bike battery, home UPS, inverter and solar service centre",
+            "keywords": "battery shop coimbatore, car battery coimbatore, bike battery coimbatore, ups service coimbatore, solar install coimbatore, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/company-values-image-1.jpg",
+            "name": "Kiara Battery Clinic Coimbatore - Trusted Battery and Power Solutions",
+            "caption": "Trusted battery and power solutions provider in Coimbatore - genuine products, doorstep service, best prices by Kiara Battery Clinic",
+            "keywords": "coimbatore battery service, best battery service and installation, ups, inverter, solar install, Kiara Battery Clinic coimbatore",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/company-values-image-2.jpg",
+            "name": "UPS and Solar Installation Service Coimbatore - Kiara Battery Clinic",
+            "caption": "Home UPS, inverter and solar panel installation service by Kiara Battery Clinic in Coimbatore, Tamil Nadu",
+            "keywords": "ups installation coimbatore, inverter coimbatore, solar install coimbatore, home ups coimbatore, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        }
+    ]
+}
+</script>

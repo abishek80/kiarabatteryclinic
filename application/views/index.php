@@ -1,3 +1,93 @@
+<!-- Homepage ImageGallery Structured Data for Google Images -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Kiara Battery Clinic - Coimbatore Battery, UPS, Inverter & Solar Service Photo Gallery",
+    "description": "Images of car battery replacement, bike battery service, home UPS inverter installation, solar panel setup, and industrial UPS service in Coimbatore, Ooty, Pollachi and Tiruppur by Kiara Battery Clinic.",
+    "url": "https://kiarabatteryclinic.com/",
+    "provider": {
+        "@type": "AutomotiveBusiness",
+        "name": "Kiara Battery Clinic",
+        "telephone": "+919003811107",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "36, 9th Street, Tatabad",
+            "addressLocality": "Coimbatore",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "641012",
+            "addressCountry": "IN"
+        }
+    },
+    "hasPart": [
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/our-goals-img-1.jpg",
+            "name": "Car Battery Replacement Doorstep Service Coimbatore - Kiara Battery Clinic",
+            "caption": "Best battery service and installation - car battery replacement at your doorstep in Coimbatore, Tamil Nadu",
+            "keywords": "coimbatore battery service, best battery service and installation, car battery replacement, doorstep battery service coimbatore, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/our-goals-img-2.jpg",
+            "name": "Home UPS and Inverter Battery Installation Coimbatore",
+            "caption": "Best UPS inverter installation service - home UPS and tubular battery setup in Coimbatore by Kiara Battery Clinic",
+            "keywords": "home ups coimbatore, inverter battery installation coimbatore, best battery service and installation, ups inverter coimbatore, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/our-goals-img-3.jpg",
+            "name": "Solar Panel Installation Coimbatore Ooty Kotagiri - Kiara Battery Clinic",
+            "caption": "Rooftop solar panel installation and solar inverter setup in Coimbatore, Ooty and Nilgiris by Kiara Battery Clinic",
+            "keywords": "solar install coimbatore, solar panel installation coimbatore, solar installation ooty, rooftop solar coimbatore, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/our-goals-img-4.jpg",
+            "name": "Industrial UPS Battery Bank Installation Coimbatore - Kiara Battery Clinic",
+            "caption": "Industrial UPS and battery bank installation for factories and data centres in Coimbatore, Tamil Nadu",
+            "keywords": "industrial ups coimbatore, ups installation coimbatore, inverter battery bank coimbatore, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/facts-image.png",
+            "name": "Kiara Battery Clinic Technician - Doorstep Battery Service Coimbatore",
+            "caption": "Kiara Battery Clinic expert technician providing doorstep battery and UPS service anywhere in Coimbatore",
+            "keywords": "coimbatore battery service, doorstep battery service coimbatore, battery technician coimbatore, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/hero-bg.jpg",
+            "name": "Kiara Battery Clinic - Best Battery Service and Installation Coimbatore",
+            "caption": "Coimbatore's most trusted battery and power solutions expert - car battery, bike battery, home UPS, inverter and solar install",
+            "keywords": "coimbatore battery service, best battery service and installation, ups, inverter, solar install, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/hero-bg-2.jpg",
+            "name": "Solar Panel Installation Service Coimbatore Tamil Nadu - Kiara Battery Clinic",
+            "caption": "Complete rooftop solar installation with government subsidy assistance in Coimbatore, Ooty and across Tamil Nadu",
+            "keywords": "solar install coimbatore, solar panel installation tamil nadu, solar coimbatore, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        },
+        {
+            "@type": "ImageObject",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/og-share-banner.jpg",
+            "name": "Kiara Battery Clinic Coimbatore - Battery UPS Solar Service",
+            "caption": "Best battery service and installation in Coimbatore - car battery, bike battery, home UPS, inverter, solar install by Kiara Battery Clinic",
+            "keywords": "coimbatore battery service, best battery service and installation, ups, inverter, solar install, Kiara Battery Clinic",
+            "contentLocation": {"@type": "Place", "name": "Coimbatore, Tamil Nadu, India"}
+        }
+    ]
+}
+</script>
+
 <div class="hero hero-bg-image hero-slider-layout bg-section dark-section">
     <div class="swiper">
         <div class="swiper-wrapper">
@@ -112,25 +202,25 @@
                     <div class="goals-image-box">
                         <div class="goals-img-1">
                             <figure class="image-anime reveal">
-                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-1.jpg" alt="Kiara Battery Clinic technician installing car battery in Coimbatore">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-1.jpg" alt="Coimbatore Battery Service - Best Car and Bike Battery Replacement & Doorstep Fitting" title="Coimbatore Battery Service - Kiara Battery Clinic">
                             </figure>
                         </div>
                         
                         <div class="goals-img-2">
                             <figure class="image-anime reveal">
-                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-2.jpg" alt="Home UPS installation service in Coimbatore">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-2.jpg" alt="Best Battery Service and Installation - Home UPS, Inverter & Tubular Battery Setup in Coimbatore" title="Home UPS and Inverter Installation Coimbatore">
                             </figure>
                         </div>
                     </div>
                     <div class="goals-image-box">
                         <div class="goals-img-3">
                             <figure class="image-anime reveal">
-                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-3.jpg" alt="Solar panel setup in Ooty and Coimbatore by Kiara Battery Clinic">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-3.jpg" alt="Rooftop Solar Panel Installation and Service in Coimbatore and Nilgiris" title="Solar Panel Installation Coimbatore - Kiara Battery Clinic">
                             </figure>
                         </div>
                         <div class="goals-img-4">
                             <figure class="image-anime reveal">
-                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-4.jpg" alt="Industrial UPS installation service in Tamil Nadu">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-4.jpg" alt="Industrial UPS Inverter Battery Bank Installation and Maintenance Coimbatore" title="Industrial Power Backup and Battery Service Coimbatore">
                             </figure>
                         </div>
                     </div>
