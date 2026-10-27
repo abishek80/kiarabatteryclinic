@@ -40,7 +40,7 @@
 
                 <div class="col-lg-12 col-sm-12">
                     <label class="w-100 fw-bold text-dark mb-2 fs-14px">FAQ Title / Question <span class="text-danger">*</span></label>
-                    <input name="title" id="title" type="text" class="form-control" placeholder="Enter Question (e.g. Do you provide 24/7 doorstep battery service?)" value="<?php echo htmlspecialchars($title); ?>" required>
+                    <input name="title" id="title" type="text" class="form-control" placeholder="Enter Question (e.g. Do you provide doorstep battery service?)" value="<?php echo htmlspecialchars($title); ?>" required>
                 </div>
 
                 <div class="col-lg-12 col-sm-12">

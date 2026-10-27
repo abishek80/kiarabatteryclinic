@@ -51,17 +51,6 @@
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <label class="fw-bold text-dark mb-2 fs-14px">Reviewer Image / Avatar (Optional)</label>
-                        <?php if(!empty($reviewerImg)) { ?>
-                            <a href="<?php echo (strpos($reviewerImg, 'http') === 0) ? $reviewerImg : base_url() . $reviewerImg; ?>" target="_blank" class="text-primary fs-14px fw-bold"><i class="bx bx-show-alt me-1"></i> Preview Current Image</a>
-                        <?php } ?>
-                    </div>
-                    <input name="reviewer_img" id="reviewer_img" type="file" class="form-control" accept="image/*">
-                    <input type="hidden" value="<?php echo $reviewerImg; ?>" name="alter_reviewer_img">
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-12">
                     <label class="w-100 fw-bold text-dark mb-2 fs-14px">Status</label>
                     <select name="status" id="status" class="form-select">
                         <option value="active" <?php echo ($status == 'active') ? 'selected' : ''; ?>>Active</option>

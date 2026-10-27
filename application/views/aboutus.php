@@ -24,7 +24,7 @@
                     <div class="section-title">
                         <h3 class="wow fadeInUp">About Kiara Battery Clinic</h3>
                         <h2 class="text-anime-style-2" data-cursor="-opaque">Your trusted partner for <span>battery, UPS & solar solutions</span></h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">Kiara Battery Clinic is one of Coimbatore's leading battery and power solutions providers. With years of hands-on experience, we specialize in bike battery, car battery, home UPS, industrial UPS, inverter installation, and complete solar power systems. We proudly serve customers in Coimbatore, Ooty, Kotagiri, Pollachi, Tiruppur and all nearby areas with fast doorstep service and genuine products.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">Kiara Battery Clinic is one of Coimbatore's leading battery and power solutions providers. With 6+ years of hands-on experience, we specialize in bike battery, car battery, home UPS, industrial UPS, inverter installation, and complete solar power systems. We proudly serve customers in Coimbatore, Ooty, Kotagiri, Pollachi, Tiruppur and all nearby areas with fast doorstep service and genuine products.</p>
                     </div>
                     <div class="about-content-body wow fadeInUp" data-wow-delay="0.4s">
                         <div class="about-service-item">
@@ -38,11 +38,11 @@
                         </div>
                         <div class="about-service-item">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-about-service-2.svg" alt="24/7 doorstep battery service Coimbatore Ooty Pollachi">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-about-service-2.svg" alt="Doorstep battery service Coimbatore Ooty Pollachi Monday to Saturday 9AM to 10PM">
                             </div>
                             <div class="about-service-item-content">
-                                <h3>24/7 Doorstep Battery & UPS Service</h3>
-                                <p>Our trained technicians come directly to your home, office or roadside - available round-the-clock across Coimbatore and surrounding areas.</p>
+                                <h3>Doorstep Battery & UPS Service</h3>
+                                <p>Our trained technicians come directly to your home, office or roadside - available Monday to Saturday, 9AM to 10PM across Coimbatore and surrounding areas.</p>
                             </div>
                         </div>
                     </div>
@@ -55,10 +55,10 @@
                 <div class="about-images">
                     <div class="about-experience-box wow fadeInUp">
                         <div class="icon-box">
-                            <img src="<?php echo base_url(); ?>themes/images/icon-about-experience.svg" alt="10+ years battery service experience in Coimbatore">
+                            <img src="<?php echo base_url(); ?>themes/images/icon-about-experience.svg" alt="6+ years battery service experience in Coimbatore">
                         </div>
                         <div class="about-experience-content">
-                            <h3><span class="counter">5</span>+ Years of Trusted Service</h3>
+                            <h3><span class="counter">6</span>+ Years of Trusted Service</h3>
                             <p>Coimbatore's experienced battery and power solutions experts.</p>
                         </div>
                     </div>
@@ -114,15 +114,15 @@
                     </div>
                     <div class="company-values-counters">
                         <div class="values-counter-item">
-                            <h2><span class="counter">5000</span>+</h2>
+                            <h2><span class="counter">6000</span>+</h2>
                             <p>Batteries Replaced</p>
                         </div>
                         <div class="values-counter-item">
-                            <h2><span class="counter">3000</span>+</h2>
+                            <h2><span class="counter">5500</span>+</h2>
                             <p>Doorstep Service Visits</p>
                         </div>
                         <div class="values-counter-item">
-                            <h2><span class="counter">4500</span>+</h2>
+                            <h2><span class="counter">6000</span>+</h2>
                             <p>Happy Customers</p>
                         </div>
                         <div class="values-counter-item">
@@ -166,9 +166,6 @@
                             <?php if(!empty($testimonialList)): ?>
                                 <?php foreach($testimonialList as $index => $row): ?>
                                     <?php 
-                                        $img_src = !empty($row->reviewer_img) 
-                                            ? ((strpos($row->reviewer_img, 'http') === 0) ? $row->reviewer_img : base_url($row->reviewer_img))
-                                            : base_url('themes/images/author-' . (($index % 4) + 1) . '.jpg');
                                         $stars = (int)($row->star ?? 5);
                                     ?>
                                     <div class="swiper-slide">
@@ -190,11 +187,6 @@
                                                 </div>
                                             </div>
                                             <div class="testimonial-body">
-                                                <div class="author-image">
-                                                    <figure class="image-anime">
-                                                        <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($row->reviewer_name); ?> - Customer Review">
-                                                    </figure>
-                                                </div>            
                                                 <div class="author-content">
                                                     <h3><?php echo htmlspecialchars($row->reviewer_name); ?></h3>
                                                     <p class="mb-0"><?php echo htmlspecialchars($row->location ?? 'Coimbatore'); ?></p>
@@ -215,7 +207,7 @@
             <div class="col-lg-12">
                 <div class="testimonial-company-slider">
                     <div class="testimonial-company-slider-text">
-                        <p>Trusted by more than <span class="counter">500</span>+ homes and businesses across Tamil Nadu</p>
+                        <p>Trusted by more than <span class="counter">200</span>+ homes and businesses across Tamil Nadu</p>
                     </div>
                     <div class="swiper">
                         <div class="swiper-wrapper">
@@ -260,7 +252,7 @@
                     <div class="section-title">
                         <h3 class="wow fadeInUp">Book a Service Today</h3>
                         <h2 class="text-anime-style-2" data-cursor="-opaque">Need battery or UPS service? <span>We come to you!</span></h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">Whether it's an emergency battery replacement, UPS repair or solar panel installation - our expert team is ready 24/7 to serve you across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">Whether it's an emergency battery replacement, UPS repair or solar panel installation - our expert team is ready Monday to Saturday, 9AM to 10PM to serve you across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
                     </div>
                     <div class="cta-box-body wow fadeInUp" data-wow-delay="0.4s">
                         <div class="cta-box-btn">
@@ -269,10 +261,10 @@
                         <span>or</span>
                         <div class="contact-now-box">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" alt="Call Kiara Battery Clinic 24/7">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" alt="Call Kiara Battery Clinic Monday to Saturday 9AM to 10PM">
                             </div>
                             <div class="contact-now-box-content">
-                                <span>Call Us 24/7 - Any Time</span>
+                                <span>Call Us Mon-Sat, 9AM - 10PM</span>
                                 <p><a href="tel:+91 90038 11107">+91 90038 11107</a></p>
                             </div>
                         </div>
@@ -356,11 +348,11 @@
                 <div class="our-features-list">
                     <div class="features-item wow fadeInUp">
                         <div class="icon-box">
-                            <img src="<?php echo base_url(); ?>themes/images/icon-features-list-1.svg" alt="24/7 emergency battery service Coimbatore">
+                            <img src="<?php echo base_url(); ?>themes/images/icon-features-list-1.svg" alt="Emergency battery service Coimbatore Monday to Saturday 9AM to 10PM">
                         </div>
                         <div class="features-item-content">
-                            <h3>24/7 Emergency Service</h3>
-                            <p>Dead battery at midnight? We're available round the clock for emergency doorstep battery service anywhere in Coimbatore.</p>
+                            <h3>Emergency Service</h3>
+                            <p>Dead battery? We're available Monday to Saturday, 9AM to 10PM for emergency doorstep battery service anywhere in Coimbatore.</p>
                         </div>
                     </div>
                     <div class="features-item wow fadeInUp" data-wow-delay="0.2s">

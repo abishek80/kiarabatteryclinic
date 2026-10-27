@@ -65,7 +65,7 @@
             <div class="section-title">
                 <h2 class="text-anime-style-2" data-cursor="-opaque">Your enquiry has been <span>received</span></h2>
             </div>
-            <p class="wow fadeInUp" data-wow-delay="0.2s">Thank you for choosing Kiara Battery Clinic. Our team will call you back shortly to confirm your requirement. For urgent battery, UPS or inverter help, call or WhatsApp us directly - we are available 24/7.</p>
+            <p class="wow fadeInUp" data-wow-delay="0.2s">Thank you for choosing Kiara Battery Clinic. Our team will call you back shortly to confirm your requirement. For urgent battery, UPS or inverter help, call or WhatsApp us directly - we are available Monday to Saturday, 9AM to 10PM.</p>
 
             <div class="row g-4 thank-you-steps">
                 <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">

@@ -52,7 +52,7 @@
                 <h4 class="mt-4 pt-3 fw-bold text-dark h5 mb-3">4. Contact Us for Refund Enquiries</h4>
                 <p>If you have a query about a payment or need to request a refund, please contact us immediately with your invoice number:</p>
                 <ul class="ps-4 mb-4" style="list-style-type: none;">
-                    <li class="mb-2"><strong>Phone:</strong> <a href="tel:+919003811107" class="text-danger" style="color: var(--accent-color) !important;">+91 90038 11107</a> (Available 24/7)</li>
+                    <li class="mb-2"><strong>Phone:</strong> <a href="tel:+919003811107" class="text-danger" style="color: var(--accent-color) !important;">+91 90038 11107</a> (Monday to Saturday, 9AM to 10PM)</li>
                     <li class="mb-2"><strong>Email:</strong> <a href="mailto:kiarabatteryclinic@gmail.com" class="text-danger" style="color: var(--accent-color) !important;">kiarabatteryclinic@gmail.com</a></li>
                     <li class="mb-2"><strong>Address:</strong> 36, 9th Street, Tatabad, Coimbatore - 641 012, Tamil Nadu</li>
                 </ul>

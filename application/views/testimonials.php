@@ -45,11 +45,6 @@
                 <?php foreach($testimonialList as $index => $row): ?>
                     <?php 
                         $delay = ($index % 3) * 0.2;
-                        $img_src = !empty($row->reviewer_img) 
-                            ? ((strpos($row->reviewer_img, 'http') === 0 || strpos($row->reviewer_img, './') === 0 || strpos($row->reviewer_img, 'uploads/') === 0) 
-                                ? base_url(ltrim($row->reviewer_img, './')) 
-                                : base_url('uploads/testimonials/' . $row->reviewer_img))
-                            : base_url('themes/images/author-' . (($index % 4) + 1) . '.jpg');
                         $stars = (int)($row->star ?? 5);
                         $timeline = !empty($row->location) ? $row->location : (!empty($row->review_date) ? date('M Y', strtotime($row->review_date)) : 'Verified Customer');
                     ?>
@@ -72,11 +67,6 @@
                                 </div>
                             </div>
                             <div class="testimonial-body">
-                                <div class="author-image">
-                                    <figure class="image-anime">
-                                        <img src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($row->reviewer_name); ?> - Customer Review">
-                                    </figure>
-                                </div>            
                                 <div class="author-content">
                                     <h3><?php echo htmlspecialchars($row->reviewer_name); ?></h3>
                                     <p class="mb-0 text-muted small"> <?php echo htmlspecialchars($timeline); ?></p>
@@ -98,7 +88,7 @@
                     <div class="section-title">
                         <h3 class="wow fadeInUp">Join Thousands of Satisfied Customers</h3>
                         <h2 class="text-anime-style-2" data-cursor="-opaque">Book your battery or UPS service today - <span>we come to you!</span></h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">Fast doorstep service &nbsp;·&nbsp; Genuine products &nbsp;·&nbsp; 24/7 support &nbsp;·&nbsp; Best price guaranteed across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">6+ years of experience &nbsp;·&nbsp; Fast doorstep service &nbsp;·&nbsp; Genuine products &nbsp;·&nbsp; Mon-Sat, 9AM-10PM support &nbsp;·&nbsp; Best price guaranteed across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
                     </div>
                     <div class="cta-box-body wow fadeInUp" data-wow-delay="0.4s">
                         <div class="cta-box-btn">
@@ -107,7 +97,7 @@
                         <span>or</span>
                         <div class="contact-now-box">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" alt="Call Kiara Battery Clinic 24/7">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" alt="Call Kiara Battery Clinic Monday to Saturday 9AM to 10PM">
                             </div>
                             <div class="contact-now-box-content">
                                 <span>Send Us an Enquiry</span>
@@ -120,7 +110,7 @@
 
             <div class="col-lg-6 col-md-5">
                 <div class="cta-box-image">
-                    <img src="<?php echo base_url(); ?>themes/images/cta-box-img.png" alt="Kiara Battery Clinic doorstep service - call us anytime">
+                    <img src="<?php echo base_url(); ?>themes/images/cta-box-img.png" alt="Kiara Battery Clinic doorstep service - Monday to Saturday, 9AM to 10PM">
                 </div>
             </div>
         </div>
@@ -196,11 +186,11 @@
                 <div class="our-features-list">
                     <div class="features-item wow fadeInUp">
                         <div class="icon-box">
-                            <img src="<?php echo base_url(); ?>themes/images/icon-features-list-1.svg" alt="24/7 emergency battery service Coimbatore">
+                            <img src="<?php echo base_url(); ?>themes/images/icon-features-list-1.svg" alt="Emergency battery service Coimbatore Monday to Saturday 9AM to 10PM">
                         </div>
                         <div class="features-item-content">
-                            <h3>24/7 Emergency Service</h3>
-                            <p>Dead battery at midnight? We're available round the clock for emergency doorstep battery service anywhere in Coimbatore.</p>
+                            <h3>Emergency Service</h3>
+                            <p>Dead battery? We're available Monday to Saturday, 9AM to 10PM for emergency doorstep battery service anywhere in Coimbatore.</p>
                         </div>
                     </div>
                     <div class="features-item wow fadeInUp" data-wow-delay="0.2s">

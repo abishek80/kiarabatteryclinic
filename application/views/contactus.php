@@ -44,7 +44,7 @@
                     <div class="contact-info-item wow fadeInUp" data-wow-delay="0.4s">
                         <div class="contact-info-header">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-phone-primary.svg" alt="Call Kiara Battery Clinic 24/7 Coimbatore">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-phone-primary.svg" alt="Call Kiara Battery Clinic Coimbatore Monday to Saturday 9AM to 10PM">
                             </div>
                             <div class="contact-info-title">
                                 <h3>Call or WhatsApp</h3>
@@ -53,7 +53,7 @@
                         <div class="contact-info-content">
                             <p class="ps-4 fs-6 fw-semibold text-black"><a href="tel:+91 90038 11107">+91 90038 11107</a></p>
                             <p class="ps-4 fs-6 fw-semibold text-black"><a href="https://wa.link/w646lw" target="_blank" rel="noopener">WhatsApp: +91 90038 11107</a></p>
-                            <small class="ps-4 mt-3 d-block mb-0">Available 24/7 - Call Anytime</small>
+                            <small class="ps-4 mt-3 d-block mb-0">Service hours: Monday to Saturday, 9AM to 10PM</small>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     <div class="section-title">
                         <h3 class="wow fadeInUp">Send Us a Message</h3>
                         <h2 class="text-anime-style-2" data-cursor="-opaque">Need battery service? <span>Let us know!</span></h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">Whether you need a quick car battery replacement, a home UPS installation, inverter repair or a complete solar power setup - fill in the form below and our team will contact you within the hour. Doorstep service available across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">Whether you need a quick car battery replacement, a home UPS installation, inverter repair or a complete solar power setup - fill in the form below and our team, with 6+ years of battery and power experience, will contact you within the hour. Doorstep service available across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
                     </div>
                     <div class="contact-form">
                         <form id="contactPageForm" action="<?php echo base_url('contactFormSave'); ?>" method="POST" data-toggle="validator" class="enquiry-form wow fadeInUp" data-wow-delay="0.4s">
@@ -150,7 +150,7 @@
                 <!-- Quick Contact CTA -->
                 <div class="mt-4 p-4 bg-section dark-section rounded-4 text-center">
                     <h3 style="color: #fff; margin-bottom: 10px;">Prefer to Call Directly?</h3>
-                    <p style="color: #ccc; margin-bottom: 15px;">Our team answers calls 24 hours a day - including weekends and holidays.</p>
+                    <p style="color: #ccc; margin-bottom: 15px;">Our team answers calls Monday to Saturday, 9AM to 10PM.</p>
                     <a href="tel:+91 90038 11107" class="btn-default btn-highlighted mb-2 d-block">Call: +91 90038 11107</a>
                     <a href="https://wa.link/w646lw" class="btn-default d-block" target="_blank" rel="noopener">WhatsApp Us Now</a>
                 </div>

@@ -28,8 +28,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
-  <!-- /category and /products are intentionally hidden (placeholder catalog, not
-       real inventory yet) and excluded from the sitemap. Re-add when re-enabled. -->
   <url>
     <loc>https://kiarabatteryclinic.com/testimonials</loc>
     <lastmod>2026-10-15</lastmod>
@@ -97,6 +95,24 @@
     <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kiarabatteryclinic.com/service/jump-starter-service</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiarabatteryclinic.com/service/genset-battery-service</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiarabatteryclinic.com/service/lithium-ion-battery-service</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <!-- Legal & Policy Pages -->

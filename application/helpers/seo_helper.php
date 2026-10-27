@@ -175,15 +175,18 @@ if (!function_exists('render_schema_jsonld')) {
             ),
             'openingHoursSpecification' => array(
                 '@type' => 'OpeningHoursSpecification',
-                'dayOfWeek' => array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'),
-                'opens' => '00:00',
-                'closes' => '23:59'
+                'dayOfWeek' => array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+                'opens' => '09:00',
+                'closes' => '22:00'
             ),
             'areaServed' => $b['area_served'],
             'brand' => array_map(function($brand) { return array('@type' => 'Brand', 'name' => $brand); }, $b['brands_offered']),
             'knowsAbout' => array(
                 'Car Battery Replacement',
                 'Bike Battery Sales & Service',
+                'Car & Bike Jump Starter Service',
+                'Genset Battery Initialization & Service',
+                'Lithium-Ion Battery Initialization, Service & Maintenance',
                 'Home UPS & Inverter Installation',
                 'Tubular Inverter Batteries',
                 'Industrial Power Back-up Systems',

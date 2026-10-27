@@ -45,6 +45,14 @@ class Admin_gallery extends CI_Controller
     {
         $data['menu_status'] = "GalleryList";
         $data['formTitle'] = "Add Gallery";
+        $data['galleryId'] = '';
+        $data['galleryToken'] = '';
+        $data['galleryDate'] = '';
+        $data['galleryName'] = '';
+        $data['description'] = '';
+        $data['galleryImg'] = '';
+        $data['galleryImgs'] = array();
+        $data['status'] = 'active';
         
         $this->load->view('backend/header', $data);
         $this->load->view('backend/gallery/gallery-form', $data);
@@ -64,6 +72,7 @@ class Admin_gallery extends CI_Controller
             $data['galleryName'] = $row->gallery_name;
             $data['description'] = $row->description;
             $data['galleryImg'] = $row->gallery_img;
+            $data['galleryImgs'] = Gallerymodel::parseImages($row->gallery_img);
             $data['status'] = $row->status;
 	    }
         
@@ -85,24 +94,35 @@ class Admin_gallery extends CI_Controller
         $galleryDate = $this->input->post('gallery_date');
         $galleryName = $this->input->post('gallery_name');
         $description = $this->input->post('description');
-        $galleryPhoto = $this->input->post('gallery_img');
         $status = $this->input->post('status');
 
-        $alterGalleryPhoto = $this->input->post('alter_gallery_img');
-        
-        $allowTypes = array('jpg', 'png', 'jpeg', 'pdf', 'doc', 'docx');
-        $photoUploadDir = './uploads/gallery_img/';
+        $retainedImages = $this->input->post('retained_images');
+        if (!is_array($retainedImages)) {
+            $retainedImages = (!empty($retainedImages)) ? array($retainedImages) : array();
+        }
 
-        // Gallery Photo
-        if (isset($_FILES['gallery_img'])) {
-            $filesArray = $_FILES['gallery_img'];
-            $uploadedFiles['gallery_img'] = $this->common->fileUpload($filesArray, $photoUploadDir, $allowTypes);
+        // Support fallback if alter_gallery_img is sent
+        $alterGalleryPhoto = $this->input->post('alter_gallery_img');
+        if (empty($retainedImages) && !empty($alterGalleryPhoto)) {
+            $retainedImages = Gallerymodel::parseImages($alterGalleryPhoto);
         }
         
-        $gallery_img = $uploadedFiles['gallery_img'][0];
-        
-        if ($_FILES["gallery_img"]["name"] == FALSE) {
-            $gallery_img = $alterGalleryPhoto;
+        $allowTypes = array('jpg', 'png', 'jpeg', 'webp');
+        $photoUploadDir = './uploads/gallery_img/';
+
+        $uploadedImages = array();
+        // Gallery Photos (Multi-Upload)
+        if (isset($_FILES['gallery_img']) && !empty($_FILES['gallery_img']['name'])) {
+            $uploadedImages = $this->common->multiFileUpload($_FILES['gallery_img'], $photoUploadDir, $allowTypes);
+        }
+
+        $allImages = array_values(array_filter(array_merge($retainedImages, $uploadedImages)));
+
+        if (empty($allImages)) {
+            $data["isError"] = TRUE;
+            $data["message"] = "Please select at least one gallery image.";
+            echo json_encode($data);
+            return;
         }
 
         if ($galleryId < 0 || $galleryId == '') {
@@ -115,7 +135,10 @@ class Admin_gallery extends CI_Controller
             }
         }
         
-        $this->gallerymodel->saveGalleryData($galleryId, $token, $galleryName, $description, $gallery_img, $status);
+        // Store as JSON array string
+        $gallery_img_val = json_encode($allImages);
+        
+        $this->gallerymodel->saveGalleryData($galleryId, $token, $galleryName, $description, $gallery_img_val, $status);
         
         $data["isError"] = FALSE;
         if ($galleryId > 0) {

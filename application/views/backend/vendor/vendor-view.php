@@ -123,7 +123,7 @@
 
                                     <tr>
                                         <td><?php echo $i++; ?></td>
-                                        <td><?php echo $row->transaction_number . '/' . $fyStart . '/' . $fyEnd; ?></td>
+                                        <td><?php echo (strpos($row->transaction_number, 'INV/') === 0) ? $row->transaction_number : ($row->transaction_number . '/' . $fyStart . '/' . $fyEnd); ?></td>
                                         <td><?php echo $transactionDate->format('d-m-Y'); ?></td>
                                         <td><?php echo $row->overall_product_quantity; ?></td>
                                         <td class="amount-format"><?php echo $row->transaction_amount; ?></td>

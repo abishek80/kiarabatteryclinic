@@ -23,7 +23,7 @@
                 <div class="section-title text-center">
                     <h3 class="wow fadeInUp">What We Offer</h3>
                     <h2 class="text-anime-style-2" data-cursor="-opaque">Complete power solutions for <br> <span>homes, vehicles & industries</span></h2>
-                    <p class="wow fadeInUp" data-wow-delay="0.2s">From a simple bike battery replacement to a complete solar power installation - Kiara Battery Clinic covers all your power needs with expert technicians, genuine products and 24/7 doorstep service across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
+                    <p class="wow fadeInUp" data-wow-delay="0.2s">From a simple bike battery replacement to a complete solar power installation - Kiara Battery Clinic covers all your power needs with 6+ years of experience, expert technicians, genuine products and doorstep service (Monday to Saturday, 9AM to 10PM) across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
                 </div>
             </div>
         </div>

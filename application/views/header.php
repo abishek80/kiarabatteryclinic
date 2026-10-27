@@ -50,7 +50,7 @@
 	<noscript><link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/animate.css"></noscript>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/magnific-popup.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>themes/css/mousecursor.css">
-	<link href="<?php echo base_url(); ?>themes/css/custom.css?v=20261016" rel="stylesheet" media="screen">
+	<link href="<?php echo base_url(); ?>themes/css/custom.css?v=20261027" rel="stylesheet" media="screen">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-49VNNWKB6M"></script>

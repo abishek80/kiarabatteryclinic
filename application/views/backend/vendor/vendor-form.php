@@ -27,7 +27,7 @@
                     <input name="vendor_mobile_number" id="vendor_mobile_number" type="text" class="form-control number-only" placeholder="Enter Vendor Mobile Number" value="<?php echo $vendorMobileNumber; ?>">
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <label class="w-100 fw-13 fw-bold text-dark mb-2 fs-14px">Vendor GST Number <span class="text-danger">*</span></label>
+                    <label class="w-100 fw-13 fw-bold text-dark mb-2 fs-14px">Vendor GST Number</label>
                     <input name="vendor_gst_number" id="vendor_gst_number" type="text" class="form-control" placeholder="Enter Vendor GST Number" value="<?php echo $vendorGSTNumber; ?>">
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -64,9 +64,6 @@
             vendor_mobile_number: {
                 required: true
             },
-            vendor_gst_number: {
-                required: true
-            },
             vendor_address_1: {
                 required: true
             }
@@ -80,9 +77,6 @@
             },
             vendor_mobile_number: {
                 required: "Please Enter Vendor Mobile Number",
-            },
-            vendor_gst_number: {
-                required: "Please Enter Vendor GST Percentage",
             },
             vendor_address_1: {
                 required: "Please Enter Vendor Address",

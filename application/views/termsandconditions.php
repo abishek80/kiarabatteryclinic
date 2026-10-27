@@ -31,7 +31,7 @@
                 <h4 class="mt-4 pt-3 fw-bold text-dark h5 mb-3">1. Services & Doorstep Assistance</h4>
                 <p>Kiara Battery Clinic specializes in the sale, installation, maintenance, and emergency recharge of automotive (car & bike), home UPS, industrial UPS, inverter batteries, and solar power systems.</p>
                 <ul class="ps-4 mb-4" style="list-style-type: disc;">
-                    <li class="mb-2"><strong>Doorstep Coverage:</strong> Our 24/7 emergency doorstep response is subject to location feasibility and traffic/weather limitations across Coimbatore, Ooty, Pollachi, Tiruppur, and Kotagiri.</li>
+                    <li class="mb-2"><strong>Doorstep Coverage:</strong> Our emergency doorstep response (Monday to Saturday, 9AM to 10PM) is subject to location feasibility and traffic/weather limitations across Coimbatore, Ooty, Pollachi, Tiruppur, and Kotagiri.</li>
                     <li class="mb-2"><strong>Technician Access:</strong> You must ensure that our technician has safe, legal access to the vehicle or building where installation or testing is scheduled.</li>
                 </ul>
 

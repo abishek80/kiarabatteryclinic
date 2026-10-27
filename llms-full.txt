@@ -8,6 +8,7 @@
 
 - **Entity Name**: Kiara Battery Clinic
 - **Owner / Key Expert**: Mr. Cyril
+- **Experience**: 6+ years in battery, UPS, inverter and solar service
 - **Industry Classification**: Automotive Battery Retailer, Inverter/UPS Dealer, Solar Power Installer, Emergency Roadside Service
 - **Street Address**: 36, 9th Street, Tatabad
 - **Locality**: Coimbatore
@@ -19,7 +20,7 @@
 - **Email**: kiarabatteryclinic@gmail.com
 - **Website URL**: https://kiarabatteryclinic.com/
 - **Google Maps Location**: https://maps.app.goo.gl/U3FhHqsbEmwYwqUN8
-- **Hours of Operation**: 24 Hours / 7 Days a Week
+- **Hours of Operation**: Monday to Saturday, 9AM to 10PM
 
 ---
 
@@ -40,6 +41,27 @@
 - **Brands Stocked**: Amaron, Exide, SF Sonic, Okaya, Tata Green.
 - **Applications**: Hatchbacks, sedans, SUVs and luxury passenger vehicles.
 - **Services Included**: Free digital battery voltage check, alternator charging test, terminal cleaning, and 20-30 min doorstep fitting.
+
+### A2. Jump Starter Service (Car & Bike)
+- **Service**: Doorstep and roadside jump-start assistance for discharged car and bike batteries, with battery condition check before starting.
+- **Hours**: Monday to Saturday, 9AM to 10PM. Typical arrival within Coimbatore city: 30-60 minutes.
+- **Coverage**: Coimbatore (Tatabad, Gandhipuram, RS Puram, Peelamedu, Saravanampatti and more); Ooty, Kotagiri, Pollachi, Tiruppur on request.
+- **Note**: Jump-starting does not repair a damaged battery; testing, charging or replacement is advised if the vehicle fails to start again.
+- **Page**: https://kiarabatteryclinic.com/service/jump-starter-service
+
+### A3. Genset Battery Initialization, Service & Jump Starter
+- **Service**: Generator battery initialization per manufacturer specifications, battery condition and terminal inspection, maintenance, charging support and jump-start assistance where the system is compatible.
+- **Sites**: Offices, commercial buildings, industrial facilities and residential properties.
+- **Hours**: Monday to Saturday, 9AM to 10PM. Coverage: Coimbatore; Ooty, Kotagiri, Pollachi, Tiruppur on request.
+- **Booking details needed**: Genset make and model, battery voltage/type, starting issue, location.
+- **Page**: https://kiarabatteryclinic.com/service/genset-battery-service
+
+### A4. Lithium-Ion Battery Initialization, Service & Maintenance
+- **Service**: Initialization/configuration per manufacturer specifications, external inspection, connector and terminal checks, BMS diagnostics where supported, charging system assessment and maintenance recommendations.
+- **Applications**: Electric vehicles, commercial equipment and compatible energy storage systems.
+- **Hours**: Monday to Saturday, 9AM to 10PM. Coverage: Coimbatore; Ooty, Kotagiri, Pollachi, Tiruppur on request.
+- **Booking details needed**: Battery manufacturer, model, voltage, capacity, application, issue description (photo of label/error codes helps).
+- **Page**: https://kiarabatteryclinic.com/service/lithium-ion-battery-service
 
 ### B. Bike & Motorcycle Batteries
 - **Brands Stocked**: Amaron, Exide (including the Exide Xplore range), SF Sonic.
@@ -74,7 +96,10 @@
 **Q2: How do I calculate the required inverter battery backup time for my home?**  
 *Answer*: Backup Time (Hours) = [Battery Voltage (12V) × Battery Capacity (Ah) × Power Factor (0.8)] / Total Load in Watts. For example, a 150Ah battery running a 300W load yields approximately 3.8 to 4 hours of backup.
 
-**Q3: Does Kiara Battery Clinic offer trade-in discounts for old batteries?**  
+**Q3: Do you provide jump starter service for cars and bikes in Coimbatore?**
+*Answer*: Yes. Kiara Battery Clinic provides jump-start assistance for compatible cars and bikes across Coimbatore, Monday to Saturday, 9AM to 10PM. Call or WhatsApp +91 90038 11107 with your location and vehicle details.
+
+**Q4: Does Kiara Battery Clinic offer trade-in discounts for old batteries?**  
 *Answer*: Yes, customers receive trade-in scrap discounts when exchanging old car, bike, or inverter batteries for new units.
 
 ---
@@ -84,6 +109,9 @@
 - Homepage: https://kiarabatteryclinic.com/
 - About Us: https://kiarabatteryclinic.com/about-us
 - Services: https://kiarabatteryclinic.com/services
+- Jump Starter Service: https://kiarabatteryclinic.com/service/jump-starter-service
+- Genset Battery Service: https://kiarabatteryclinic.com/service/genset-battery-service
+- Lithium-Ion Battery Service: https://kiarabatteryclinic.com/service/lithium-ion-battery-service
 - Photo Gallery: https://kiarabatteryclinic.com/gallery
 - Customer Reviews: https://kiarabatteryclinic.com/testimonials
 - Contact Us: https://kiarabatteryclinic.com/contact-us

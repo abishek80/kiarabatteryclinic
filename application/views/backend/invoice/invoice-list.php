@@ -47,7 +47,7 @@
                         ?>
                         <tr>
                             <td><?php echo $i++; ?></td>
-                            <td><?php echo $row->invoice_number . '/' . $fyStart . '/' . $fyEnd; ?></td>
+                            <td><?php echo (strpos($row->invoice_number, 'INV/') === 0) ? $row->invoice_number : ($row->invoice_number . '/' . $fyStart . '/' . $fyEnd); ?></td>
                             <td><?php $dateFormat = new DateTime($row->invoice_date); echo $dateFormat->format('d - m - Y'); ?></td>
                             <td><?php echo $row->vendor_name; ?></td>
                             <td>

@@ -1,6 +1,6 @@
 # Kiara Battery Clinic
 
-> Kiara Battery Clinic is Coimbatore's premier battery retailer, power backup specialist, and 24/7 emergency doorstep installation service provider in Tamil Nadu. Led by owner/technical expert Mr. Cyril, Kiara Battery Clinic holds top customer ratings with over 27+ 5-star Google reviews.
+> Kiara Battery Clinic is Coimbatore's premier battery retailer, power backup specialist, and emergency doorstep installation service provider in Tamil Nadu. With 6+ years of experience and led by owner/technical expert Mr. Cyril, Kiara Battery Clinic holds top customer ratings with over 27+ 5-star Google reviews.
 
 ## Overview
 
@@ -9,12 +9,15 @@ Kiara Battery Clinic provides sales, installation, maintenance, and doorstep rep
 - **Headquarters**: 36, 9th Street, Tatabad, Coimbatore, Tamil Nadu - 641012, India
 - **Phone / WhatsApp**: +91 90038 11107
 - **Email**: kiarabatteryclinic@gmail.com
-- **Operating Hours**: 24 Hours / 7 Days a Week Emergency Doorstep Support
+- **Operating Hours**: Monday to Saturday, 9AM to 10PM (Doorstep Service)
 - **Key Regions Covered**: Coimbatore (Tatabad, Gandhipuram, RS Puram, Peelamedu, Saravanampatti, Singanallur, Thudiyalur, Saibaba Colony), Ooty, Kotagiri, Pollachi, Tiruppur
 
 ## Core Service & Product Offerings
 
-- **Car Battery Replacement & Sales**: 24/7 breakdown jumpstart and doorstep replacement with genuine Amaron, Exide, and SF Sonic batteries.
+- **Car Battery Replacement & Sales**: Breakdown jumpstart and doorstep replacement with genuine Amaron, Exide, and SF Sonic batteries.
+- **Jump Starter Service (Car & Bike)**: Doorstep and roadside jump-start assistance for discharged car and bike batteries in Coimbatore, Monday to Saturday, 9AM to 10PM, with battery testing and replacement advice. Page: https://kiarabatteryclinic.com/service/jump-starter-service
+- **Genset Battery Initialization, Service & Jump Starter**: Generator battery initialization, condition checks, terminal inspection, maintenance and jump-start assistance for offices, commercial and industrial sites and homes in Coimbatore, Monday to Saturday, 9AM to 10PM. Page: https://kiarabatteryclinic.com/service/genset-battery-service
+- **Lithium-Ion Battery Initialization, Service & Maintenance**: Initialization, condition checks, connector inspection, BMS diagnostics and charging system checks for compatible lithium-ion batteries (electric vehicles, commercial equipment, energy storage) in Coimbatore, Monday to Saturday, 9AM to 10PM. Page: https://kiarabatteryclinic.com/service/lithium-ion-battery-service
 - **Bike & Motorcycle Battery Service**: Two-wheeler battery testing, charging, acid/water filling, and instant fitting.
 - **Home UPS & Inverter Battery Solutions**: Power backup estimation, tubular battery sales (Luminous, Okaya, Exide), inverter repair, and concealed wiring installation.
 - **Industrial UPS & Commercial Power AMC**: High-capacity battery banks, scheduled maintenance, and industrial backup solutions.
@@ -23,8 +26,14 @@ Kiara Battery Clinic provides sales, installation, maintenance, and doorstep rep
 
 ## Key Factual Entities & Answers (AEO)
 
-- **Q: Does Kiara Battery Clinic offer 24/7 doorstep service?**  
-  A: Yes, 24/7 emergency doorstep battery replacement, battery checkups, and jumpstart services are available across Coimbatore and nearby regions even during late hours and rain.
+- **Q: What are the service hours of Kiara Battery Clinic?**
+  A: Monday to Saturday, 9AM to 10PM. Emergency doorstep battery replacement, battery checkups, and jumpstart services are available across Coimbatore and nearby regions during these hours.
+- **Q: Does Kiara Battery Clinic offer jump starter service for cars and bikes?**
+  A: Yes. Jump-start assistance is available for compatible cars and bikes across Coimbatore, Monday to Saturday, 9AM to 10PM. Jump-starting does not repair a worn-out battery, so a battery test is recommended if the vehicle keeps failing to start.
+- **Q: Does Kiara Battery Clinic service generator (genset) batteries?**
+  A: Yes. Genset battery initialization, maintenance, jump-start assistance and replacement advice are available in Coimbatore, Monday to Saturday, 9AM to 10PM. Provide the generator make, model and battery details when booking.
+- **Q: Does Kiara Battery Clinic service lithium-ion batteries?**
+  A: Yes. Lithium-ion battery initialization, diagnostics (including BMS status where supported) and preventive maintenance are available in Coimbatore, Monday to Saturday, 9AM to 10PM, following manufacturer specifications. Swollen or overheating batteries should be stopped, isolated and inspected by a qualified professional - never opened or self-repaired.
 - **Q: Which battery brands are officially stocked?**  
   A: Amaron, Exide, Okaya, SF Sonic, Luminous, Microtek, and Tata Green.
 - **Q: How quickly does a technician arrive for emergency battery service?**

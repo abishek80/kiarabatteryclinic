@@ -46,12 +46,35 @@ class Admin_invoice extends CI_Controller
         $data['menu_status'] = "InvoiceList";
         $data['formTitle'] = "Add Invoice";
         
+        $data['invoiceId'] = 0;
+        $data['invoiceDate'] = date('Y-m-d');
+        $data['invoiceNumber'] = $this->invoicemodel->getNextInvoiceNumber($data['invoiceDate']);
+        $data['invoiceToken'] = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $data['invoiceNumber']), '-'));
+
 	    $data['productDropdown'] = $this->productmodel->getProductDropdown();
         $data['vendorList'] = $this->vendormodel->vendorList('active');
 
         $this->load->view('backend/header_link', $data);
         $this->load->view('backend/invoice/invoice-form', $data);
         $this->load->view('backend/footer');
+    }
+
+    public function getNextInvoiceNumberAjax()
+    {
+        $this->output->set_content_type('application/json');
+        $invoiceDate = $this->input->get('date') ? $this->input->get('date') : $this->input->post('date');
+        if (empty($invoiceDate)) {
+            $invoiceDate = date('Y-m-d');
+        }
+        $invoiceNumber = $this->invoicemodel->getNextInvoiceNumber($invoiceDate);
+        $token = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $invoiceNumber), '-'));
+
+        echo json_encode(array(
+            'isError' => false,
+            'invoice_number' => $invoiceNumber,
+            'token' => $token
+        ));
+        return;
     }
 
     public function invoice_edit($invoiceId)
@@ -170,11 +193,23 @@ class Admin_invoice extends CI_Controller
 
         $invoiceArrayData = json_decode($this->input->post('invoiceDataArray'));
 
-        if ($invoiceId < 0 || $invoiceId == '') {
-            $checkExists = $this->invoicemodel->checkInvoice($token);
+        if (empty($invoiceDate)) {
+            $invoiceDate = date('Y-m-d');
+        }
+
+        if (empty($invoiceNumber)) {
+            $invoiceNumber = $this->invoicemodel->getNextInvoiceNumber($invoiceDate);
+        }
+
+        if (empty($token)) {
+            $token = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $invoiceNumber), '-'));
+        }
+
+        if (empty($invoiceId) || (int) $invoiceId <= 0) {
+            $checkExists = $this->invoicemodel->checkInvoice($token, $invoiceNumber);
             if ($checkExists > 0) {
                 $data["isError"] = TRUE;
-                $data["message"] = "Invoice Name Is Already Exists";
+                $data["message"] = "Invoice Number Is Already Exists";
                 echo json_encode($data);
                 return;
             }

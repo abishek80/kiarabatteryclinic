@@ -18,12 +18,18 @@ class Web extends CI_Controller {
     // without a static file going stale every time one is added/removed via admin.
     public function image_sitemap()
     {
+        while (ob_get_level() > 0) {
+            ob_end_clean();
+        }
+        ob_start();
+
         $this->output->set_content_type('application/xml');
 
         $data['site_url'] = rtrim(base_url(), '/');
         $data['galleryList'] = $this->webmodel->galleryList();
 
-        $this->load->view('image_sitemap', $data);
+        $xml = $this->load->view('image_sitemap', $data, TRUE);
+        $this->output->set_output(trim($xml));
     }
 
     public function index()
@@ -221,6 +227,13 @@ class Web extends CI_Controller {
                         : trim(mb_substr(strip_tags((string) $row->description), 0, 160));
                     $customMeta['canonical'] = 'service/' . $slug;
                     $customMeta['crumb_title'] = $row->service_name;
+
+                    // Hand-written SEO title/description/keywords for a service (seo_config 'service_seo').
+                    $this->config->load('seo_config', TRUE);
+                    $seoCfg = $this->config->item('seo_config');
+                    if (!empty($seoCfg['seo']['service_seo'][$slug])) {
+                        $customMeta = array_merge($customMeta, $seoCfg['seo']['service_seo'][$slug]);
+                    }
                 }
             }
         }
@@ -235,46 +248,6 @@ class Web extends CI_Controller {
         $this->load->view('footer', $data);
     }
     
-    // Category/product catalog is hidden for now (placeholder catalog, not real
-    // inventory) but kept live and working — not deleted — so it can be switched
-    // back on later. noindex + robots.txt + sitemap/llms removal keep it out of
-    // search in the meantime.
-    public function category()
-    {
-        $data['meta'] = get_seo_meta('category', array('robots' => 'noindex, nofollow'));
-        $data['metaTitle'] = $data['meta']['title'];
-        $data['metaDescription'] = $data['meta']['description'];
-        $data['metaKeyword'] = $data['meta']['keywords'];
-
-        $this->load->view('header', $data);
-        $this->load->view('category', $data);
-        $this->load->view('footer', $data);
-    }
-
-    public function products($categoryId = '')
-    {
-        $data['meta'] = get_seo_meta('products', array('robots' => 'noindex, nofollow'));
-        $data['metaTitle'] = $data['meta']['title'];
-        $data['metaDescription'] = $data['meta']['description'];
-        $data['metaKeyword'] = $data['meta']['keywords'];
-
-        $this->load->view('header', $data);
-        $this->load->view('product', $data);
-        $this->load->view('footer', $data);
-    }
-
-    public function product()
-    {
-        $data['meta'] = get_seo_meta('product_detail', array('robots' => 'noindex, nofollow'));
-        $data['metaTitle'] = $data['meta']['title'];
-        $data['metaDescription'] = $data['meta']['description'];
-        $data['metaKeyword'] = $data['meta']['keywords'];
-
-        $this->load->view('header', $data);
-        $this->load->view('product_detail', $data);
-        $this->load->view('footer', $data);
-    }
-
     public function thank_you()
     {
         $data['meta'] = get_seo_meta('home', array(

@@ -11,10 +11,6 @@ Disallow: /application/
 Disallow: /database/
 Disallow: /uploads/temp/
 
-# Temporarily hidden (placeholder catalog, not real inventory) - remove when re-enabled
-Disallow: /category
-Disallow: /products
-
 # Search engine sitemap location
 Sitemap: https://kiarabatteryclinic.com/sitemap.xml
 Sitemap: https://kiarabatteryclinic.com/image-sitemap.xml

@@ -68,7 +68,9 @@
                                         <p class="mb-0 fs-13px text-black"><?php echo $vendorAddress2; ?></p>
                                         <p class="mb-0 fs-13px text-black"><?php echo $vendorMobileNumber; ?></p>
                                         <p class="mb-0 fs-13px text-black"><?php echo $vendorEmail; ?></p>
+                                        <?php if (!empty($vendorGSTNumber)) { ?>
                                         <p class="mt-1 mb-0 fs-13px text-black fw-semibold">GST No : <?php echo $vendorGSTNumber; ?></p>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -179,7 +181,7 @@
                                                 <td class="border-top-0"><?php echo $i++; ?></td>
                                                 <td class="border-top-0"><?php echo $transactionDate->format('d-m-Y'); ?></td>
                                                 <?php if($row->transaction_type == 'invoice') { ?>
-                                                    <td class="border-top-0"><?php echo $row->invoice_number . '/' . $fyStart . '/' . $fyEnd; ?></td>
+                                                    <td class="border-top-0"><?php echo (strpos($row->invoice_number, 'INV/') === 0) ? $row->invoice_number : ($row->invoice_number . '/' . $fyStart . '/' . $fyEnd); ?></td>
                                                 <?php } else { ?>
                                                     <td class="border-top-0">-</td>
                                                 <?php } ?>

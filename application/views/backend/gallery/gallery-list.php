@@ -25,14 +25,31 @@
                     </thead>
                     <tbody>
                         <?php
-                            $i=1;
+                            $i = 1;
                             foreach($galleryList as $row) { 
                                 $dateObj = new DateTime($row->created_at);
                                 $formattedDate = $dateObj->format('d-m-Y h:i A');
+                                
+                                $images = Gallerymodel::parseImages($row->gallery_img);
+                                $firstImg = !empty($images) ? $images[0] : '';
+                                $firstUrl = !empty($firstImg) ? ((strpos($firstImg, 'http') === 0) ? $firstImg : base_url(ltrim($firstImg, './'))) : '';
+                                $imgCount = count($images);
+                                
+                                $fullImgUrls = array();
+                                foreach ($images as $im) {
+                                    $fullImgUrls[] = (strpos($im, 'http') === 0) ? $im : base_url(ltrim($im, './'));
+                                }
                         ?>
                         <tr>
                             <td><?php echo $i++; ?></td>
-                            <td><img src="<?php echo base_url() . $row->gallery_img; ?>" class="table-card" style="width: 60px; height: 50px; object-fit: cover;" alt="Gallery Image"></td>
+                            <td>
+                                <div class="position-relative d-inline-block">
+                                    <img src="<?php echo $firstUrl; ?>" class="table-card rounded shadow-sm" style="width: 60px; height: 50px; object-fit: cover;" alt="Gallery Image">
+                                    <?php if ($imgCount > 1): ?>
+                                        <span class="badge bg-primary position-absolute bottom-0 end-0 m-1 py-0 px-1" style="font-size: 10px;" title="<?php echo $imgCount; ?> photos">+<?php echo ($imgCount - 1); ?></span>
+                                    <?php endif; ?>
+                                </div>
+                            </td>
                             <td><?php echo htmlspecialchars($row->gallery_name); ?></td>
                             <td><p class="one-line-clamp mb-0"><?php echo htmlspecialchars($row->description); ?></p></td>
                             <td>
@@ -47,7 +64,8 @@
                                 <div class="d-flex gap-1 justify-content-center">
                                     <a href="javascript:void(0);" class="box-hover viewGalleryBtn" 
                                        data-name="<?php echo htmlspecialchars($row->gallery_name); ?>" 
-                                       data-img="<?php echo base_url() . $row->gallery_img; ?>" 
+                                       data-img="<?php echo $firstUrl; ?>" 
+                                       data-imgs="<?php echo htmlspecialchars(json_encode($fullImgUrls), ENT_QUOTES, 'UTF-8'); ?>"
                                        data-desc="<?php echo htmlspecialchars($row->description); ?>" 
                                        data-status="<?php echo ucfirst($row->status); ?>" 
                                        data-date="<?php echo $formattedDate; ?>" 
@@ -76,11 +94,19 @@
             <div class="modal-body p-4">
                 <div class="row g-4">
                     <div class="col-md-5 text-center border-end">
-                        <label class="w-100 fw-bold text-dark mb-2 text-start fs-14px">Gallery Image</label>
-                        <a id="modalGalleryImgLink" href="#" data-lightbox="roadtrip">
-                            <img id="modalGalleryImg" src="" class="img-fluid rounded-3 border shadow-sm" style="max-height: 260px; width: 100%; object-fit: cover;" alt="Gallery Image">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <label class="fw-bold text-dark mb-0 fs-14px">Gallery Images</label>
+                            <span class="badge bg-primary" id="modalImgCountBadge">1 Image</span>
+                        </div>
+                        <a id="modalGalleryImgLink" href="#" data-lightbox="modal-roadtrip">
+                            <img id="modalGalleryImg" src="" class="img-fluid rounded-3 border shadow-sm w-100" style="max-height: 230px; object-fit: cover;" alt="Gallery Image">
                         </a>
                         <small class="text-muted d-block mt-2"><i class="bx bx-search-alt me-1"></i> Click image to view full size</small>
+
+                        <!-- Thumbnail bar for multi-images -->
+                        <div id="modalGalleryThumbs" class="d-flex flex-wrap gap-2 justify-content-center mt-3 pt-2 border-top" style="max-height: 100px; overflow-y: auto;">
+                            <!-- Thumbnails dynamically rendered -->
+                        </div>
                     </div>
                     <div class="col-md-7">
                         <div class="mb-3 pb-2 border-bottom">
@@ -114,14 +140,26 @@
 <script>
     $(document).on('click', '.viewGalleryBtn', function() {
         var name = $(this).data('name');
-        var img = $(this).data('img');
+        var mainImg = $(this).data('img');
+        var imgsData = $(this).data('imgs');
         var desc = $(this).data('desc');
         var status = $(this).data('status');
         var date = $(this).data('date');
 
+        var imgs = [];
+        if (typeof imgsData === 'string') {
+            try {
+                imgs = JSON.parse(imgsData);
+            } catch(e) {
+                imgs = [mainImg];
+            }
+        } else if (Array.isArray(imgsData)) {
+            imgs = imgsData;
+        } else if (mainImg) {
+            imgs = [mainImg];
+        }
+
         $('#modalGalleryName').text(name);
-        $('#modalGalleryImg').attr('src', img);
-        $('#modalGalleryImgLink').attr('href', img);
         $('#modalGalleryDesc').text(desc);
         $('#modalGalleryDate').text(date);
 
@@ -131,7 +169,41 @@
             $('#modalGalleryStatus').attr('class', 'badge bg-label-danger fs-14px').text('Inactive');
         }
 
+        var totalImgs = imgs.length;
+        $('#modalImgCountBadge').text(totalImgs + (totalImgs === 1 ? ' Image' : ' Images'));
+
+        var activeSrc = (totalImgs > 0) ? imgs[0] : mainImg;
+        $('#modalGalleryImg').attr('src', activeSrc);
+        $('#modalGalleryImgLink').attr('href', activeSrc);
+
+        var $thumbs = $('#modalGalleryThumbs');
+        $thumbs.empty();
+
+        if (totalImgs > 1) {
+            $thumbs.removeClass('d-none');
+            imgs.forEach(function(src, idx) {
+                var isActive = (idx === 0) ? 'border-primary' : 'border-light';
+                var thumb = $(`
+                    <img src="${src}" class="rounded border ${isActive} shadow-sm cursor-pointer modal-thumb-item" 
+                         data-src="${src}" 
+                         style="width: 48px; height: 48px; object-fit: cover; cursor: pointer; transition: all 0.2s;" 
+                         alt="Thumbnail ${idx+1}">
+                `);
+                $thumbs.append(thumb);
+            });
+        } else {
+            $thumbs.addClass('d-none');
+        }
+
         var myModal = new bootstrap.Modal(document.getElementById('viewGalleryModal'));
         myModal.show();
+    });
+
+    $(document).on('click', '.modal-thumb-item', function() {
+        var newSrc = $(this).data('src');
+        $('#modalGalleryImg').attr('src', newSrc);
+        $('#modalGalleryImgLink').attr('href', newSrc);
+        $('.modal-thumb-item').removeClass('border-primary').addClass('border-light');
+        $(this).removeClass('border-light').addClass('border-primary');
     });
 </script>

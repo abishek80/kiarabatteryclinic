@@ -99,7 +99,7 @@
                                 <div class="hero-content">
                                     <div class="section-title">
                                         <h1 class="text-anime-style-2" data-cursor="-opaque">Coimbatore's Most Trusted Battery & Power Solutions Experts</h1>
-                                        <p class="wow fadeInUp" data-wow-delay="0.2s">From bike batteries and car batteries to home UPS, inverters, industrial UPS and solar panel installation - we deliver doorstep service 24/7 across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
+                                        <p class="wow fadeInUp" data-wow-delay="0.2s">From bike batteries and car batteries to home UPS, inverters, industrial UPS and solar panel installation - with 6+ years of experience we deliver doorstep service Monday to Saturday, 9AM to 10PM across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
                                     </div>
                                     <div class="hero-body wow fadeInUp" data-wow-delay="0.4s">
                                         <div class="hero-btn">
@@ -234,7 +234,7 @@
                     <div class="section-title">
                         <h3 class="wow fadeInUp">Why Choose Us</h3>
                         <h2 class="text-anime-style-2" data-cursor="-opaque">Our goal: deliver the best <span>battery & power solutions</span> at your doorstep</h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">At Kiara Battery Clinic, our mission is to make power solutions easy, affordable and accessible for every home and business in Coimbatore and the surrounding areas. We stock genuine batteries from top brands and provide fast doorstep installation and service.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">With 6+ years of experience, Kiara Battery Clinic's mission is to make power solutions easy, affordable and accessible for every home and business in Coimbatore and the surrounding areas. We stock genuine batteries from top brands and provide fast doorstep installation and service.</p>
                     </div>
                     <div class="goals-content-body wow fadeInUp" data-wow-delay="0.4s">
                         <div class="goals-item">
@@ -248,11 +248,11 @@
                         </div>
                         <div class="goals-item">
                             <div class="icon-box">
-                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-goals-item-2.svg" alt="Doorstep battery service Coimbatore 24/7">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-goals-item-2.svg" alt="Doorstep battery service Coimbatore Monday to Saturday 9AM to 10PM">
                             </div>
                             <div class="goals-item-content">
-                                <h3>24/7 Doorstep Service</h3>
-                                <p>Our trained technicians come to your home, office or roadside - any time, any day across Coimbatore, Ooty, Pollachi and Tiruppur.</p>
+                                <h3>Doorstep Service</h3>
+                                <p>Our trained technicians come to your home, office or roadside - Monday to Saturday, 9AM to 10PM across Coimbatore, Ooty, Pollachi and Tiruppur.</p>
                             </div>
                         </div>
                     </div>
@@ -262,10 +262,10 @@
                         </div>
                         <div class="contact-now-box">
                             <div class="icon-box">
-                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-phone-accent.svg" alt="Call Kiara Battery Clinic 24/7">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-phone-accent.svg" alt="Call Kiara Battery Clinic Monday to Saturday 9AM to 10PM">
                             </div>
                             <div class="contact-now-box-content">
-                                <span>Call Us 24/7</span>
+                                <span>Call Us Mon-Sat, 9AM - 10PM</span>
                                 <p><a href="tel:+91 90038 11107">+91 90038 11107</a></p>
                             </div>
                         </div>
@@ -352,118 +352,6 @@
     </div>
 </div>
 
-<!-- <div class="our-awards">
-    <div class="container-fluid px-lg-5">
-        <div class="row mb-3 align-items-center">
-            <div class="col-lg-6">
-                <div class="section-title">
-                    <h3 class="wow fadeInUp">Our Battery Brands</h3>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">We stock <span>top battery brands</span> trusted across Tamil Nadu</h2>
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="section-title-content wow fadeInUp" data-wow-delay="0.2s">
-                    <p>We are authorized dealers and service partners for India's most trusted battery and power product brands - available at the best prices with full warranty.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-amaron.jpg" alt="Amaron car battery dealer Coimbatore - best price with warranty">
-                    <div class="hero-description-bk"></div>
-                    <div class="hero-heading">
-                        <h4>Amaron Batteries</h4>
-                    </div>
-                    <div class="hero-description">
-                        <p>Amaron car & bike batteries with long life and zero-maintenance warranty in Coimbatore.</p>
-                    </div>
-                    <div class="hero-button">
-                        <span>View Products</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-exide.jpg" alt="Exide battery dealer Coimbatore - bike car tubular batteries">
-                    <div class="hero-description-bk"></div>
-                    <div class="hero-heading">
-                        <h4>Exide Batteries</h4>
-                    </div>
-                    <div class="hero-description">
-                        <p>Exide batteries for bikes, cars, UPS and inverters - trusted brand, best price in Coimbatore.</p>
-                    </div>
-                    <div class="hero-button">
-                        <span>View Products</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-ups-inverter.jpg" alt="Home UPS and inverter battery in Coimbatore">
-                    <div class="hero-description-bk"></div>
-                    <div class="hero-heading">
-                        <h4>Home UPS & Inverters</h4>
-                    </div>
-                    <div class="hero-description">
-                        <p>Reliable home UPS systems and inverters for power backup - professional doorstep installation.</p>
-                    </div>
-                    <div class="hero-button">
-                        <span>View Products</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-solar.jpg" alt="Solar panel installation Coimbatore Ooty Kotagiri government scheme">
-                    <div class="hero-description-bk"></div>
-                    <div class="hero-heading">
-                        <h4>Solar Power Systems</h4>
-                    </div>
-                    <div class="hero-description">
-                        <p>Complete rooftop solar installations with government scheme support across Tamil Nadu.</p>
-                    </div>
-                    <div class="hero-button">
-                        <span>View Products</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-industrial-ups.jpg" alt="Industrial UPS installation Coimbatore factory power backup">
-                    <div class="hero-description-bk"></div>
-                    <div class="hero-heading">
-                        <h4>Industrial UPS Systems</h4>
-                    </div>
-                    <div class="hero-description">
-                        <p>High-capacity industrial UPS for factories and data centres - AMC and maintenance contracts available.</p>
-                    </div>
-                    <div class="hero-button">
-                        <span>View Products</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <a href="<?php echo base_url() . 'products/' . 'product_name'; ?>" class="hero-category wow fadeInUp">
-                    <img class="hero-profile-img w-100" loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/category-tubular.jpg" alt="Tubular battery for inverter and UPS in Coimbatore">
-                    <div class="hero-description-bk"></div>
-                    <div class="hero-heading">
-                        <h4>Tubular Batteries</h4>
-                    </div>
-                    <div class="hero-description">
-                        <p>Long-lasting tubular batteries for home inverters and UPS systems - best brands at lowest prices.</p>
-                    </div>
-                    <div class="hero-button">
-                        <span>View Products</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <div class="our-testimonial">
     <div class="container-fluid px-lg-5">
         <div class="row">
@@ -495,11 +383,6 @@
                             <?php if(!empty($testimonialList)): ?>
                                 <?php foreach($testimonialList as $index => $row): ?>
                                     <?php 
-                                        $img_src = !empty($row->reviewer_img) 
-                                            ? ((strpos($row->reviewer_img, 'http') === 0 || strpos($row->reviewer_img, './') === 0 || strpos($row->reviewer_img, 'uploads/') === 0) 
-                                                ? base_url(ltrim($row->reviewer_img, './')) 
-                                                : base_url('uploads/testimonials/' . $row->reviewer_img))
-                                            : base_url('themes/images/author-' . (($index % 4) + 1) . '.jpg');
                                         $stars = (int)($row->star ?? 5);
                                         $timeline = !empty($row->location) ? $row->location : (!empty($row->review_date) ? date('M Y', strtotime($row->review_date)) : 'Verified Customer');
                                     ?>
@@ -522,11 +405,6 @@
                                                 </div>
                                             </div>
                                             <div class="testimonial-body">
-                                                <div class="author-image">
-                                                    <figure class="image-anime">
-                                                        <img loading="lazy" decoding="async" width="60" height="60" src="<?php echo $img_src; ?>" alt="<?php echo htmlspecialchars($row->reviewer_name); ?> - Customer Review">
-                                                    </figure>
-                                                </div>            
                                                 <div class="author-content">
                                                     <h3><?php echo htmlspecialchars($row->reviewer_name); ?></h3>
                                                     <p class="mb-0 text-muted small"><?php echo htmlspecialchars($timeline); ?></p>
@@ -563,7 +441,7 @@
                             <ul>
                                 <li>✔ Genuine Batteries - All Top Brands Available</li>
                                 <li>✔ Free Doorstep Installation & Old Battery Pickup</li>
-                                <li>✔ 24/7 Emergency Battery Service - Call Anytime</li>
+                                <li>✔ Battery Service Monday to Saturday, 9AM to 10PM</li>
                             </ul>
                         </div>
                     </div>
@@ -583,17 +461,17 @@
                 <div class="facts-counter-box">
                     <div class="facts-counter-item">
                         <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-facts-counter-1.svg" alt="Batteries replaced by Kiara Battery Clinic">
-                        <h2><span class="counter">5000</span>+</h2>
+                        <h2><span class="counter">6000</span>+</h2>
                         <p>Batteries Replaced</p>
                     </div>
                     <div class="facts-counter-item">
                         <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-facts-counter-2.svg" alt="Doorstep service visits Coimbatore">
-                        <h2><span class="counter">3000</span>+</h2>
+                        <h2><span class="counter">5500</span>+</h2>
                         <p>Doorstep Service Visits</p>
                     </div>
                     <div class="facts-counter-item">
                         <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/icon-facts-counter-3.svg" alt="Happy customers Kiara Battery Clinic Coimbatore">
-                        <h2><span class="counter">4500</span>+</h2>
+                        <h2><span class="counter">6000</span>+</h2>
                         <p>Happy Customers</p>
                     </div>
                     <div class="facts-counter-item">
@@ -672,7 +550,7 @@
             <div class="col-lg-12">
                 <div class="testimonial-company-slider mt-0 wow fadeInUp">
                     <div class="testimonial-company-slider-text">
-                        <p>Trusted by more than <span class="counter">500</span>+ homes and businesses across Tamil Nadu</p>
+                        <p>Trusted by more than <span class="counter">200</span>+ homes and businesses across Tamil Nadu</p>
                     </div>
                     <div class="swiper">
                         <div class="swiper-wrapper">

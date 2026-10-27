@@ -96,7 +96,9 @@
                         <p class="mb-0 fs-12px text-black"><?php echo $vendorAddress1; ?>, <?php echo $vendorAddress2; ?></p>
                         <p class="mb-0 fs-12px text-black"><?php echo $vendorMobileNumber; ?></p>
                         <p class="mb-0 fs-12px text-black"><?php echo $vendorEmail; ?></p>
+                        <?php if (!empty($vendorGSTNumber)) { ?>
                         <p class="mt-1 mb-0 fs-12px text-black fw-semibold">GST No : <?php echo $vendorGSTNumber; ?></p>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -104,7 +106,7 @@
                 <div class="row g-1 h-50">
                     <div class="p-2 col-6 border-end-dark">
                         <p class="mb-1 fs-12px text-black">Invoice No : </p>
-                        <p class="mb-0 fs-13px ps-2 text-black fw-bold"><?php echo $invoiceNumber . '/' . $fyStart . '/' . $fyEnd; ?></p>
+                        <p class="mb-0 fs-13px ps-2 text-black fw-bold"><?php echo (strpos($invoiceNumber, 'INV/') === 0) ? $invoiceNumber : ($invoiceNumber . '/' . $fyStart . '/' . $fyEnd); ?></p>
                     </div>
                     <div class="col-6 p-2">
                             <p class="mb-1 fs-12px text-black">Date : </p>
@@ -317,7 +319,8 @@
         var element = document.querySelector('.downloadInvoicePage');
         
         // Use html2pdf to download it
-        var vendorName = "<?php echo $vendorName . ' - Invoice Bill - ' . $invoiceNumber . ' - ' . $invoiceDateFormat->format('d-m-Y'); ?>"; // Get PHP variable in JavaScript
+        var formattedInvoiceNo = "<?php echo str_replace('/', '-', (strpos($invoiceNumber, 'INV/') === 0 ? $invoiceNumber : ($invoiceNumber . '-' . $fyStart . '-' . $fyEnd))); ?>";
+        var vendorName = "<?php echo $vendorName; ?> - Invoice Bill - " + formattedInvoiceNo + " - <?php echo $invoiceDateFormat->format('d-m-Y'); ?>"; // Get PHP variable in JavaScript
         var fileName = vendorName + '.pdf'; // Concatenate the filename
         
         html2pdf(element, {

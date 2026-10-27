@@ -8,7 +8,7 @@
                         </div>
 
                         <div class="about-footer-content">
-                            <p class="fs-6">Coimbatore's trusted battery & power solutions provider. We specialize in bike batteries, car batteries, home UPS, industrial UPS, inverter service and solar panel installation - with 24/7 doorstep service across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
+                            <p class="fs-6">Coimbatore's trusted battery & power solutions provider with 6+ years of experience. We specialize in bike batteries, car batteries, home UPS, industrial UPS, inverter service and solar panel installation - with doorstep service (Monday to Saturday, 9AM to 10PM) across Coimbatore, Ooty, Pollachi, Tiruppur and Kotagiri.</p>
                         </div>
                     </div>
                 </div>
@@ -59,11 +59,11 @@
                         </div>
                         <div class="footer-contact-item">
                             <div class="icon-box">
-                                <img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" width="20" height="20" style="filter: brightness(0) invert(1);" alt="Call Kiara Battery Clinic 24/7">
+                                <img src="<?php echo base_url(); ?>themes/images/icon-phone.svg" width="20" height="20" style="filter: brightness(0) invert(1);" alt="Call Kiara Battery Clinic Monday to Saturday 9AM to 10PM">
                             </div>
                             <div class="footer-contact-content">
                                 <p><a href="tel:+91 90038 11107">+91 90038 11107</a> &nbsp;|&nbsp; <a href="https://wa.link/w646lw" target="_blank" rel="noopener">WhatsApp</a></p>
-                                <p><small>Available 24/7 - Call Anytime</small></p>
+                                <p><small>Monday to Saturday, 9AM to 10PM</small></p>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
           "name": "Do you provide doorstep battery service in Coimbatore?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes! We provide 24/7 doorstep battery service across Coimbatore and nearby areas including Ooty, Pollachi, Tiruppur and Kotagiri."
+            "text": "Yes! We provide doorstep battery service Monday to Saturday, 9AM to 10PM across Coimbatore and nearby areas including Ooty, Pollachi, Tiruppur and Kotagiri."
           }
         },
         {
@@ -122,7 +122,7 @@
           "name": "How quickly will your technician arrive?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For emergency calls within Coimbatore city, our technician typically arrives within 30-60 minutes. We are available 24/7."
+            "text": "For emergency calls within Coimbatore city, our technician typically arrives within 30-60 minutes. Our service hours are Monday to Saturday, 9AM to 10PM."
           }
         }
       ]

@@ -721,6 +721,29 @@
             }
         });
     }
+
+    // Auto-update Invoice Number when Invoice Date changes (only for new invoices)
+    $('#invoice_date').on('change', function () {
+        var invoiceId = $('#invoice_id').val();
+        if (!invoiceId || invoiceId == '0') {
+            var selectedDate = $(this).val();
+            if (selectedDate) {
+                $.ajax({
+                    url: '<?php echo base_url(); ?>admin/invoice/getNextInvoiceNumberAjax',
+                    type: 'GET',
+                    data: { date: selectedDate },
+                    dataType: 'json',
+                    success: function (res) {
+                        if (res && res.invoice_number) {
+                            $('#invoice_number').val(res.invoice_number);
+                            $('#token').val(res.token);
+                        }
+                    }
+                });
+            }
+        }
+    });
+
     // Invoice Save Function
     $("#invoiceForm").validate({
         rules: {

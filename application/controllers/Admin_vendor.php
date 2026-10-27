@@ -121,7 +121,7 @@ class Admin_vendor extends CI_Controller
         $vendorName = $this->input->post('vendor_name');
         $vendorEmail = $this->input->post('vendor_email');
         $vendorMobileNumber = $this->input->post('vendor_mobile_number');
-        $vendorGSTNumber = $this->input->post('vendor_gst_number');
+        $vendorGSTNumber = trim((string) $this->input->post('vendor_gst_number'));
         $vendorAddress1 = $this->input->post('vendor_address_1');
         $vendorAddress2 = $this->input->post('vendor_address_2');
         $status = $this->input->post('status');

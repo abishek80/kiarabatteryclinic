@@ -15,7 +15,6 @@
                     <thead>
                         <tr>
                             <th>S. No</th>
-                            <th>Image</th>
                             <th>Title</th>
                             <th>Reviewer Name</th>
                             <th>Location</th>
@@ -33,13 +32,6 @@
                         ?>
                         <tr>
                             <td><?php echo $i++; ?></td>
-                            <td>
-                                <?php if(!empty($row->reviewer_img)) { ?>
-                                    <img src="<?php echo (strpos($row->reviewer_img, 'http') === 0) ? $row->reviewer_img : base_url() . $row->reviewer_img; ?>" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;" alt="Reviewer">
-                                <?php } else { ?>
-                                    <span class="badge bg-label-secondary"><i class="bx bx-user"></i></span>
-                                <?php } ?>
-                            </td>
                             <td><strong class="text-dark"><?php echo htmlspecialchars($row->title); ?></strong></td>
                             <td><?php echo htmlspecialchars($row->reviewer_name); ?></td>
                             <td><span class="text-muted"><?php echo htmlspecialchars($row->location); ?></span></td>
@@ -113,16 +105,6 @@
                                                     <div class="col-md-3 col-sm-6">
                                                         <h6 class="fw-bold text-dark mb-1">Created At</h6>
                                                         <div class="text-secondary"><?php echo !empty($row->created_at) ? date('d/m/Y h:i A', strtotime($row->created_at)) : '-'; ?></div>
-                                                    </div>
-                                                    <div class="col-md-3 col-sm-6">
-                                                        <h6 class="fw-bold text-dark mb-1">Reviewer Image</h6>
-                                                        <div>
-                                                            <?php if(!empty($row->reviewer_img)) { ?>
-                                                                <img src="<?php echo (strpos($row->reviewer_img, 'http') === 0) ? $row->reviewer_img : base_url() . $row->reviewer_img; ?>" class="rounded-circle border" style="width: 40px; height: 40px; object-fit: cover;" alt="Reviewer">
-                                                            <?php } else { ?>
-                                                                <span class="text-secondary">No Image</span>
-                                                            <?php } ?>
-                                                        </div>
                                                     </div>
 
                                                     <div class="col-12 mt-3">

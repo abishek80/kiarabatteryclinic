@@ -13,8 +13,8 @@ $config['seo'] = array(
     'site_url' => 'https://kiarabatteryclinic.com/',
     'site_name' => 'Kiara Battery Clinic',
     'site_tagline' => "Coimbatore's #1 Battery Shop, UPS & Solar Service Experts",
-    'default_description' => 'Kiara Battery Clinic offers 24/7 doorstep bike battery, car battery replacement, home UPS, inverter service, industrial UPS & solar panel installation across Coimbatore, Ooty, Pollachi, Tiruppur & Kotagiri.',
-    'default_keywords' => 'car battery Coimbatore, bike battery replacement, battery shop Coimbatore, home UPS inverter price, inverter battery dealer Tatabad, doorstep battery service 24/7, Kiara Battery Clinic',
+    'default_description' => 'Kiara Battery Clinic - 6+ years of experience - offers doorstep bike battery, car battery replacement, home UPS, inverter service, industrial UPS & solar panel installation across Coimbatore, Ooty, Pollachi, Tiruppur & Kotagiri. Service hours: Mon-Sat, 9AM-10PM.',
+    'default_keywords' => 'car battery Coimbatore, bike battery replacement, battery shop Coimbatore, home UPS inverter price, inverter battery dealer Tatabad, doorstep battery service Coimbatore, Kiara Battery Clinic',
     'default_og_image' => 'themes/images/og-share-banner.jpg',
 
     'business_info' => array(
@@ -29,7 +29,7 @@ $config['seo'] = array(
         'phone_raw' => '+919003811107',
         'email' => 'kiarabatteryclinic@gmail.com',
         'google_maps' => 'https://maps.app.goo.gl/ttQckMunQZZrcVq66',
-        'opening_hours' => 'Mo-Su 00:00-23:59',
+        'opening_hours' => 'Mo-Sa 09:00-22:00',
         'price_range' => '₹₹',
         'area_served' => array('Coimbatore', 'Ooty', 'Kotagiri', 'Pollachi', 'Tiruppur', 'Tatabad', 'Gandhipuram', 'RS Puram', 'Peelamedu', 'Saravanampatti', 'Thudiyalur', 'Singanallur', 'Vadavalli'),
         'brands_offered' => array('Amaron', 'Exide', 'Okaya', 'SF Sonic', 'Luminous', 'Microtek', 'Tata Green'),
@@ -55,14 +55,41 @@ $config['seo'] = array(
             'secondary_keywords' => array('inverter battery dealer Tatabad', 'Luminous inverter price Coimbatore', 'tubular inverter battery replacement', 'office UPS service Coimbatore'),
             'target_url' => 'services'
         ),
+        'jump_starter' => array(
+            'primary_keyword' => 'jump starter service Coimbatore',
+            'secondary_keywords' => array('car jump start near me', 'bike battery jump start Coimbatore', 'roadside battery assistance Coimbatore', 'dead battery help Coimbatore', 'battery jumpstart Tatabad'),
+            'target_url' => 'service/jump-starter-service'
+        ),
+        'genset_battery' => array(
+            'primary_keyword' => 'genset battery service Coimbatore',
+            'secondary_keywords' => array('generator battery replacement Coimbatore', 'genset battery initialization', 'generator battery jump start', 'DG set battery maintenance Coimbatore', 'standby generator battery service'),
+            'target_url' => 'service/genset-battery-service'
+        ),
+        'lithium_ion_battery' => array(
+            'primary_keyword' => 'lithium-ion battery service Coimbatore',
+            'secondary_keywords' => array('lithium battery maintenance Coimbatore', 'BMS diagnostics Coimbatore', 'EV battery service Coimbatore', 'lithium-ion battery initialization', 'energy storage battery service'),
+            'target_url' => 'service/lithium-ion-battery-service'
+        ),
         'doorstep_service' => array(
-            'primary_keyword' => '24/7 doorstep battery service Coimbatore',
+            'primary_keyword' => 'doorstep battery service Coimbatore',
             'secondary_keywords' => array('emergency battery replacement near me', 'car battery breakdown assistance Coimbatore', 'onsite battery installation'),
             'target_url' => 'contact-us'
         )
     ),
 
     'aeo_questions' => array(
+        array(
+            'question' => 'Do you provide lithium-ion battery initialization, service and maintenance in Coimbatore?',
+            'answer' => 'Yes. Kiara Battery Clinic provides lithium-ion battery initialization, condition checks, connector inspection, BMS diagnostics and charging system checks for electric vehicles, commercial equipment and compatible energy storage systems in Coimbatore, Monday to Saturday, 9AM to 10PM, following the battery manufacturer specifications. Call or WhatsApp +91 90038 11107 with the battery make, model, voltage and application.'
+        ),
+        array(
+            'question' => 'Do you provide genset battery service and jump-start for generators in Coimbatore?',
+            'answer' => 'Yes. Kiara Battery Clinic provides genset battery initialization, maintenance, terminal inspection and jump-start assistance for compatible generators in offices, commercial buildings, industrial units and homes across Coimbatore, Monday to Saturday, 9AM to 10PM. Share your genset make, model and battery details when you call or WhatsApp +91 90038 11107.'
+        ),
+        array(
+            'question' => 'Do you provide jump starter service for cars and bikes in Coimbatore?',
+            'answer' => 'Yes. Kiara Battery Clinic provides jump starter service for compatible cars and bikes across Coimbatore (Tatabad, Gandhipuram, RS Puram, Peelamedu, Saravanampatti), with coverage on request in Ooty, Kotagiri, Pollachi and Tiruppur. Service hours are Monday to Saturday, 9AM to 10PM. Call or WhatsApp +91 90038 11107; a technician typically arrives within 30-60 minutes within Coimbatore city.'
+        ),
         array(
             'question' => 'How long does a car battery usually last in Coimbatore climate conditions?',
             'answer' => 'A high-quality car battery (like Amaron or Exide) typically lasts 3 to 5 years in Indian climatic conditions. Extreme heat, infrequent driving, or faulty alternators can reduce lifespan. Regular voltage checks during free routine testing at Kiara Battery Clinic ensure peak health.'
@@ -72,8 +99,8 @@ $config['seo'] = array(
             'answer' => 'A UPS (Uninterruptible Power Supply) provides zero-millisecond switching time, ideal for sensitive electronics like computers and medical equipment. An inverter has a slight transfer lag (10-20ms), suitable for general home appliances like fans, lights, and TVs. Kiara Battery Clinic stocks Luminous and Microtek UPS and inverter systems to match your home or office backup needs.'
         ),
         array(
-            'question' => 'Do you provide 24/7 emergency doorstep battery replacement in Coimbatore?',
-            'answer' => 'Yes! Kiara Battery Clinic offers 24/7 emergency doorstep battery replacement, testing, and jumpstart services across Coimbatore (Tatabad, Gandhipuram, RS Puram, Peelamedu, Saravanampatti) as well as Ooty, Kotagiri, Pollachi, and Tiruppur. For emergency calls within Coimbatore city, a technician typically arrives within 30-60 minutes of your call or WhatsApp message.'
+            'question' => 'Do you provide emergency doorstep battery replacement in Coimbatore?',
+            'answer' => 'Yes! Kiara Battery Clinic offers doorstep battery replacement, testing, and jumpstart services Monday to Saturday, 9AM to 10PM across Coimbatore (Tatabad, Gandhipuram, RS Puram, Peelamedu, Saravanampatti) as well as Ooty, Kotagiri, Pollachi, and Tiruppur. For emergency calls within Coimbatore city during service hours, a technician typically arrives within 30-60 minutes of your call or WhatsApp message.'
         ),
         array(
             'question' => 'How do I choose the correct battery for my car or bike?',
@@ -81,18 +108,37 @@ $config['seo'] = array(
         )
     ),
 
+    // Per-service overrides keyed by service token; any of title / description / keywords.
+    'service_seo' => array(
+        'jump-starter-service' => array(
+            'title' => 'Jump Starter Service for Cars & Bikes | Roadside Assistance',
+            'description' => 'Need a jump starter service for your car or bike? Get help with discharged vehicle batteries and check roadside jump-start assistance in your area.',
+            'keywords' => 'Jump starter service, Car jump start service, Bike jump start service, Vehicle battery jump start, Roadside battery assistance, Dead car battery assistance, Jump start service near me'
+        ),
+        'genset-battery-service' => array(
+            'title' => 'Genset Battery Service, Initialization & Jump Start',
+            'description' => 'Get genset battery initialization, generator battery maintenance, and jump-start assistance. Support reliable generator starting with professional battery care.',
+            'keywords' => 'Genset battery service, Genset battery initialization, Generator battery maintenance, Generator battery jump start, Diesel generator battery service, Generator starting battery, Genset battery troubleshooting, Generator battery inspection'
+        ),
+        'lithium-ion-battery-service' => array(
+            'title' => 'Lithium-Ion Battery Service, Initialization & Maintenance',
+            'description' => 'Get lithium-ion battery initialization, diagnostics, servicing, and maintenance. Support battery reliability with appropriate inspections and preventive care.',
+            'keywords' => 'Lithium-ion battery service, Lithium-ion battery initialization, Lithium battery maintenance, Lithium battery diagnostics, Battery management system (BMS) service, Lithium-ion battery inspection, Lithium battery servicing, Rechargeable battery maintenance'
+        )
+    ),
+
     'pages' => array(
         'home' => array(
             'title' => 'Kiara Battery Clinic | Car & Bike Battery, UPS & Inverter Dealer Coimbatore',
-            'description' => "Coimbatore's #1 battery shop. Expert car battery, bike battery replacement, home UPS, inverter, industrial UPS & solar panel installation. 24/7 doorstep service across Coimbatore, Ooty, Pollachi, Tiruppur & Kotagiri.",
-            'keywords' => 'car battery Coimbatore, bike battery replacement, battery shop near me, home UPS inverter price, doorstep battery service 24/7, Kiara Battery Clinic',
+            'description' => "Coimbatore's #1 battery shop with 6+ years of experience. Expert car battery, bike battery replacement, home UPS, inverter, industrial UPS & solar panel installation. Doorstep service across Coimbatore, Ooty, Pollachi, Tiruppur & Kotagiri. Open Mon-Sat, 9AM-10PM.",
+            'keywords' => 'car battery Coimbatore, bike battery replacement, battery shop near me, home UPS inverter price, doorstep battery service Coimbatore, Kiara Battery Clinic',
             'canonical' => '',
             'og_type' => 'website',
             'schema_type' => 'AutomotiveBusiness'
         ),
         'about_us' => array(
             'title' => 'About Us | Kiara Battery Clinic - Trusted Battery & Power Experts Coimbatore',
-            'description' => 'Learn about Kiara Battery Clinic, Coimbatore’s premier battery and power solutions shop. Authorized dealer for Amaron, Exide, Okaya & Luminous with 24/7 emergency doorstep fitting and solar rooftop setups.',
+            'description' => 'Learn about Kiara Battery Clinic, Coimbatore’s premier battery and power solutions shop with 6+ years of experience. Authorized dealer for Amaron, Exide, Okaya & Luminous with doorstep fitting (Mon-Sat, 9AM-10PM) and solar rooftop setups.',
             'keywords' => 'about Kiara Battery Clinic, battery store Tatabad Coimbatore, trusted battery dealer Coimbatore, power solutions expert Tamil Nadu',
             'canonical' => 'about-us',
             'og_type' => 'article',
@@ -100,8 +146,8 @@ $config['seo'] = array(
         ),
         'services' => array(
             'title' => 'Battery Services | Car Battery, Bike Battery, Home UPS & Inverter Service Coimbatore',
-            'description' => 'Explore complete power solutions: car battery replacement, bike battery fitting, home UPS installation, inverter battery sales, industrial UPS maintenance, and 24/7 doorstep emergency battery service.',
-            'keywords' => 'car battery replacement Coimbatore, bike battery service, home UPS service, inverter battery dealer Tatabad, industrial UPS installation, 24/7 doorstep battery assistance',
+            'description' => 'Explore complete power solutions from a team with 6+ years of experience: car battery replacement, bike battery fitting, home UPS installation, inverter battery sales, industrial UPS maintenance, and doorstep emergency battery service (Mon-Sat, 9AM-10PM).',
+            'keywords' => 'car battery replacement Coimbatore, bike battery service, home UPS service, inverter battery dealer Tatabad, industrial UPS installation, doorstep battery assistance',
             'canonical' => 'services',
             'og_type' => 'website',
             'schema_type' => 'Service'
@@ -113,30 +159,6 @@ $config['seo'] = array(
             'canonical' => 'service',
             'og_type' => 'article',
             'schema_type' => 'Service'
-        ),
-        'category' => array(
-            'title' => 'Battery & Power Categories | Amaron, Exide, Okaya & Luminous Coimbatore',
-            'description' => 'Browse battery categories for cars, two-wheelers, heavy commercial vehicles, home UPS, solar inverters, and industrial power systems at Kiara Battery Clinic Coimbatore.',
-            'keywords' => 'Amaron car battery Coimbatore, Exide bike battery dealer Tatabad, Okaya inverter battery, vehicle battery types',
-            'canonical' => 'category',
-            'og_type' => 'website',
-            'schema_type' => 'CollectionPage'
-        ),
-        'products' => array(
-            'title' => 'Battery Products & Price List | Car, Bike, UPS & Inverter Batteries Coimbatore',
-            'description' => 'Top brand automotive batteries, inverter batteries, solar panels, and UPS systems at best prices in Coimbatore. Free installation & 24/7 doorstep delivery.',
-            'keywords' => 'car battery price Coimbatore, bike battery shop near me, home UPS inverter price Tatabad, solar battery Coimbatore',
-            'canonical' => 'products',
-            'og_type' => 'website',
-            'schema_type' => 'CollectionPage'
-        ),
-        'product_detail' => array(
-            'title' => 'Genuine Battery Product Details | Kiara Battery Clinic Coimbatore',
-            'description' => 'Buy genuine batteries with official manufacturer warranty. Doorstep delivery, installation, and old battery buyback exchange available in Coimbatore.',
-            'keywords' => 'buy car battery online Coimbatore, bike battery replacement, inverter battery warranty',
-            'canonical' => 'product',
-            'og_type' => 'product',
-            'schema_type' => 'Product'
         ),
         'testimonials' => array(
             'title' => 'Customer Reviews & Ratings | Kiara Battery Clinic Coimbatore',
@@ -155,8 +177,8 @@ $config['seo'] = array(
             'schema_type' => 'ImageGallery'
         ),
         'contact_us' => array(
-            'title' => 'Contact Us | 24/7 Doorstep Battery Service Coimbatore - Kiara Battery Clinic',
-            'description' => 'Need emergency battery service in Coimbatore? Call +91 90038 11107 or visit our Tatabad store. 24/7 doorstep bike/car battery jumpstart & replacement.',
+            'title' => 'Contact Us | Doorstep Battery Service Coimbatore - Kiara Battery Clinic',
+            'description' => 'Need emergency battery service in Coimbatore from a team with 6+ years of experience? Call +91 90038 11107 or visit our Tatabad store. Mon-Sat, 9AM-10PM doorstep bike/car battery jumpstart & replacement.',
             'keywords' => 'contact battery clinic Coimbatore, battery emergency phone number Coimbatore, Tatabad battery shop address, doorstep battery request',
             'canonical' => 'contact-us',
             'og_type' => 'website',

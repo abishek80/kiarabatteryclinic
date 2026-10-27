@@ -157,7 +157,6 @@ CREATE TABLE IF NOT EXISTS `testimonial` (
   `location` varchar(255) DEFAULT NULL,
   `review_date` date DEFAULT NULL,
   `star` tinyint(1) NOT NULL DEFAULT 5,
-  `reviewer_img` varchar(500) DEFAULT NULL,
   `status` enum('active','inactive') NOT NULL DEFAULT 'active',
   `delete_status` int(5) NOT NULL DEFAULT 0,
   `created_by` int(11) DEFAULT NULL,
@@ -186,5 +185,15 @@ CREATE TABLE IF NOT EXISTS `faq` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+-- 18. Service Realistic Image Updates
+-- --------------------------------------------------------
+UPDATE `service` SET `service_img` = 'themes/images/service-image-7.jpg' WHERE `token` = 'battery-recharge-maintenance';
+UPDATE `service` SET `service_img` = 'themes/images/service-image-8.jpg' WHERE `token` = 'doorstep-battery-service';
+UPDATE `service` SET `service_img` = 'themes/images/service-image-9.jpg' WHERE `token` = 'support-complete-follow-up';
+UPDATE `service` SET `service_img` = 'themes/images/service-image-10.jpg' WHERE `token` = 'jump-starter-service';
+UPDATE `service` SET `service_img` = 'themes/images/service-image-11.jpg' WHERE `token` = 'genset-battery-service';
+UPDATE `service` SET `service_img` = 'themes/images/service-image-12.jpg' WHERE `token` = 'lithium-ion-battery-service';
 
 SET FOREIGN_KEY_CHECKS = 1;

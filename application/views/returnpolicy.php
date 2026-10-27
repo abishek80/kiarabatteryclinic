@@ -58,7 +58,7 @@
                 <h4 class="mt-4 pt-3 fw-bold text-dark h5 mb-3">5. How to Request a Return</h4>
                 <p>To initiate a request, please contact our support team:</p>
                 <ul class="ps-4 mb-4" style="list-style-type: none;">
-                    <li class="mb-2"><strong>Phone/WhatsApp:</strong> <a href="tel:+919003811107" class="text-danger" style="color: var(--accent-color) !important;">+91 90038 11107</a> (24/7 Support)</li>
+                    <li class="mb-2"><strong>Phone/WhatsApp:</strong> <a href="tel:+919003811107" class="text-danger" style="color: var(--accent-color) !important;">+91 90038 11107</a> (Monday to Saturday, 9AM to 10PM)</li>
                     <li class="mb-2"><strong>Email:</strong> <a href="mailto:kiarabatteryclinic@gmail.com" class="text-danger" style="color: var(--accent-color) !important;">kiarabatteryclinic@gmail.com</a></li>
                     <li class="mb-2">Alternatively, visit our main clinic: <strong>36, 9th Street, Tatabad, Coimbatore - 641 012</strong></li>
                 </ul>

@@ -152,11 +152,11 @@
                                 </div>
                                 <div class="working-box-item">
                                     <div class="icon-box">
-                                        <img src="<?php echo base_url(); ?>themes/images/icon-working-box-2.svg" alt="24/7 doorstep service Kiara Battery Clinic">
+                                        <img src="<?php echo base_url(); ?>themes/images/icon-working-box-2.svg" alt="Doorstep service Kiara Battery Clinic Monday to Saturday 9AM to 10PM">
                                     </div>
                                     <div class="working-box-content">
-                                        <h3>24/7 Doorstep Support</h3>
-                                        <p>Available round the clock across Coimbatore, Ooty, Kotagiri, Pollachi and Tiruppur.</p>
+                                        <h3>Doorstep Support</h3>
+                                        <p>Available Monday to Saturday, 9AM to 10PM across Coimbatore, Ooty, Kotagiri, Pollachi and Tiruppur.</p>
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +210,7 @@
                                     </h2>
                                     <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#faqaccordion">
                                         <div class="accordion-body">
-                                            <p>Yes, we provide 24/7 doorstep battery replacement, testing and jumpstart service for cars and bikes across Coimbatore, Ooty, Kotagiri, Pollachi and Tiruppur.</p>
+                                            <p>Yes, we provide doorstep battery replacement, testing and jumpstart service for cars and bikes Monday to Saturday, 9AM to 10PM across Coimbatore, Ooty, Kotagiri, Pollachi and Tiruppur.</p>
                                         </div>
                                     </div>
                                 </div>

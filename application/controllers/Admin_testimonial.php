@@ -47,7 +47,6 @@ class Admin_testimonial extends CI_Controller
         $data['location'] = "";
         $data['reviewDate'] = date('Y-m-d');
         $data['star'] = 5;
-        $data['reviewerImg'] = "";
         $data['status'] = "active";
 
         $this->load->view('backend/header', $data);
@@ -74,7 +73,6 @@ class Admin_testimonial extends CI_Controller
             $data['location'] = $row->location;
             $data['reviewDate'] = !empty($row->review_date) ? $row->review_date : date('Y-m-d');
             $data['star'] = isset($row->star) ? $row->star : 5;
-            $data['reviewerImg'] = $row->reviewer_img;
             $data['status'] = $row->status;
         }
 
@@ -100,7 +98,6 @@ class Admin_testimonial extends CI_Controller
         $reviewDate = $this->input->post('review_date');
         $star = (int) $this->input->post('star');
         $status = $this->input->post('status');
-        $alterImg = $this->input->post('alter_reviewer_img');
 
         if (empty($title) || empty($reviewerName)) {
             $data["isError"] = TRUE;
@@ -113,21 +110,6 @@ class Admin_testimonial extends CI_Controller
             $token = strtolower(url_title($title . '-' . $reviewerName));
         }
 
-        // Handle Image Upload if provided
-        $allowTypes = array('jpg', 'png', 'jpeg', 'webp', 'gif', 'svg');
-        $uploadDir = './uploads/testimonials/';
-        if (!is_dir($uploadDir)) {
-            mkdir($uploadDir, 0777, true);
-        }
-
-        if (isset($_FILES['reviewer_img']) && $_FILES['reviewer_img']['name'] != '') {
-            $filesArray = $_FILES['reviewer_img'];
-            $uploadedFiles = $this->common->fileUpload($filesArray, $uploadDir, $allowTypes);
-            $reviewerImg = isset($uploadedFiles[0]) ? $uploadedFiles[0] : '';
-        } else {
-            $reviewerImg = $alterImg;
-        }
-
         $saveData = array(
             'token' => $token,
             'title' => $title,
@@ -136,7 +118,6 @@ class Admin_testimonial extends CI_Controller
             'location' => $location,
             'review_date' => !empty($reviewDate) ? $reviewDate : date('Y-m-d'),
             'star' => ($star >= 1 && $star <= 5) ? $star : 5,
-            'reviewer_img' => $reviewerImg,
             'status' => !empty($status) ? $status : 'active'
         );
 

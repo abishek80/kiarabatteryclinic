@@ -52,10 +52,77 @@ class Invoicemodel extends CI_Model
         return $res->result();
     }
 
-    //Check Invoice
-    public function checkInvoice($token)
+    // Get Indian Financial Year (e.g. 2026-27)
+    public function getIndianFinancialYear($date = null)
     {
-        $sql = "SELECT * FROM invoice WHERE delete_status = 0 AND token='" . $token . "'";
+        if (empty($date)) {
+            $date = date('Y-m-d');
+        }
+        $time = strtotime($date);
+        $year = (int)date('Y', $time);
+        $month = (int)date('n', $time);
+
+        if ($month >= 4) {
+            $startYear = $year;
+            $endYear = $year + 1;
+        } else {
+            $startYear = $year - 1;
+            $endYear = $year;
+        }
+
+        return $startYear . '-' . substr((string)$endYear, -2);
+    }
+
+    // Check if Invoice Number Exists
+    public function checkInvoiceNumberExists($invoiceNumber)
+    {
+        $sql = "SELECT id FROM invoice WHERE invoice_number = " . $this->db->escape($invoiceNumber);
+        $res = $this->db->query($sql);
+        return ($res->num_rows() > 0);
+    }
+
+    // Get Next Invoice Number: INV/KBC/{indian-finance-year}/{invoice-no}
+    public function getNextInvoiceNumber($date = null)
+    {
+        $fy = $this->getIndianFinancialYear($date);
+
+        // Get last invoice from invoice table
+        $sql = "SELECT id, invoice_number FROM invoice ORDER BY id DESC LIMIT 1";
+        $query = $this->db->query($sql);
+
+        $nextNo = 1;
+        if ($query->num_rows() > 0) {
+            $lastRow = $query->row();
+            if (!empty($lastRow->invoice_number) && preg_match('/(\d+)$/', trim($lastRow->invoice_number), $matches)) {
+                $lastNo = (int)$matches[1];
+                $nextNo = $lastNo + 1;
+            } else if (!empty($lastRow->id)) {
+                $nextNo = (int)$lastRow->id + 1;
+            }
+        }
+
+        // Ensure candidate number is unique
+        do {
+            $formattedNo = sprintf('%04d', $nextNo);
+            $candidateInvoiceNumber = "INV/KBC/{$fy}/{$formattedNo}";
+            if ($this->checkInvoiceNumberExists($candidateInvoiceNumber)) {
+                $nextNo++;
+            } else {
+                break;
+            }
+        } while (true);
+
+        return $candidateInvoiceNumber;
+    }
+
+    //Check Invoice
+    public function checkInvoice($token, $invoiceNumber = '')
+    {
+        if (!empty($invoiceNumber)) {
+            $sql = "SELECT * FROM invoice WHERE delete_status = 0 AND (token=" . $this->db->escape($token) . " OR invoice_number=" . $this->db->escape($invoiceNumber) . ")";
+        } else {
+            $sql = "SELECT * FROM invoice WHERE delete_status = 0 AND token=" . $this->db->escape($token);
+        }
 
         $res = $this->db->query($sql);
         return $res->num_rows();
