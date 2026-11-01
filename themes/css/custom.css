@@ -2,6 +2,7 @@
 	font-family: 'Font Awesome 6 Free';
 	font-display: swap;
 }
+
 @font-face {
 	font-family: 'Font Awesome 6 Brands';
 	font-display: swap;
@@ -720,17 +721,17 @@ header.main-header .header-sticky.active {
 	color: var(--accent-color);
 }
 
-.main-menu ul > li.active > a,
-.main-menu ul > li > a.active,
-.main-menu ul > li.active > a:hover,
-.main-menu ul > li.active > a:focus {
+.main-menu ul>li.active>a,
+.main-menu ul>li>a.active,
+.main-menu ul>li.active>a:hover,
+.main-menu ul>li.active>a:focus {
 	color: var(--accent-color) !important;
 	font-weight: 600;
 	position: relative;
 }
 
-.main-menu ul > li.active > a::before,
-.main-menu ul > li > a.active::before {
+.main-menu ul>li.active>a::before,
+.main-menu ul>li>a.active::before {
 	content: '';
 	position: absolute;
 	bottom: 8px;
@@ -741,23 +742,23 @@ header.main-header .header-sticky.active {
 	border-radius: 2px;
 }
 
-.main-menu ul > li.submenu.active > a::before {
+.main-menu ul>li.submenu.active>a::before {
 	right: 32px;
 }
 
-.main-menu ul ul li.active > a,
+.main-menu ul ul li.active>a,
 .main-menu ul ul li a.active {
 	color: var(--accent-color) !important;
 	font-weight: 600;
 	padding-left: 25px !important;
 }
 
-.main-menu ul ul li.active > a::before,
+.main-menu ul ul li.active>a::before,
 .main-menu ul ul li a.active::before {
 	display: none !important;
 }
 
-.slicknav_nav li.active > a,
+.slicknav_nav li.active>a,
 .slicknav_nav li a.active {
 	background-color: rgba(255, 255, 255, 0.2) !important;
 	color: var(--white-color) !important;
@@ -932,7 +933,7 @@ header.main-header .header-sticky.active {
 	width: 100%;
 	padding: 0;
 	background: var(--accent-color);
-	box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .slicknav_menu ul {
@@ -1019,7 +1020,7 @@ header.main-header .header-sticky.active {
 }
 
 .hero.hero-bg-image {
-	background: url('../images/hero-bg.jpg') no-repeat;
+	background: url('../images/hero-bg.png') no-repeat;
 	background-position: center center;
 	background-size: cover;
 	padding: 150px 0;
@@ -1063,7 +1064,7 @@ header.main-header .header-sticky.active {
 
 .hero.hero-bg-image.hero-slider-layout .hero-slide {
 	position: relative;
-	background: url('../images/hero-bg.jpg');
+	background: url('../images/hero-bg.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -2424,7 +2425,7 @@ header.main-header .header-sticky.active {
 
 .cta-box {
 	position: relative;
-	background-image: url('../images/cta-box-bg.jpg');
+	background-image: url('../images/cta-box-bg.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -7426,24 +7427,24 @@ header.main-header .header-sticky.active {
 
 /* Lightbox Preview Title Centering & Spacing */
 .mfp-bottom-bar {
-    margin-top: 1rem !important;
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    width: 100% !important;
-    text-align: center !important;
+	margin-top: 1rem !important;
+	position: absolute !important;
+	top: 100% !important;
+	left: 0 !important;
+	width: 100% !important;
+	text-align: center !important;
 }
 
 .mfp-title {
-    text-align: center !important;
-    margin-top: 1rem !important;
-    padding-right: 0 !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    color: #ffffff !important;
+	text-align: center !important;
+	margin-top: 1rem !important;
+	padding-right: 0 !important;
+	font-size: 16px !important;
+	font-weight: 500 !important;
+	color: #ffffff !important;
 }
 
 .mfp-counter {
-    right: 0 !important;
-    top: 1rem !important;
+	right: 0 !important;
+	top: 1rem !important;
 }

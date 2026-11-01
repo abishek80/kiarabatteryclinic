@@ -27,6 +27,9 @@ class Web extends CI_Controller {
 
         $data['site_url'] = rtrim(base_url(), '/');
         $data['galleryList'] = $this->webmodel->galleryList();
+        $data['serviceList'] = $this->webmodel->serviceList();
+        $data['testimonialList'] = $this->webmodel->testimonialList();
+        $data['brandList'] = $this->webmodel->brandList();
 
         $xml = $this->load->view('image_sitemap', $data, TRUE);
         $this->output->set_output(trim($xml));

@@ -22,7 +22,7 @@
     "hasPart": [
         {
             "@type": "ImageObject",
-            "contentUrl": "https://kiarabatteryclinic.com/themes/images/our-goals-img-1.jpg",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/our-goals-img-1.png",
             "name": "Car Battery Replacement Doorstep Service Coimbatore - Kiara Battery Clinic",
             "caption": "Best battery service and installation - car battery replacement at your doorstep in Coimbatore, Tamil Nadu",
             "keywords": "coimbatore battery service, best battery service and installation, car battery replacement, doorstep battery service coimbatore, Kiara Battery Clinic",
@@ -46,7 +46,7 @@
         },
         {
             "@type": "ImageObject",
-            "contentUrl": "https://kiarabatteryclinic.com/themes/images/our-goals-img-4.jpg",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/our-goals-img-4.png",
             "name": "Industrial UPS Battery Bank Installation Coimbatore - Kiara Battery Clinic",
             "caption": "Industrial UPS and battery bank installation for factories and data centres in Coimbatore, Tamil Nadu",
             "keywords": "industrial ups coimbatore, ups installation coimbatore, inverter battery bank coimbatore, Kiara Battery Clinic",
@@ -62,7 +62,7 @@
         },
         {
             "@type": "ImageObject",
-            "contentUrl": "https://kiarabatteryclinic.com/themes/images/hero-bg.jpg",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/hero-bg.png",
             "name": "Kiara Battery Clinic - Best Battery Service and Installation Coimbatore",
             "caption": "Coimbatore's most trusted battery and power solutions expert - car battery, bike battery, home UPS, inverter and solar install",
             "keywords": "coimbatore battery service, best battery service and installation, ups, inverter, solar install, Kiara Battery Clinic",
@@ -202,7 +202,7 @@
                     <div class="goals-image-box">
                         <div class="goals-img-1">
                             <figure class="image-anime reveal">
-                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-1.jpg" alt="Coimbatore Battery Service - Best Car and Bike Battery Replacement & Doorstep Fitting" title="Coimbatore Battery Service - Kiara Battery Clinic">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-1.png" alt="Coimbatore Battery Service - Best Car and Bike Battery Replacement & Doorstep Fitting" title="Coimbatore Battery Service - Kiara Battery Clinic">
                             </figure>
                         </div>
                         
@@ -220,7 +220,7 @@
                         </div>
                         <div class="goals-img-4">
                             <figure class="image-anime reveal">
-                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-4.jpg" alt="Industrial UPS Inverter Battery Bank Installation and Maintenance Coimbatore" title="Industrial Power Backup and Battery Service Coimbatore">
+                                <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/our-goals-img-4.png" alt="Industrial UPS Inverter Battery Bank Installation and Maintenance Coimbatore" title="Industrial Power Backup and Battery Service Coimbatore">
                             </figure>
                         </div>
                     </div>
@@ -499,7 +499,7 @@
             <div class="col-lg-6">
                 <div class="faqs-image">
                     <figure class="image-anime reveal">
-                        <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/faqs-image.jpg" alt="FAQs - Kiara Battery Clinic Coimbatore doorstep service">
+                        <img loading="lazy" decoding="async" src="<?php echo base_url(); ?>themes/images/home-image.png" alt="FAQs - Kiara Battery Clinic Coimbatore doorstep service">
                     </figure>
                 </div>
             </div>

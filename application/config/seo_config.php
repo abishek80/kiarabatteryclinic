@@ -74,10 +74,19 @@ $config['seo'] = array(
             'primary_keyword' => 'doorstep battery service Coimbatore',
             'secondary_keywords' => array('emergency battery replacement near me', 'car battery breakdown assistance Coimbatore', 'onsite battery installation'),
             'target_url' => 'contact-us'
+        ),
+        'annual_maintenance_contract' => array(
+            'primary_keyword' => 'Annual maintenance contract service',
+            'secondary_keywords' => array('AMC service provider', 'Annual maintenance services', 'Battery maintenance contract', 'Genset maintenance contract', 'Preventive maintenance service', 'Equipment maintenance contract', 'Commercial battery maintenance'),
+            'target_url' => 'service/annual-maintenance-contract'
         )
     ),
 
     'aeo_questions' => array(
+        array(
+            'question' => 'Do you provide Annual Maintenance Contract (AMC) service for batteries and generators in Coimbatore?',
+            'answer' => 'Yes. Kiara Battery Clinic offers structured Annual Maintenance Contracts for commercial battery banks, genset batteries, lithium-ion systems, and backup power equipment in Coimbatore. AMC services include scheduled preventive maintenance visits, battery health checks, terminal and connection cleaning, and priority technical support. Call or WhatsApp +91 90038 11107 to request an AMC proposal.'
+        ),
         array(
             'question' => 'Do you provide lithium-ion battery initialization, service and maintenance in Coimbatore?',
             'answer' => 'Yes. Kiara Battery Clinic provides lithium-ion battery initialization, condition checks, connector inspection, BMS diagnostics and charging system checks for electric vehicles, commercial equipment and compatible energy storage systems in Coimbatore, Monday to Saturday, 9AM to 10PM, following the battery manufacturer specifications. Call or WhatsApp +91 90038 11107 with the battery make, model, voltage and application.'
@@ -215,6 +224,17 @@ $config['seo'] = array(
             'canonical' => 'refund-policy',
             'og_type' => 'website',
             'schema_type' => 'WebPage'
+        )
+    ),
+
+    'service_seo' => array(
+        'annual-maintenance-contract' => array(
+            'title' => 'Annual Maintenance Contract (AMC) for Batteries & Equipment | Kiara Battery Clinic',
+            'description' => 'Explore annual maintenance contract services for batteries, gensets, and supported equipment. Get scheduled inspections, preventive maintenance, and technical support.',
+            'keywords' => 'Annual maintenance contract service, AMC service provider, Annual maintenance services, Battery maintenance contract, Genset maintenance contract, Preventive maintenance service, Equipment maintenance contract, Commercial battery maintenance',
+            'canonical' => 'service/annual-maintenance-contract',
+            'og_type' => 'article',
+            'schema_type' => 'Service'
         )
     )
 );

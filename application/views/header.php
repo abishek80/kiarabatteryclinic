@@ -39,7 +39,7 @@
 	<!-- Search Engine Sitemap Discovery -->
 	<link rel="sitemap" type="application/xml" title="Sitemap" href="<?php echo base_url('sitemap.xml'); ?>">
 	<?php if (uri_string() === '') { ?>
-	<link rel="preload" as="image" href="<?php echo base_url(); ?>themes/images/hero-bg.jpg" fetchpriority="high">
+	<link rel="preload" as="image" href="<?php echo base_url(); ?>themes/images/hero-bg.png" fetchpriority="high">
 	<?php } ?>
 	<link href="<?php echo base_url(); ?>themes/css/fonts.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>themes/css/bootstrap.min.css" rel="stylesheet" media="screen">

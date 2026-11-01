@@ -140,7 +140,7 @@
             <div class="col-lg-6">
                 <div class="faqs-image">
                     <figure class="image-anime reveal">
-                        <img src="<?php echo base_url(); ?>themes/images/faqs-image.jpg" alt="FAQs - Kiara Battery Clinic Coimbatore battery UPS solar service">
+                        <img src="<?php echo base_url(); ?>themes/images/faqs-image.png" alt="FAQs - Kiara Battery Clinic Coimbatore battery UPS solar service">
                     </figure>
                 </div>
             </div>

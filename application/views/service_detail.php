@@ -94,7 +94,7 @@
                                     <figure class="image-anime">
                                         <?php 
                                             $sImgPath = !empty($serviceImg) ? ltrim((string)$serviceImg, './') : '';
-                                            $sImgSrc = !empty($sImgPath) ? ((strpos($sImgPath, 'http') === 0) ? $sImgPath : base_url($sImgPath)) : base_url('themes/images/project-video-image.jpg');
+                                            $sImgSrc = !empty($sImgPath) ? ((strpos($sImgPath, 'http') === 0) ? $sImgPath : base_url($sImgPath)) : base_url('themes/images/home-image.png');
                                             $sName = !empty($serviceName) ? htmlspecialchars($serviceName) : 'Coimbatore Battery Service';
                                         ?>
                                         <img src="<?php echo $sImgSrc; ?>" alt="<?php echo $sName; ?> - Best Battery Service, UPS Inverter & Solar Installation in Coimbatore" title="<?php echo $sName; ?> - Kiara Battery Clinic Coimbatore" loading="lazy" decoding="async">

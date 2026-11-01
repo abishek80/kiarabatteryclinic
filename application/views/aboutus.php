@@ -64,7 +64,7 @@
                     </div>
                     <div class="about-video-image wow fadeInUp" data-wow-delay="0.2s">
                         <figure class="image-anime">
-                            <img src="<?php echo base_url(); ?>themes/images/about-image-1.jpg" alt="Kiara Battery Clinic technicians at work - Coimbatore">
+                            <img src="<?php echo base_url(); ?>themes/images/about-image-1.png" alt="Kiara Battery Clinic technicians at work - Coimbatore">
                         </figure>
 
                         <div class="video-play-button btn-effect">
@@ -75,7 +75,7 @@
                     </div>
                     <div class="about-image">
                         <figure class="image-anime reveal">
-                            <img src="<?php echo base_url(); ?>themes/images/about-image-2.jpg" alt="Battery shop in Coimbatore - car battery and bike battery service">
+                            <img src="<?php echo base_url(); ?>themes/images/about-image-2.png" alt="Battery shop in Coimbatore - car battery and bike battery service">
                         </figure>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                 <div class="company-values-images">
                     <div class="company-values-image-1">
                         <figure class="image-anime">
-                            <img src="<?php echo base_url(); ?>themes/images/company-values-image-1.jpg" alt="Kiara Battery Clinic Coimbatore - trusted power solutions">
+                            <img src="<?php echo base_url(); ?>themes/images/company-values-image-1.png" alt="Kiara Battery Clinic Coimbatore - trusted power solutions">
                         </figure>
                         <div class="contact-now-circle">
                             <a href="<?php echo base_url(); ?>contact-us"><img src="<?php echo base_url(); ?>themes/images/contact-now-circle.png" alt="Contact Kiara Battery Clinic for service"></a>
@@ -302,7 +302,7 @@
             <div class="col-lg-6">
                 <div class="faqs-image">
                     <figure class="image-anime reveal">
-                        <img src="<?php echo base_url(); ?>themes/images/faqs-image.jpg" alt="FAQs - Kiara Battery Clinic Coimbatore battery UPS solar service">
+                        <img src="<?php echo base_url(); ?>themes/images/about-image.png" alt="FAQs - Kiara Battery Clinic Coimbatore battery UPS solar service">
                     </figure>
                 </div>
             </div>
@@ -412,7 +412,7 @@
     "hasPart": [
         {
             "@type": "ImageObject",
-            "contentUrl": "https://kiarabatteryclinic.com/themes/images/about-image-1.jpg",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/about-image-1.png",
             "name": "Kiara Battery Clinic Technicians at Work - Coimbatore Battery Service",
             "caption": "Expert battery technicians at Kiara Battery Clinic providing doorstep car battery and bike battery service in Coimbatore",
             "keywords": "coimbatore battery service, battery technician coimbatore, doorstep battery service, Kiara Battery Clinic",
@@ -420,7 +420,7 @@
         },
         {
             "@type": "ImageObject",
-            "contentUrl": "https://kiarabatteryclinic.com/themes/images/about-image-2.jpg",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/about-image-2.png",
             "name": "Kiara Battery Clinic Battery Shop Coimbatore - Car Battery Bike Battery UPS Solar",
             "caption": "Kiara Battery Clinic battery shop in Coimbatore - car battery, bike battery, home UPS, inverter and solar service centre",
             "keywords": "battery shop coimbatore, car battery coimbatore, bike battery coimbatore, ups service coimbatore, solar install coimbatore, Kiara Battery Clinic",
@@ -428,7 +428,7 @@
         },
         {
             "@type": "ImageObject",
-            "contentUrl": "https://kiarabatteryclinic.com/themes/images/company-values-image-1.jpg",
+            "contentUrl": "https://kiarabatteryclinic.com/themes/images/company-values-image-1.png",
             "name": "Kiara Battery Clinic Coimbatore - Trusted Battery and Power Solutions",
             "caption": "Trusted battery and power solutions provider in Coimbatore - genuine products, doorstep service, best prices by Kiara Battery Clinic",
             "keywords": "coimbatore battery service, best battery service and installation, ups, inverter, solar install, Kiara Battery Clinic coimbatore",

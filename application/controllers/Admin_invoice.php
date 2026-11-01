@@ -175,8 +175,44 @@ class Admin_invoice extends CI_Controller
         $invoiceId = $this->input->post('invoice_id');
         $token = $this->input->post('token');
         $invoiceNumber = $this->input->post('invoice_number');
-        $invoiceDate = $this->input->post('invoice_date');
         $vendorId = $this->input->post('vendor_id');
+        $isNewVendor = $this->input->post('is_new_vendor');
+        if ($isNewVendor == '1') {
+            $newVendorName = trim($this->input->post('new_vendor_name'));
+            if (empty($newVendorName)) {
+                $data["isError"] = TRUE;
+                $data["message"] = "Please Enter Vendor Name";
+                echo json_encode($data);
+                return;
+            }
+
+            $vendorEmail = $this->input->post('vendor_email');
+            $vendorMobileNumber = $this->input->post('vendor_mobile_number');
+            $vendorGSTNumber = $this->input->post('vendor_gst_number');
+            $vendorAddress1 = $this->input->post('vendor_address_1');
+            $vendorAddress2 = $this->input->post('vendor_address_2');
+            $vendorStatus = 'active';
+
+            $vendorToken = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $newVendorName), '-'));
+            if (empty($vendorToken)) {
+                $vendorToken = 'vendor-' . time();
+            }
+
+            $checkVendor = $this->vendormodel->checkVendor($vendorToken);
+            if ($checkVendor > 0) {
+                $vendorToken = $vendorToken . '-' . time();
+            }
+
+            $vendorId = $this->vendormodel->saveVendorData(0, $vendorToken, $newVendorName, $vendorEmail, $vendorMobileNumber, $vendorGSTNumber, $vendorAddress1, $vendorAddress2, $vendorStatus);
+        }
+
+        if (empty($vendorId) || (int) $vendorId <= 0) {
+            $data["isError"] = TRUE;
+            $data["message"] = "Please Select or Enter Vendor Name";
+            echo json_encode($data);
+            return;
+        }
+
         $supplierRef = $this->input->post('supplier_ref');
         $otherReference = $this->input->post('other_reference');
         $subTotalAmount = $this->input->post('subtotal_amount');
@@ -192,6 +228,27 @@ class Admin_invoice extends CI_Controller
         $invoiceAmountInWord = $this->input->post('invoice_amount_in_words');
 
         $invoiceArrayData = json_decode($this->input->post('invoiceDataArray'));
+
+        if (empty($invoiceArrayData) || !is_array($invoiceArrayData) || count($invoiceArrayData) === 0) {
+            $data["isError"] = TRUE;
+            $data["message"] = "Please add at least one product.";
+            echo json_encode($data);
+            return;
+        }
+
+        $hasProduct = false;
+        foreach ($invoiceArrayData as $item) {
+            if (!empty($item->productName) || !empty($item->productId)) {
+                $hasProduct = true;
+                break;
+            }
+        }
+        if (!$hasProduct) {
+            $data["isError"] = TRUE;
+            $data["message"] = "Please add at least one product.";
+            echo json_encode($data);
+            return;
+        }
 
         if (empty($invoiceDate)) {
             $invoiceDate = date('Y-m-d');

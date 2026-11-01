@@ -52,6 +52,7 @@ class Vendormodel extends CI_Model
             );
             $this->db->where('id', (int) $vendorId);
             $this->db->update('vendor', $data);
+            return $vendorId;
         } else {
             $data = array(
                 'token' => $token,
@@ -66,7 +67,7 @@ class Vendormodel extends CI_Model
                 'created_at' => date('Y-m-d H:i:s')
             );
             $this->db->insert('vendor', $data);
-            $this->db->insert_id();
+            return $this->db->insert_id();
         }
     }
 

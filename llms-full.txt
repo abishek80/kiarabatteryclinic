@@ -63,6 +63,12 @@
 - **Booking details needed**: Battery manufacturer, model, voltage, capacity, application, issue description (photo of label/error codes helps).
 - **Page**: https://kiarabatteryclinic.com/service/lithium-ion-battery-service
 
+### A5. Annual Maintenance Contract (AMC) Service
+- **Service**: Structured maintenance plans for compatible battery systems, generators, and backup power equipment. Includes scheduled inspections, battery health checks, terminal and connection cleaning, preventive servicing, and priority technical assistance.
+- **Coverage**: Commercial facilities, industrial sites, offices, and vehicle fleets across Coimbatore; Ooty, Kotagiri, Pollachi, Tiruppur on request.
+- **Hours**: Monday to Saturday, 9AM to 10PM.
+- **Page**: https://kiarabatteryclinic.com/service/annual-maintenance-contract
+
 ### B. Bike & Motorcycle Batteries
 - **Brands Stocked**: Amaron, Exide (including the Exide Xplore range), SF Sonic.
 - **Applications**: Commuter motorcycles, scooters, high-cc premium bikes.
@@ -112,6 +118,7 @@
 - Jump Starter Service: https://kiarabatteryclinic.com/service/jump-starter-service
 - Genset Battery Service: https://kiarabatteryclinic.com/service/genset-battery-service
 - Lithium-Ion Battery Service: https://kiarabatteryclinic.com/service/lithium-ion-battery-service
+- Annual Maintenance Contract (AMC): https://kiarabatteryclinic.com/service/annual-maintenance-contract
 - Photo Gallery: https://kiarabatteryclinic.com/gallery
 - Customer Reviews: https://kiarabatteryclinic.com/testimonials
 - Contact Us: https://kiarabatteryclinic.com/contact-us

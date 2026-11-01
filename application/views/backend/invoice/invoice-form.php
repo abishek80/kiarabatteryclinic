@@ -5,6 +5,59 @@
     table th {
         font-size: 14px !important;
     }
+
+    /* iOS/Pill Toggle Switch */
+    .ios-toggle-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        user-select: none;
+        margin-bottom: 0;
+    }
+    .ios-toggle {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 24px;
+        margin: 0;
+        vertical-align: middle;
+    }
+    .ios-toggle input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+    }
+    .ios-toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #cbd5e1;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 50px;
+    }
+    .ios-toggle-slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: #ffffff;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    }
+    .ios-toggle input:checked + .ios-toggle-slider {
+        background-color: #1877f2;
+    }
+    .ios-toggle input:checked + .ios-toggle-slider:before {
+        transform: translateX(20px);
+    }
 </style>
 
 
@@ -33,14 +86,29 @@
                     <input name="invoice_date" id="invoice_date" type="date" class="form-control date-picker" placeholder="Enter Invoice Date" value="<?php echo $invoiceDate; ?>">
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <label class="w-100 fw-13 fw-bold text-dark mb-2 fs-14px">Vendor Name <span class="text-danger">*</span></label>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <label class="fw-13 fw-bold text-dark mb-0 fs-14px">Vendor Name <span class="text-danger">*</span></label>
+                        <label class="ios-toggle-wrap" for="vendorToggleSwitch" title="Toggle New Vendor">
+                            <span class="fs-12px fw-semibold text-muted" id="toggleVendorLabel">New Vendor</span>
+                            <span class="ios-toggle">
+                                <input type="checkbox" id="vendorToggleSwitch">
+                                <span class="ios-toggle-slider"></span>
+                            </span>
+                        </label>
+                    </div>
+                    <input type="hidden" name="is_new_vendor" id="is_new_vendor" value="0">
                     <input name="vendor_name" id="vendor_name" type="hidden" readonly class="form-control vendorName" value="<?php echo $vendorName; ?>">
-                    <select name="vendor_id" id="vendor_id" class="select2 selectVendorName">
-                        <option value="">Select Vendor Name</option>
-                        <?php foreach ($vendorList as $row) { ?>
-                            <option value="<?php echo $row->id; ?>" <?php if ($row->id == $vendorId) { echo 'selected="true"'; } ?>><?php echo $row->vendor_name; ?></option>
-                        <?php } ?>
-                    </select>
+                    <div id="vendorSelectWrapper">
+                        <select name="vendor_id" id="vendor_id" class="select2 selectVendorName">
+                            <option value="">Select Vendor Name</option>
+                            <?php foreach ($vendorList as $row) { ?>
+                                <option value="<?php echo $row->id; ?>" <?php if ($row->id == $vendorId) { echo 'selected="true"'; } ?>><?php echo $row->vendor_name; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div id="newVendorInputWrapper" style="display: none;">
+                        <input name="new_vendor_name" id="new_vendor_name" type="text" class="form-control" placeholder="Enter Vendor Name">
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <label class="w-100 fw-13 fw-bold text-dark mb-2 fs-14px">Vendor Address 1 </label>
@@ -78,10 +146,10 @@
                         <thead>
                             <tr>
                                 <th>S. No</th>
-                                <th>Product Name</th>
+                                <th>Product Name <span class="text-danger">*</span></th>
                                 <th>Specification</th>
-                                <th>Price</th>
                                 <th>HSN & Per Value</th>
+                                <th>Price</th>
                                 <th>Quantity</th>
                                 <th>CGST % & Amt</th>
                                 <th>SGST % & Amt</th>
@@ -233,6 +301,41 @@
 
 <script>
     $(document).ready(function () {
+        $('#vendorToggleSwitch').on('change', function () {
+            var isChecked = $(this).is(':checked');
+            if (isChecked) {
+                // Switch to New Vendor mode
+                $('#is_new_vendor').val('1');
+                $('#vendorSelectWrapper').hide();
+                $('#newVendorInputWrapper').show();
+                $('#toggleVendorLabel').removeClass('text-muted').addClass('text-primary fw-bold');
+                
+                // Remove readonly and clear fields
+                $('#vendor_address_1, #vendor_address_2, #vendor_gst_number, #vendor_mobile_number, #vendor_email')
+                    .prop('readonly', false)
+                    .val('');
+                $('#vendor_id').val('').trigger('change.select2');
+                $('#vendor_name').val('');
+                $('#new_vendor_name').val('').focus();
+            } else {
+                // Switch back to Existing Vendor mode
+                $('#is_new_vendor').val('0');
+                $('#newVendorInputWrapper').hide();
+                $('#vendorSelectWrapper').show();
+                $('#toggleVendorLabel').removeClass('text-primary fw-bold').addClass('text-muted');
+                
+                // Re-enable readonly and clear fields
+                $('#vendor_address_1, #vendor_address_2, #vendor_gst_number, #vendor_mobile_number, #vendor_email')
+                    .prop('readonly', true)
+                    .val('');
+                $('#new_vendor_name').val('');
+                $('#vendor_name').val('');
+            }
+            if ($("#invoiceForm").data('validator')) {
+                $("#invoiceForm").validate().resetForm();
+            }
+        });
+
         $('.selectVendorName').change(function () {
             var selectVendorName = $(this).val();
             if (selectVendorName !== '') {
@@ -754,24 +857,58 @@
                 required: true
             },
             vendor_id: {
-                required: true
+                required: function () {
+                    return $('#is_new_vendor').val() === '0';
+                }
+            },
+            new_vendor_name: {
+                required: function () {
+                    return $('#is_new_vendor').val() === '1';
+                }
             }
         },
         messages: {
             invoice_number: {
-                required: "Please Enter Invoice Name",
+                required: "Please Enter Invoice Number",
             },
             invoice_date: {
                 required: "Please Enter Invoice Date",
             },
             vendor_id: {
-                required: "Please Enter Invoice Price",
+                required: "Please Select Vendor Name",
+            },
+            new_vendor_name: {
+                required: "Please Enter Vendor Name",
             }
         },
         submitHandler: function (form) {
             var data = new FormData($('#invoiceForm').get(0));
             
             getInvoiceTableData();
+
+            // Validate that at least one product is added
+            var hasValidProduct = false;
+            if (invoiceData && invoiceData.length > 0) {
+                for (var i = 0; i < invoiceData.length; i++) {
+                    if (invoiceData[i].productName && invoiceData[i].productName.trim() !== '') {
+                        hasValidProduct = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!hasValidProduct) {
+                toastr.options = {
+                    'closeButton': true,
+                    'progressBar': false,
+                    'positionClass': 'toast-top-right',
+                    'timeOut': '4000',
+                };
+                toastr.error('Please add at least one product');
+                $('#invoiceTable tr:first .productName').addClass('border border-danger').focus();
+                return false;
+            }
+
             data.append('invoiceDataArray', JSON.stringify(invoiceData));
 
             $.ajax({
@@ -814,6 +951,12 @@
                 }
             });
             return false;
+        }
+    });
+
+    $(document).on('input change', '.productName', function() {
+        if ($(this).val().trim() !== '') {
+            $(this).removeClass('border border-danger');
         }
     });
 </script>
