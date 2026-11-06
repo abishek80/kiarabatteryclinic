@@ -1,4 +1,7 @@
 <style>
+    .downloadInvoicePage {
+        padding: 15px 15px 0 15px !important;
+    }
     .table> :not(caption)>*>* {
         font-size: 11px !important;
         padding: 3px 5px !important;
@@ -63,7 +66,7 @@
     }
 ?>
 
-<div class="p-0 bg-white a4-size downloadInvoicePage">
+<div class="bg-white a4-size downloadInvoicePage" style="padding: 15px 15px 0 15px;">
     <div class="border rounded-3 border-dark">
         <div class="border-bottom border-dark py-2">
             <div class="d-flex gap-3 justify-content-center align-items-center mb-2">
@@ -298,9 +301,10 @@
                 </div>
             </div>
             <div class="ps-2 col-6 py-2">
-                <div class="h-100">
-                    <p class="mb-0 fs-13px text-black text-end pe-4">For <?php echo $companyName; ?></p>
-                    <p class="mb-0 mt-5 fs-13px text-black text-end pe-4">Authorized Signature</p>
+                <div class="h-100 text-end">
+                    <p class="mb-0 fs-13px text-black pe-4">For <?php echo $companyName; ?></p>
+                    <img src="<?php echo base_url(); ?>themes/images/e-signature.png" alt="signature" style="margin: 5px 20px 0 0; width: 60px; object-fit: contain;">
+                    <p class="mb-0 fs-13px text-black pe-4">Authorized Signature</p>
                 </div>
             </div>
         </div>
