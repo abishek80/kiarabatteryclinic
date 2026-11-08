@@ -74,12 +74,17 @@
                         <div class="footer-copyright-text">
                             <p class="fs-6">Copyright &copy; <?php echo date('Y'); ?> Kiara Battery Clinic. All Rights Reserved | Battery Shop in Coimbatore</p>
                         </div>
-                        <div class="footer-social-links">
-                            <ul>
-                                <li><a href="https://wa.link/w646lw" target="_blank" rel="noopener" aria-label="WhatsApp Kiara Battery Clinic"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                <!-- <li><a href="#" target="_blank" rel="noopener" aria-label="Facebook Kiara Battery Clinic"><i class="fa-brands fa-facebook-f"></i></a></li> -->
-                                <li><a href="https://www.instagram.com/kiara_battery_clinic/" target="_blank" rel="noopener" aria-label="Instagram Kiara Battery Clinic"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
+                        <div class="footer-copyright-right">
+                            <div class="footer-developer-text">
+                                <p class="fs-6 mb-0">Developed By <a href="https://abishek80.github.io/portfolio.github.io/" class="text-white text-decoration-none fw-bold" target="_blank" rel="noopener">Antony Abishek</a></p>
+                            </div>
+                            <div class="footer-social-links">
+                                <ul>
+                                    <li><a href="https://wa.link/w646lw" target="_blank" rel="noopener" aria-label="WhatsApp Kiara Battery Clinic"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    <!-- <li><a href="#" target="_blank" rel="noopener" aria-label="Facebook Kiara Battery Clinic"><i class="fa-brands fa-facebook-f"></i></a></li> -->
+                                    <li><a href="https://www.instagram.com/kiara_battery_clinic/" target="_blank" rel="noopener" aria-label="Instagram Kiara Battery Clinic"><i class="fa-brands fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
